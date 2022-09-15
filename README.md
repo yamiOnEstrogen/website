@@ -6,6 +6,8 @@
 [![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
 [![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
 
+![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
+
 
 # Build
 
