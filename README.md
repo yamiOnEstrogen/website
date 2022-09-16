@@ -9,6 +9,9 @@
 ![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
 
 
+[Pull Request](https://github.com/akenolol/akenolol.github.io/compare)
+
+
 # Build
 
 ```bash
@@ -22,5 +25,3 @@ npm i
 npm run start
 
 ```
-
-
