@@ -8,6 +8,10 @@ const Logger = require("./utils/logger.js");
 const logger = new Logger({ debug: true });
 
 
+const serverConfig = {
+  poweredBy: "Love",
+}
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,12 +20,12 @@ app.engine(".ejs", ejs.__express);
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-    res.setHeader("X-Powered-By", "Akeno Api");
+    res.setHeader("X-Powered-By", serverConfig.poweredBy);
     res.sendFile(__dirname + "/public/index.html");
 })
 
 app.get("/redirect", (req, res) => {
-    res.setHeader("X-Powered-By", "Akeno Api");
+  res.setHeader("X-Powered-By", serverConfig.poweredBy); 
     const url = req.query.url;
     if (url == null || url == "" || url == undefined) {
       res.json({
