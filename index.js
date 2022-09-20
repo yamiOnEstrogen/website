@@ -49,7 +49,14 @@ app.get("/redirect", (req, res) => {
 
 
 app.listen(process.env.PORT || 5600, () => {
-    logger.info(`Express server listening on port ${process.env.PORT}`);
+  console.clear()
+    if (process.env.PORT != null)
+    {
+      logger.info(`Express server listening on port ${process.env.PORT}`);
+    }
+    else {
+      logger.info(`Express server listening on port 5600`);
+    }
 })
 
 
