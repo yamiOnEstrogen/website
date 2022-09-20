@@ -1,4 +1,4 @@
-const websiteConfig = [{
+const websiteConfig = {
     name: 'AkenoDev Website',
     url: 'https://akenodev.xyz',
     description: 'AkenoDev is a website that is used to host my projects and other things.',
@@ -17,7 +17,7 @@ const websiteConfig = [{
         'Sec-Fetch-User': '?1',
         'Sec-GPC': '1',
     },
-}];
+};
 
 
 console.log('------------------------------------------------------------------------------------------------------');
