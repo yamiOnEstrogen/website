@@ -1,7 +1,7 @@
 
 # Akeno Dev Website
 
-The website for echoanime.xyz
+The website for akenodev.xyz
 
 ![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
@@ -23,7 +23,7 @@ ____
 ```
 
 
-#### Get item
+#### Access Redirect Page
 
 ```http
   GET /redirect
@@ -32,6 +32,12 @@ ____
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `url` | `string` | **Required**. The URL to redirect to.|
+
+### Access Status Page
+
+```http
+  GET /status
+```
 
 
 ___
@@ -56,6 +62,9 @@ Install dependencies
 ```bash
   npm install
 ```
+
+Edit `config.js` to fit your needs.
+
 
 Start the server
 
