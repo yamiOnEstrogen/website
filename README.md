@@ -1,7 +1,7 @@
 
 # Akeno Dev Website
 
-A brief description of what this project does and who it's for
+The website for echoanime.xyz
 
 ![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
 [![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
