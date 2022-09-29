@@ -48,13 +48,13 @@ ___
 Clone the project
 
 ```bash
-  git clone https://github.com/akenolol/akenolol.github.io
+  git clone https://github.com/akenolol/akenodev.xyz
 ```
 
 Go to the project directory
 
 ```bash
-  cd akenolol.github.io
+  cd akenodev.xyz
 ```
 
 Install dependencies
