@@ -1,27 +1,65 @@
+
 # Akeno Dev Website
 
-
-
-[![forthebadge](https://forthebadge.com/images/badges/made-with-javascript.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/open-source.svg)](https://forthebadge.com)
-[![forthebadge](https://forthebadge.com/images/badges/uses-html.svg)](https://forthebadge.com)
+A brief description of what this project does and who it's for
 
 ![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
+[![MIT License](https://img.shields.io/badge/License-MIT-green.svg)](https://choosealicense.com/licenses/mit/)
+
+____
+
+## Authors
+
+- [@akenolol](https://www.github.com/akenolol)
+- [@Furdox](https://github.com/Furdox)
 
 
-[Pull Request](https://github.com/akenolol/akenolol.github.io/compare)
+## Reference
+
+#### Access Home Page
+
+```http
+  GET /
+```
 
 
-# Build
+#### Get item
+
+```http
+  GET /redirect
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `url` | `string` | **Required**. The URL to redirect to.|
+
+
+___
+
+
+## Run Locally
+
+Clone the project
 
 ```bash
-
-git clone https://github.com/akenolol/akeno-website.git Website
-
-cd Website
-
-npm i
-
-npm run start
-
+  git clone https://github.com/akenolol/akenolol.github.io
 ```
+
+Go to the project directory
+
+```bash
+  cd akenolol.github.io
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+
