@@ -71,6 +71,7 @@ app.get("/redirect", (req, res) => {
   } else {
     res.render("redirect", {
       REDIRECT_URL: url,
+      HOST: req.hostname,
       REDIRECT_URL_SHORT: url
         .replace("https://", "")
         .replace("http://", "")
