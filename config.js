@@ -6,7 +6,8 @@ module.exports.webApp = {
 module.exports.owner = {
     id: "YOUR-DISCORD-ID",
     botToken: "YOUR-DISCORD-BOT-TOKEN",
-    githubToken: "YOUR-GITHUB-TOKEN"
+    githubToken: "YOUR-GITHUB-TOKEN",
+    supportServer: "YOUR-SUPPORT-SERVER",
 },
 
 
@@ -97,5 +98,22 @@ module.exports.projects = {
         language: `${this.languages.JavaScript}`,
         framework: `${this.frameworks.Discordjs}`,
     }
+
+}
+
+module.exports.profile = {
+    aboutMe: ["Web Developer", "Discord / Telegram Bot Developer", "Discord Moderator", "Reddit Moderator", "Software Developer", "Anime Voice Actor"],
+    socials: {
+        github: "https://github.com/akenolol",
+        twitter: "https://twitter.com/akeno_dev",
+        reddit: "https://www.reddit.com/user/premage1010",
+        discord: "https://discordapp.com/users/547923574833545226",
+        telegram: "https://t.me/akenodev",
+    },
+    languages: [
+        " en",
+        " jp",
+    ],
+
 
 }
