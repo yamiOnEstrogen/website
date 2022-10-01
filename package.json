@@ -1,6 +1,6 @@
 {
   "name": "akeno-website",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "The Source Code for akeno's website",
   "main": "index.js",
   "scripts": {
