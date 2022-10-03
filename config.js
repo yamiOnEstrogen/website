@@ -97,24 +97,21 @@ module.exports.projects = {
         description: "The Official Github Repo for akenodev.xyz.",
         url: "https://github.com/akenolol/akenodev.xyz",
         image: "https://cdn.discordapp.com/icons/1014190469628055552/a_a92a1b63d4ae364ea0e17ad6526bd16b.gif",
-        language: `${this.languages.JavaScript} | ${this.languages.HTML} | ${this.languages.CSS}`,
-        framework: `${this.frameworks.Express} | ${this.frameworks.Bodyparser} | ${this.frameworks.Cors} | ${this.frameworks.Ejs}`,
+        
     },
     2: {
         name: "Goddess-Bot",
         description: "The Source Code for The Server Goddess (https://cafe.akenodev.xyz.invite/).",
         url: "https://github.com/akenolol/Goddess-Bot",
         image: "https://cdn.discordapp.com/avatars/1006316455886860329/8df894fb0eb61a03200d86d5eaf52867.png?size=1024",
-        language: `${this.languages.JavaScript}`,
-        framework: `${this.frameworks.Discordjs} | ${this.frameworks.Express}`,
+       
     },
     3: {
         name: "react-todo-app",
         description: "A simple todo app made with React.",
         url: "https://github.com/akenolol/react-todo-app",
         image: "https://cdn.discordapp.com/attachments/981632133191843852/1025205816472653884/3203-reactjs.png",
-        language: `${this.languages.JavaScript} | ${this.languages.CSS} | ${this.languages.HTML}`,
-        framework: `${this.frameworks.React}`,
+        
     },
     4: {
         name: "Basic-Web-Server",
@@ -129,16 +126,14 @@ module.exports.projects = {
         description: "A Simple Program to Show How C Works.",
         url: "https://github.com/akenolol/c-program",
         image: "https://cdn.iconscout.com/icon/free/png-512/c-programming-569564.png",
-        language: `${this.languages.C}`,
-        framework: "None",
+        
     },
     6: {
         name: "Akeno-Bartender-Bot",
         description: "The Discord bot For https://discord.gg/g78PTzfMMP",
         url: "https://github.com/akenolol/Akeno-Bartender-Bot",
         image: "https://cdn.discordapp.com/attachments/981632133191843852/1025204888944267306/DJNekoWag.gif",
-        language: `${this.languages.JavaScript}`,
-        framework: `${this.frameworks.Discordjs}`,
+        
     }
 
 }
@@ -149,8 +144,6 @@ module.exports.profile = {
         github: "https://github.com/akenolol",
         twitter: "https://twitter.com/akeno_dev",
         reddit: "https://www.reddit.com/user/premage1010",
-        discord: "https://discordapp.com/users/547923574833545226",
-        telegram: "https://t.me/akenodev",
     },
     languages: [
         " en",
