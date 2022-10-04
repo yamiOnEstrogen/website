@@ -11,7 +11,7 @@ module.exports.owner = {
 },
 
 
-module.exports.languages = {
+ module.exports.languages = {
         "JavaScript": {
             name: "JavaScript",
             options: {
@@ -73,7 +73,6 @@ module.exports.languages = {
             }
         },
     };
-
 
 module.exports.frameworks = {
     Express: {
@@ -137,6 +136,70 @@ module.exports.frameworks = {
         }
     }
 };
+
+module.exports.technologies = {
+    Nodejs: {
+        name: "Node.js",
+        options: {
+            fontawesome: "fab fa-node-js",
+        }
+    },
+    MongoDB: {
+        name: "MongoDB",
+        options: {
+            fontawesome: "fas fa-database",
+        }
+    },
+    MySQL: {
+        name: "MySQL",
+        options: {
+            fontawesome: "fas fa-database",
+        }
+    },
+    Redis: {
+        name: "Redis",
+        options: {
+            fontawesome: "fas fa-database",
+        }
+    },
+    Docker: {
+        name: "Docker",
+        options: {
+            fontawesome: "fab fa-docker",
+        }
+    },
+    Git: {
+        name: "Git",
+        options: {
+            fontawesome: "fab fa-git",
+        }
+    },
+    Linux: {
+        name: "Linux",
+        options: {
+            fontawesome: "fab fa-linux",
+        }
+    },
+    Unity: {
+        name: "Unity",
+        options: {
+            fontawesome: "fab fa-unity",
+        }
+    },
+    Npm: {
+        name: "Npm",
+        options: {
+            fontawesome: "fab fa-npm",
+        }
+    },
+    Aws: {
+        name: "AWS",
+        options: {
+            fontawesome: "fab fa-aws",
+        }
+    }
+};
+
 module.exports.projects = {
     1: {
         name: "akenodev.xyz",
