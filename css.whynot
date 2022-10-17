@@ -1,0 +1,17 @@
+@keyframes blurData {
+  0% {
+      filter: blur(5px);
+  }
+  100% {
+      filter: blur(5px);
+  }
+}
+
+@keyframes unBlurData {
+0% {
+    filter: blur(0px);
+}
+100% {
+    filter: blur(0px);
+}
+}
