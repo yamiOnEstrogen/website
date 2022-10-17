@@ -15,3 +15,15 @@
     filter: blur(0px);
 }
 }
+
+
+
+.sensitveData {
+    animation: blurData 1s infinite;
+}
+
+
+.sensitveData:hover {
+  animation: unBlurData 1s infinite;
+
+}
