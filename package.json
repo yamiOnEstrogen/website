@@ -16,7 +16,7 @@
   "author": "akeno#1010",
   "license": "ISC",
   "dependencies": {
-    "@octokit/core": "^4.0.5",
+    "@octokit/core": "^4.1.0",
     "axios": "^0.27.2",
     "body-parser": "^1.20.0",
     "chalk": "^4.1.2",
