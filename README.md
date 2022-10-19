@@ -1,9 +1,10 @@
 
 # Akeno Dev Website
 
-The website for akenodev.xyz
+![App Banner](./.github/Images/repoBanner.png)
 
 ![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
+[![MIT License](https://img.shields.io/github/license/akenolol/akenodev.xyz?color=blue)](https://choosealicense.com/licenses/gpl-3.0/)
 
 ____
 
@@ -15,14 +16,14 @@ ____
 
 ## Reference
 
-#### Access Home Page
+### Access Home Page
 
 ```http
   GET /
 ```
 
 
-#### Access Redirect Page
+### Access Redirect Page
 
 ```http
   GET /redirect
@@ -32,12 +33,12 @@ ____
 | :-------- | :------- | :------------------------- |
 | `url` | `string` | **Required**. The URL to redirect to.|
 
-### Access Status Page
+
+### Access Login Page
 
 ```http
-  GET /status
+  GET /login
 ```
-
 
 ___
 
@@ -70,4 +71,9 @@ Start the server
 ```bash
   npm run start
 ```
+
+
+## Support
+
+For support, email [owner@akenodev.xyz](mailto:owner@akenodev.xyz) or join our [Discord Server](https://akenodev.xyz/redirect?url=https://akenodev.xyz/invite).
 
