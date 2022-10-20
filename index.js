@@ -140,13 +140,17 @@ app.get("/reportbug", async (req, res) => {
 
 app.get("/redirect", (req, res) => {
   const url = req.query.url;
+  const title = req.query.title || "akenodev redirect feature";
+
   if (url == null || url == "" || url == undefined) {
     res.json({
       error: "No url provided"
     });
-  } else {
+  }
+  else {
     res.render("redirect", {
       REDIRECT_URL: url,
+      REDIRECT_TITLE: title,
       HOST: req.hostname,
       REDIRECT_URL_SHORT: url
         .replace("https://", "")
