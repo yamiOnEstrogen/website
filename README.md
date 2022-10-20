@@ -32,6 +32,7 @@ ____
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
 | `url` | `string` | **Required**. The URL to redirect to.|
+| `title` | `string` | **OPTIONAL**. The title to give.|
 
 
 ### Access Login Page
