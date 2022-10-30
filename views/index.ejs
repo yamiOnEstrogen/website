@@ -1,0 +1,661 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+  <!-- Required meta tags-->
+  <meta charset="utf-8">
+  <!-- Title-->
+  <title><%= owner.username %> - Home </title>
+  <!-- Description-->
+  <meta name="description" content="View <%= owner.username %>'s Portfolio! ">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Favicons-->
+  <link rel="shortcut icon" href="img/avatar.png">
+  <!-- Web fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
+  <!-- CSS vendors-->
+  <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
+  <link rel="stylesheet" href="assets/css/ionicons.min.css">
+  <link rel="stylesheet" href="assets/css/tiny-slider.css">
+  <link rel="stylesheet" href="assets/css/lity.min.css">
+  <link rel="stylesheet" href="assets/css/simplebar.min.css">
+  <link rel="stylesheet" href="assets/css/jquery.mb.YTPlayer.min.css">
+  <!-- Main CSS-->
+  <link rel="stylesheet" href="assets/css/main.css">
+  <!-- CSS Color scheme-->
+  <link id="color-scheme" rel="stylesheet" href="assets/css/colors/main-purple.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="assets/css/custom.css">
+  <!-- Bootstrap CSS -->
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+
+<body class="theme-dark">
+  <!-- Preloader-->
+  <div class="preloader">
+    <div class="preloader-block">
+      <div class="preloader-icon"><span class="loading-dot loading-dot-1"></span><span class="loading-dot loading-dot-2"></span><span class="loading-dot loading-dot-3"></span></div>
+    </div>
+  </div>
+  <div id="overlay-effect"></div>
+  <!-- Navbar-->
+  <nav class="navbar-expand-md navbar fixed-top" id="navbar"><a class="navbar-bots" data-scroll="" href="#home-area">
+      <!-- Navbar Logo-->
+      <img class="img-fluid invisableImage" src="https://cdn.discordapp.com/attachments/981632133191843852/1030952155181498459/trans.png"></a>
+    <span class="navbar-menu ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" role="button"><span class="btn-line"></span></span>
+    <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
+      <!-- Navbar menu-->
+      <!-- Navbar menu-->
+      <ul class="navbar-nav ml-auto navBar">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    
+  </nav>
+  <!-- Home-->
+  <section class="home-area element-cover-bg video-variant" id="home" style="background-image:url(assets/img/backgroundAsset.jpg)">
+    <div class="player" id="homeVideo" data-property="{videoURL:'https://youtu.be/UKRYHQALlAI',containment:'#home',autoPlay:true, mute:false, showControls:false, stopMovieOnBlur:false, showYTLogo: false}"></div>
+    <div class="container h-100">
+      <div class="row h-100 align-items-center justify-content-center">
+        <div class="col-12 col-lg-8 home-content text-center">
+          <h1 class="home-name"><%= owner.username %> </h1>
+          <h4 class="cd-headline clip home-headline">I’m a <span class="cd-words-wrapper single-headline"><b class="is-visible">Web Developer</b><b>Voice Actor</b><b>Bot Developer</b><b>Software Developer</b><b>Moderator</b></span></h4>
+        </div>
+      </div>
+    </div>
+    <div class="fixed-wrapper">
+      <!-- Languages list COMING SOON!-->
+      <!-- <div class="fixed-block block-left">
+        <ul class="list-unstyled languages-list">
+          <li><a href="#0"><span class="single-language">ENG</span></a></li>
+          <li><a href="#0"><span class="single-language">JAP</span></a></li>
+        </ul>
+      </div> -->
+<!-- 
+      <div class="fixed-block block-left">
+        <ul class="list-unstyled languages-list">
+          <li id="userProfile"><a><span class="single-language hidden" id="userProfile-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16" id="userProfile-2">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+          </svg></span></a></li>
+        </ul>
+      </div> -->
+       <!-- Social media icons-->
+      <div class="fixed-block block-right">
+        <ul class="list-unstyled social-icons">
+          <li><a href="https://twitter.com/akeno_dev"><svg data-bs-toggle="tooltip" data-bs-title="Twitter" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+          </svg></a></li>
+          <li><a href="https://github.com/akenolol"><svg data-bs-toggle="tooltip" data-bs-title="Github" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg></a></li>
+          <li><a href="<%= supportServer %> "><svg data-bs-toggle="tooltip" data-bs-title="Discord" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+          </svg></a></li>
+          <li><a href="https://www.twitch.tv/akenodevlol"><svg data-bs-toggle="tooltip" data-bs-title="Twitch.Tv" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitch" viewBox="0 0 16 16">
+            <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>
+            <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
+          </svg></a></li>
+          <li><a href="https://stackoverflow.com/users/19972576/akenodev"><svg data-bs-toggle="tooltip" data-bs-title="Stack Overflow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack-overflow" viewBox="0 0 16 16">
+            <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z"/>
+            <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z"/>
+          </svg></a></li>
+          <li><a href="https://steamcommunity.com/id/akenodevlol/"><svg data-bs-toggle="tooltip" data-bs-title="Steam" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">
+            <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"/>
+            <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/>
+          </svg></a></li>
+           <li><a href="/spotify"><svg data-bs-toggle="tooltip" data-bs-title="Spotify Playlist" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+              </svg></a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- About lightbox-->
+  <div class="lightbox-wrapper" id="about" data-simplebar>
+    <div class="container">
+      <div class="lightbox-close">
+        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="lightbox-content">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-heading page-heading">
+                  <h2 class="section-title">About Me</h2>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Info section-->
+            <div class="info-section single-section">
+              <div class="row align-items-center">
+                <!-- Picture part-->
+                <% if (owner.avatar.includes("a_")) { %>
+                    <div class="col-12 col-lg-5 info-img"><img class="img-fluid img-thumbnail" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="About Picture"></div>
+                <% } %>
+                <% if (!owner.avatar.includes("a_")) { %>
+                    <div class="col-12 col-lg-5 info-img"><img class="img-fluid img-thumbnail" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="About Picture"></div>
+                <% } %>
+                <!-- Content part-->
+                <div class="col-12 col-lg-7 info-content">
+                  <div class="content-block">
+                    <h2 class="content-subtitle">Who am i?</h2>
+                    <h6 class="content-title">I'm <%= owner.username %>, a Web Developer, Voice Actor, Discord Bot Developer, Moderator, Software Developer</h6>
+                    <div class="content-description" style="color:white">
+                      <p>I am a freelancer based in the United States and i have been building noteworthy Websites / Discord Bots / Applications for <strong>3</strong> Years!
+                    </p>
+                    </div>
+                    <address class="content-info">
+                      <div class="row">
+                        <div class="col-12 col-md-6 single-info"><span>Name:</span>
+                          <p style="color:white"><%= owner.username %> (HAYDEN) </p>
+                        </div>
+                        <div class="col-12 col-md-6 single-info"><span>Email:</span>
+                          <p class="sensitveData" style="color:white"><a href="mailto:oss@akenodev.xyz">oss@akenodev.xyz</a></p>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12 col-md-6 single-info"><span>Age:</span>
+                          <p style="color:white">16</p>
+                        </div>
+                        <div class="col-12 col-md-6 single-info"><span>From:</span>
+                          <p class="sensitveData" style="color:white">Waycross, Ga</p>
+                        </div>
+                      </div>
+                    </address>
+                    <div class="d-block d-sm-flex align-items-center"><a class="btn content-download button-main button-scheme" href="/cv" role="button">CV</a>
+                      <ul class="list-unstyled list-inline content-follow">
+                        <li class="list-inline-item"><a href="https://twitter.com/akeno_dev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="https://github.com/akenolol"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="<%= supportServer %> "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
+                            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="https://www.twitch.tv/akenodevlol"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitch" viewBox="0 0 16 16">
+                            <path d="M3.857 0 1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0H3.857zm9.714 7.429-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142v6.286z"/>
+                            <path d="M11.857 3.143h-1.143V6.57h1.143V3.143zm-3.143 0H7.571V6.57h1.143V3.143z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="https://stackoverflow.com/users/19972576/akenodev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack-overflow" viewBox="0 0 16 16">
+                            <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z"/>
+                            <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="https://steamcommunity.com/id/akenodevlol/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">
+                            <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"/>
+                            <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/>
+                          </svg></a></li>
+                          <li class="list-inline-item"><a href="/spotify"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-spotify" viewBox="0 0 16 16">
+                              <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.669 11.538a.498.498 0 0 1-.686.165c-1.879-1.147-4.243-1.407-7.028-.77a.499.499 0 0 1-.222-.973c3.048-.696 5.662-.397 7.77.892a.5.5 0 0 1 .166.686zm.979-2.178a.624.624 0 0 1-.858.205c-2.15-1.321-5.428-1.704-7.972-.932a.625.625 0 0 1-.362-1.194c2.905-.881 6.517-.454 8.986 1.063a.624.624 0 0 1 .206.858zm.084-2.268C10.154 5.56 5.9 5.419 3.438 6.166a.748.748 0 1 1-.434-1.432c2.825-.857 7.523-.692 10.492 1.07a.747.747 0 1 1-.764 1.288z"/>
+                            </svg></a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Services section-->
+            <div class="services-section single-section">
+              <div class="row">
+                <div class="col-12">
+                  <div class="section-heading">
+                    <h2 class="section-title">My Services</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <!-- Single service-->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="single-service">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
+                        <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
+                        <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
+                      </svg>
+                    <h6 class="service-title">Discord Bot</h6>
+                    <p class="service-description" style="color:white">
+                        I can make a discord bot for you, I can make it do anything you want, I can make it do moderation, fun commands, music, and more!
+                    </p>
+                  </div>
+                </div>
+                <!-- Single service-->
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="single-service">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-hdd-fill" viewBox="0 0 16 16">
+                        <path d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM.91 7.204A2.993 2.993 0 0 1 2 7h12c.384 0 .752.072 1.09.204l-1.867-3.422A1.5 1.5 0 0 0 11.906 3H4.094a1.5 1.5 0 0 0-1.317.782L.91 7.204z"/>
+                      </svg>
+                    <h6 class="service-title">Website Development</h6>
+                    <p class="service-description" style="color:white">
+                        I can make a website for you, Ecommerce, Blog, Portfolio, and more!
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6 col-lg-4">
+                  <div class="single-service">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-cloud-fill" viewBox="0 0 16 16">
+                      <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
+                    </svg> <h6 class="service-title">Minecraft Plugin Development</h6>
+                    <p class="service-description" style="color:white">
+                       I can create a Minecraft Plugin for you.
+
+                       I can do: PvP, Economy, Minigames, and more!
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+                        <!-- Testimonials section-->
+            <div class="testimonials-section single-section">
+              <div class="row">
+                <div class="col-12">
+                  <div class="section-heading">
+                    <h2 class="section-title">Testimonials</h2>
+                  </div>
+                </div>
+              </div>
+             
+              <div class="my-slider">
+                <% clients.forEach(user => { %>
+                
+                <div class="slider-item">
+                  
+                    <div class="single-review swiper-slide">
+                      <div class="review-header d-flex justify-content-between">
+                        <div class="review-client">
+    
+                          <div class="media"><img class="img-fluid rounded-circle client-avatar" src="<%= user.image %>" alt="<%= user.name %>">
+                            <div class="client-details">
+                              <% if (user.isInServer === false) { %>
+                              <h6 class="client-name"><%= user.name %>#<%= user.discriminator %></h6><span class="client-role"><%= user.whois.name %></span>
+                            <% } %>
+                            <% if (user.isInServer) { %>
+                              <h6 class="client-name"><%= user.name %>#<%= user.discriminator %></h6><span class="client-role"><a href="<%= user.whois.url %>"><%= user.whois.name %></a></span>
+                            <% } %>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- <i class="fa fa-star" style="color:white" aria-hidden="true"></i> -->
+                      </div>
+                      <p class="review-content" style="color:white"><%= user.discription %></p>
+                    </div>
+
+   
+                </div>
+
+                <% }) %>
+                </div>
+                
+              </div>
+            </div>
+            <!-- Pricing section-->
+            <div class="pricing-section single-section">
+              <div class="row">
+                <div class="col-12">
+                  <div class="section-heading">
+                    <h2 class="section-title">Choose a Service</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row align-items-center">
+                <!-- Single plan-->
+                <div class="col-lg-4">
+                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-laptop-code publicPath"></i>
+                    <h3 class="plan-type">Discord Bot</h3>
+                    <h2 class="plan-price">$10</h2>
+                    <ul class="list-unstyled plan-list">
+                      <li style="color:white">Mod Commands</li>
+                      <li style="color:white">Giveaway Commands</li>
+                      <li style="color:white">Leveling System ( + $5 )</li>
+                      <li style="color:white">Dashboard ( + $15 )</li>
+                      <li style="color:white">24/7 Support</li>
+                    </ul>
+
+                    <button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(8564564)">Get "<strong>Discord Bot</strong>"</button>
+                  </div>
+                </div>
+                <!-- Single plan-->
+                <div class="col-lg-4">
+                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-industry publicPath"></i>
+                    <h3 class="plan-type">Website</h3>
+                    <h2 class="plan-price">$20</h2>
+                    <ul class="list-unstyled plan-list">
+                      <li style="color:white">Api ( + $5 )</li>
+                      <li style="color:white">Responsive Design ( + $7 )</li>
+                      <li style="color:white">Databases ( + $3 )</li>
+                      <li style="color:white">Discord / Twitch / Twitter / Instagram / Youtube Integration ( + $10 )</li>
+                      <li style="color:white">24/7 Support</li>
+                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(5473524)">Get "<strong>Website</strong>"</button>
+                  </div>
+                </div>
+                <div class="col-lg-4">
+                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-bullhorn publicPath"></i>
+                    <h3 class="plan-type">Twitter Bot</h3>
+                    <h2 class="plan-price">$15</h2>
+                    <ul class="list-unstyled plan-list">
+                      <li style="color:white">Scan Hashtags</li>
+                      <li style="color:white">Reply to Certain Hashtags ( + $7 )</li>
+                      <li style="color:white">Databases ( + $3 ) (EACH)</li>
+                      <li style="color:white">24/7 Support</li>
+                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(4289640)">Get "<strong>Twitter Bot</strong>"</button>
+                  </div>
+                </div>
+                   <div class="col-lg-4">
+                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-tag publicPath"></i>
+                    <h3 class="plan-type">Minecraft Plugin</h3>
+                    <h2 class="plan-price">$10</h2>
+                    <ul class="list-unstyled plan-list">
+                      <li style="color:white">Discord Integration ( + $7 )</li>
+                      <li style="color:white">Server Integration ( + $9 )</li>
+                      <li style="color:white">Databases ( + $3 ) (EACH)</li>
+                      <li style="color:white">24/7 Support</li>
+                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(78403650)">Get "<strong>Minecraft Plugin</strong>"</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Resume lightbox-->
+  <div class="lightbox-wrapper" id="resume" data-simplebar>
+    <div class="container">
+      <div class="lightbox-close">
+        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="lightbox-content">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-heading page-heading">
+                  <h2 class="section-title">Resume</h2>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Resume section-->
+            <div class="resume-section single-section">
+              <div class="row">
+                <!-- Education part-->
+                <div class="col-12 col-md-6">
+                  <div class="col-block education">
+                    <h3 class="col-title">Awards</h3>
+                    <div class="resume-item"><span class="item-arrow"></span>
+                      <h5 class="item-title">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-award-fill" viewBox="0 0 16 16">
+                          <path d="m8 0 1.669.864 1.858.282.842 1.68 1.337 1.32L13.4 6l.306 1.854-1.337 1.32-.842 1.68-1.858.282L8 12l-1.669-.864-1.858-.282-.842-1.68-1.337-1.32L2.6 6l-.306-1.854 1.337-1.32.842-1.68L6.331.864 8 0z"/>
+                          <path d="M4 11.794V16l4-1 4 1v-4.206l-2.018.306L8 13.126 6.018 12.1 4 11.794z"/>
+                        </svg>
+                        <span class="item-name"><a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/ccna.html">CCNA</a> / <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry/technician-cct.html">CCT</a> / <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/associate/cyberops-associate.html">CyberOps Associate</a> / <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/devnet/cisco-certified-devnet-associate.html">DevNet Associate</a></span>
+                    </div>
+                  </div>
+                </div>
+                <!-- Experience part-->
+                <div class="col-12 col-md-6">
+                  <div class="col-block experience">
+                    <h3 class="col-title">Experience</h3>
+                    <div class="resume-item"><span class="item-arrow"></span>
+                      <h5 class="item-title">Software Engineer</h5><span class="item-details publicPath"><a href="https://github.com/Project-Faded">Faded</a> / 2021 - 2022</span>
+                    </div>
+                    <div class="resume-item"><span class="item-arrow"></span>
+                      <h5 class="item-title">Back-End / Front-End Developer</h5><span class="item-details publicPath"><a href="https://icker.akenodev.xyz/">Icker</a> / 2022 - 2022</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Skills section-->
+            <div class="skills-section single-section">
+              <div class="row">
+                <div class="col-12">
+                  <div class="section-heading">
+                    <h2 class="section-title">My Skills</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12 col-md-6">
+                    <%  codingLanguages.forEach(element => { %>
+                        <div class="single-skill" data-percentage="<%= element.options.percentile %>">
+                            <div class="skill-info"><span class="skill-name"><%= element.name %></span><span class="skill-percentage"></span></div>
+                            <div class="progress skill-progress">
+                              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                    <% }) %>
+
+                </div>
+                <div class="col-12 col-md-6">
+                    <%  frameworks.forEach(element => { %>
+                        <div class="single-skill" data-percentage="<%= element.options.percentile %>">
+                            <div class="skill-info"><span class="skill-name"><%= element.name %></span><span class="skill-percentage"></span></div>
+                            <div class="progress skill-progress">
+                              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                          </div>
+                    <% }) %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Portfolio lightbox-->
+  <div class="lightbox-wrapper" id="portfolio" data-simplebar>
+    <div class="container">
+      <div class="lightbox-close">
+        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="lightbox-content">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-heading page-heading">
+                  <h2 class="section-title">Portfolio</h2>
+                  <p class="section-description publicPath">All of these Items on be found on my github!</p>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Portfolio section-->
+            <div class="portfolio-section single-section">
+              <div class="row">
+                <!-- Filter nav-->
+                <div class="col-12">
+                  <ul class="list-inline filter-control" role="group" aria-label="Filter Control">
+                    <li class="list-inline-item tab-active" data-filter="*">All</li>
+                    <li class="list-inline-item" data-filter=".bots">Bots</li>
+                    <li class="list-inline-item" data-filter=".websites">Websites</li>
+                    <li class="list-inline-item" data-filter=".tools">Tools</li>
+                    <li class="list-inline-item" data-filter=".packages">Packages</li>
+                  </ul>
+                </div>
+              </div>
+              <!-- Thumbnail list-->
+              <div class="portfolio-grid row">
+                <!-- Single item-->
+                <% projects.forEach(detials => { %>
+                <div class="single-item col-6 col-lg-4 <%= detials.role %>">
+                  <div class="portfolio-wrapper"><img class="img-fluid cimage" alt="<%= detials.name %>" src="<%= detials.image %>">
+                    <div class="item-content">
+                      <h6 class="content-title publicPath"><%= detials.name %></h6>
+                        <button class="btn btn-<%= detials.button.color %> " type="button" onclick="redirect('<%= detials.button.url %>', '<%= detials.button.warning %>')"><%= detials.button.name %> </button>
+                    </div>
+                  </div>
+                </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- News lightbox-->
+  <div class="lightbox-wrapper" id="news" data-simplebar>
+    <div class="container">
+      <div class="lightbox-close">
+        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="lightbox-content">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-heading page-heading">
+                  <h2 class="section-title">News</h2>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <div class="blog-section single-section">
+              <div class="row justify-content-center">
+                <!-- Post-->
+                <% news.forEach(element => { %>
+                  <div class="col-12 col-sm-8 col-lg-4">
+                    <div class="card single-post"><a class="post-img" href="<%= element.link %>"><img class="card-img-top" src="<%= element.image %>" alt="News post"><span class="content-date"><%= element.date %></span></a>
+                      <div class="card-body post-content">
+                          <h5 class="card-title content-title"><%= element.title %></h5>
+                        <p class="card-text content-description publicPath"><%= element.description %></p>
+                      </div>
+                    </div>
+                  </div>
+                <% }) %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Contact lightbox-->
+  <div class="lightbox-wrapper" id="contact" data-simplebar>
+    <div class="container">
+      <div class="lightbox-close">
+        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+      </div>
+      <div class="row">
+        <div class="col-12">
+          <div class="lightbox-content">
+            <div class="row">
+              <div class="col-12">
+                <div class="section-heading page-heading">
+                  <p class="section-description publicPath">Feel free to contact me anytime</p>
+                  <h2 class="section-title">Get in Touch</h2>
+                  <div class="animated-bar"></div>
+                </div>
+              </div>
+            </div>
+            <!-- Contact section-->
+            <div class="contact-section single-section">
+              <div class="row">
+                <!-- Contact form-->
+                <div class="col-12 col-lg-7">
+                  <form class="contact-form" id="contact-form">
+                    <h4 class="content-title">Message Me</h4>
+                    <div class="row">
+                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-name" type="text" name="name" placeholder="Name" required=""></div>
+                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email" type="email" name="email" placeholder="Email" required=""></div>
+                      <div class="col-12 form-group"><input class="form-control" id="contact-subject" type="text" name="subject" placeholder="Subject" required=""></div>
+                      <div class="col-12 form-group form-message"><textarea class="form-control" id="contact-message" name="message" placeholder="Message" rows="5" required=""></textarea></div>
+                      <div class="col-12 form-submit"><button class="btn button-main button-scheme " id="contact-submit" type="submit" onclick="sendMessage()">Send Message</button>
+                        <p class="contact-feedback"></p>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                <!-- Contact info-->
+                <div class="col-12 col-lg-5">
+                  <div class="contact-info">
+                    <h4 class="content-title">Contact Info</h4>
+                    <p class="info-description publicPath">Always available for freelance work if the right project comes along, Feel free to contact me!</p>
+                    <ul class="list-unstyled list-info">
+                      <li>
+                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-discord" viewBox="0 0 16 16">
+                          <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
+                        </svg></span>
+                          <div class="media-body info-details">
+                            <h6 class="info-type">Discord</h6><span class="info-value publicPath"><%= owner.username %>#<%= owner.discriminator %>  </span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg></span>
+                          <div class="media-body info-details">
+                            <h6 class="info-type">Location</h6><span class="info-value sensitveData publicPath">Waycross GA</span>
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                      </li>
+                      <li>
+                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-envelope" viewBox="0 0 16 16">
+                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                        </svg></span>
+                          <div class="media-body info-details">
+                            <h6 class="info-type">Email Me</h6><span class="info-value sensitveData publicPath"><a href="mailto:oss@akenodev.xyz">oss@akenodev.xyz</a></span>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; URL=/error?err=Please Enable Javascript for this Website!&code=505" />
+</noscript>>
+
+
+
+  <!-- Scripts-->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
+  <script src="assets/js/isotope.pkgd.min.js"></script>
+  <script src="assets/js/animatedModal.js"></script>
+  <script src="assets/js/tiny-slider.js"></script>
+  <script src="assets/js/lity.min.js"></script>
+  <script src="assets/js/simplebar.min.js"></script>
+  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
+  <script src="assets/js/main.js"></script>
+  <!-- Custom JS (Add your custom JS scripts to this file)-->
+  <script src="assets/js/custom.js"></script>
+  <!-- Fontawesome support -->
+  <script src="https://kit.fontawesome.com/b2ded0cdec.js" crossorigin="anonymous"></script>
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+
+<script>
+  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+</script>
+  <!--       _
+       .__(.)< (QUACK)
+        \___)   
+ ~~~~~~~~~~~~~~~~~~-->
+</body>
+
+</html>
