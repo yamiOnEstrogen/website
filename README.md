@@ -14,35 +14,21 @@ ____
 - [@Furdox](https://github.com/Furdox)
 
 
-## Reference
-
-### Access Home Page
-
-```http
-  GET /
-```
+## Api Reference
 
 
-### Access Redirect Page
+#### Access Api
 
 ```http
-  GET /redirect
+  GET /api
 ```
 
 | Parameter | Type     | Description                |
 | :-------- | :------- | :------------------------- |
-| `url` | `string` | **Required**. The URL to redirect to.|
-| `title` | `string` | **OPTIONAL**. The title to give.|
-
-
-### Access Login Page
-
-```http
-  GET /login
-```
+| `version` | `string` | **Required**. The Version of the `Api` to Use |
+| `field` | `string` | **Required**. The '`data`' to return |
 
 ___
-
 
 ## Run Locally
 
