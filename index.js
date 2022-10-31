@@ -105,12 +105,24 @@ app.get("/spotify", async (req, res) => {
   res.redirect("/redirect?url=https://open.spotify.com/playlist/3bZ1UCRHaChgW1pIsdvxnw?si=03a44d18212848d1&title=Spotify%20Playlist");
 })
 
-app.get("/api/:field", async (req, res) => {
+app.get("/api/:version/:field", async (req, res) => {
   const field = req.params.field;
+  const version = req.params.version;
+  const type = req.query.type;
+
+  const supportedVersions = ["v1"];
+
+  if (!supportedVersions.includes(version)) {
+    return res.json({
+      errorCode: 404,
+      errorMessage: "Version not found"
+    })
+  }
+
 
 
     if (field === "news") {
-      res.json(config.news);
+     res.json(config.news);
     }
     if (field === "projects") {
       res.json(config.projects);
@@ -123,7 +135,6 @@ app.get("/api/:field", async (req, res) => {
   }
 
 })
-
 app.get("/oauth2", async (req, res) => {
   const data_1 = new URLSearchParams();
   data_1.append('client_id', process.env.clientId);
