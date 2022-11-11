@@ -98,7 +98,7 @@ app.get("/", async (req, res) => {
 
 
 app.get("/login", (req, res) => {
-  res.redirect("https://discord.com/api/oauth2/authorize?client_id=1025115275114319883&redirect_uri=http%3A%2F%2Flocalhost%3A8080%2Foauth2&response_type=code&scope=identify%20email%20guilds.join")
+  res.redirect(process.env.redirectUrl)
 });
 
 app.get("/spotify", async (req, res) => {
