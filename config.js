@@ -236,7 +236,7 @@ module.exports.clients = {
         image: "/assets/img/clients/remi.png",
         discriminator: "7095",
         rating: "5",
-        discription: "Ordered a custom bot from akeno, and it was amazing! He was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend him to anyone who is looking for a custom bot!",
+        discription: "Ordered a custom bot from akeno, and it was amazing! She was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend her to anyone who is looking for a custom bot!",
         whois: {
             name: "Discord Server Member",
             url: "https://akenodev.xyz/invite",
@@ -250,7 +250,7 @@ module.exports.clients = {
         image: "/assets/img/clients/default.png",
         discriminator: "1265",
         rating: "5",
-        discription: "I have worked with akeno on a few projects, and he is a great developer. He is very helpful and is always willing to help. I would highly recommend him to anyone who is looking for a developer.",
+        discription: "I have worked with akeno on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer.",
         whois: {
             name: "Github Contributor",
             url: "https://akenodev.xyz/invite",
