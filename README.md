@@ -62,5 +62,5 @@ Start the server
 
 ## Support
 
-For support, email [oss@akenodev.xyz](mailto:oss@akenodev.xyz) or join our [Discord Server](https://akenodev.xyz/invite).
+For support, email [connect@akenodev.me](mailto:connect@akenodev.me) or join our [Discord Server](https://akenodev.xyz/invite).
 
