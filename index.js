@@ -36,6 +36,9 @@ app.use((req, res, next) => {
 })
 
 
+app.get("/discord", async (req, res) => {
+    res.redirect("https://buyred.space/discord")
+})
 
 
 app.get("/", async (req, res) => {
