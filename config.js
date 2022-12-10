@@ -1,6 +1,6 @@
 module.exports.webApp = {
     port: 8080,
-    isOffline: false,
+    isOffline: true,
 },
 
     module.exports.owner = {
