@@ -36,7 +36,7 @@ app.use((req, res, next) => {
 })
 
 
-app.get("/latest-tweet", async (req, res) +> {
+app.get("/latest-tweet", async (req, res) => {
   res.redirect("https://twitter.com/akeno_lol/status/1605740476782485504?s=20&t=E7ZdY7NcpnnF_P1enzbEPQ") // I will make a system to pull data from the twitter account later... I just do not have the time rn.
 })
 
