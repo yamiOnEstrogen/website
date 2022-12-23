@@ -5,7 +5,7 @@ module.exports.webApp = {
 
     module.exports.owner = {
         id: "547923574833545226",
-        supportServer: "https://discord.gg/d9fd8CHWP3",
+        supportServer: "https://discord.gg/wGGp7PvT",
     },
 
     module.exports.items = {
