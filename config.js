@@ -39,25 +39,25 @@ module.exports.webApp = {
 
     module.exports.news = {
         1: {
-    title: "akenodev.xyz goes Open Source!",
-    description: `akeno, has now made akenodev.xyz open source on github!`,
+    title: "kiyodev.xyz goes Open Source!",
+    description: `kiyo, has now made kiyodev.xyz open source on github!`,
     date: "2022-9-5",
     image: "./assets/img/news/akenoDevGithubBanner.png",
-    link: "https://github.com/akenolol/akenodev.xyz",
+    link: "https://github.com/kiyolol/akenodev.xyz",
   },
-  2: {
-    title: "Discord Integration Comes to akenodev.xyz!",
-    description: `akeno, has now added the option to Login with Discord, to purchase items.`,
-    date: "2022-10-17",
-    image: "./assets/img/news/discordLogoBanner.png",
-    link: "https://discord.com",
-  },
-         3: {
+         2: {
             title: "Aqua the Goddess Comes to Red Cafe!",
             description: `Aqua the Water Goddess comes to Red Cafe!`,
             date: "2022-10-23",
             image: "./assets/img/news/aquaGoddess.png",
-            link: "https://akenodev.xyz/invite"
+            link: "https://kiyodev.xyz/invite"
+        },
+        3: {
+            title: "Procs Gets Out of Beta!",
+            description: `procs.space comes out of beta for the public to use!`,
+            date: "2022-12-27",
+            image: "https://media.tenor.com/k2V7yl0m9I0AAAAC/cidade.gif",
+            link: "https://kiyodev.xyz/invite"
         },
     },
 
@@ -135,7 +135,7 @@ module.exports.projects = {
     role: "websites",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/akenodev.xyz",
+      url: "https://github.com/kiyolol/akenodev.xyz",
       color: "primary",
     },
   },
@@ -145,7 +145,7 @@ module.exports.projects = {
     role: "websites tools",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/react-todo-app",
+      url: "https://github.com/kiyolol/react-todo-app",
       color: "primary",
     },
   },
@@ -155,7 +155,7 @@ module.exports.projects = {
     role: "bots tools",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/Goddess-Bot",
+      url: "https://github.com/kiyolol/Goddess-Bot",
       color: "primary",
     },
   },
@@ -176,7 +176,7 @@ module.exports.projects = {
     role: "tools",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/Discord-Info",
+      url: "https://github.com/kiyolol/Discord-Info",
       color: "primary",
     },
   },
@@ -186,7 +186,7 @@ module.exports.projects = {
     role: "bots tools",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/Devo-Bot",
+      url: "https://github.com/kiyolol/Devo-Bot",
       color: "primary",
     },
   },
@@ -196,7 +196,7 @@ module.exports.projects = {
     role: "tools",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/Discord-Webhook-CSharp",
+      url: "https://github.com/kiyolol/Discord-Webhook-CSharp",
       color: "primary",
     },
   },
@@ -206,7 +206,7 @@ module.exports.projects = {
     role: "tools bots",
     button: {
       name: "View Repository",
-      url: "https://github.com/akenolol/verbose-bot",
+      url: "https://github.com/kiyolol/verbose-bot",
       color: "primary",
     },
   },
@@ -236,10 +236,10 @@ module.exports.clients = {
         image: "/assets/img/clients/remi.png",
         discriminator: "7095",
         rating: "5",
-        discription: "Ordered a custom bot from akeno, and it was amazing! She was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend her to anyone who is looking for a custom bot!",
+        discription: "Ordered a custom bot from kiyo, and it was amazing! She was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend her to anyone who is looking for a custom bot!",
         whois: {
             name: "Discord Server Member",
-            url: "https://akenodev.xyz/invite",
+            url: "https://kiyodev.xyz/invite",
         },
         isInServer: true,
         didContributeToRepo: false,
@@ -250,10 +250,10 @@ module.exports.clients = {
         image: "/assets/img/clients/default.png",
         discriminator: "1265",
         rating: "5",
-        discription: "I have worked with akeno on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer.",
+        discription: "I have worked with kiyo on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer.",
         whois: {
             name: "Github Contributor",
-            url: "https://akenodev.xyz/invite",
+            url: "https://kiyodev.xyz/invite",
         },
         isInServer: false,
         didContributeToRepo: true,
