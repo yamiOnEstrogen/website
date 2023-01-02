@@ -10,7 +10,7 @@ ____
 
 ## Authors
 
-- [@akenolol](https://www.github.com/akenolol)
+- [@kiyolol](https://www.github.com/kiyolol)
 - [@Furdox](https://github.com/Furdox)
 
 
@@ -35,7 +35,7 @@ ___
 Clone the project
 
 ```bash
-  git clone https://github.com/akenolol/akenodev.xyz
+  git clone https://github.com/kiyolol/akenodev.xyz
 ```
 
 Go to the project directory
