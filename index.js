@@ -47,14 +47,12 @@ app.get("/", async (req, res) => {
 
     const codingLanguagesArray = [];
     const clientUsers = [];
-    const frameworksArray = [];
     const projectsArray = [];
     const newsArray = [];
     const serverWidget = await discordClient.getServerWidget(`1014190469628055552`, "shield");
 
     const socials = config.profile.socials;
     const codingLanguages = config.languages;
-    const frameworks = config.frameworks;
     const projects = config.projects;
 
 
@@ -68,9 +66,7 @@ app.get("/", async (req, res) => {
       codingLanguagesArray.push(codingLanguages[language]);
     }
 
-    for (const framework in frameworks) {
-      frameworksArray.push(frameworks[framework]);
-    }
+
 
     for (const news in config.news) {
       newsArray.push(config.news[news]);
