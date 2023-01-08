@@ -82,14 +82,13 @@ app.get("/", async (req, res) => {
     }
   
 
+    
     res.render("index", {
       owner: owner,
       supportServer: config.owner.supportServer,
       codingLanguages: codingLanguagesArray,
       aboutMe: config.profile.aboutMe,
-      languages: config.profile.languages,
       socials: socials,
-      frameworks: frameworksArray,
       serverWidget: serverWidget,
       news: newsArray,
       projects: projectsArray,
@@ -98,7 +97,6 @@ app.get("/", async (req, res) => {
     });
   })
 });
-
 
 app.get("/login", (req, res) => {
   res.redirect(process.env.redirectUrl)
@@ -222,10 +220,9 @@ app.get("/error", (req, res) => {
 app.post("/contact", (req, res) => {
   const name = req.body.name;
   const email = req.body.email;
-  const subject = req.body.subject;
-  const message = req.body.text;
+  const message = req.body.message;
 
-  discordClient.postContactMessage(name, email, subject, message).then((channel) => {
+  discordClient.postContactMessage(name, email, message).then((channel) => {
     res.json({
       success: "Message sent successfully",
       message: channel,
