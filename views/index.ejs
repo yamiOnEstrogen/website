@@ -1,603 +1,129 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 
 <head>
-  <!-- Required meta tags-->
-  <meta charset="utf-8">
-  <!-- Title-->
-  <title><%= owner.username %> - Home </title>
-  <!-- Description-->
-  <meta name="description" content="View <%= owner.username %>'s Portfolio! ">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <!-- Favicons-->
-  <link rel="shortcut icon" href="img/avatar.png">
-  <!-- Web fonts-->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&amp;display=swap" rel="stylesheet">
-  <!-- CSS vendors-->
-  <link rel="stylesheet" href="assets/css/bootstrap-custom.css">
-  <link rel="stylesheet" href="assets/css/ionicons.min.css">
-  <link rel="stylesheet" href="assets/css/tiny-slider.css">
-  <link rel="stylesheet" href="assets/css/lity.min.css">
-  <link rel="stylesheet" href="assets/css/simplebar.min.css">
-  <link rel="stylesheet" href="assets/css/jquery.mb.YTPlayer.min.css">
-  <!-- Main CSS-->
-  <link rel="stylesheet" href="assets/css/main.css">
-  <!-- CSS Color scheme-->
-  <link id="color-scheme" rel="stylesheet" href="assets/css/colors/main-purple.css">
-  <!-- Custom CSS -->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="kiyo">
+  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/plugins.css">
   <link rel="stylesheet" href="assets/css/custom.css">
-  <!-- Bootstrap CSS -->
-  <!-- CSS only -->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <title>kiyo - Home</title>
 </head>
 
-<body class="theme-dark">
-  <!-- Preloader-->
-  <div class="preloader">
-    <div class="preloader-block">
-      <div class="preloader-icon"><span class="loading-dot loading-dot-1"></span><span class="loading-dot loading-dot-2"></span><span class="loading-dot loading-dot-3"></span></div>
+<style>
+  .circleImage {
+    border-radius: 50%;
+  }
+</style>
+
+
+<body class="dark">
+
+  <div class="kiyo_tm_all_wrap" data-magic-cursor="show" data-enter="fadeInLeft" data-exit="">
+
+    <div id="preloader">
+      <div class="loader_line"></div>
     </div>
-  </div>
-  <div id="overlay-effect"></div>
-  <!-- Navbar-->
-  <nav class="navbar-expand-md navbar fixed-top" id="navbar"><a class="navbar-bots" data-scroll="" href="#home-area">
-      <!-- Navbar Logo-->
-      <img class="img-fluid invisableImage" src="https://cdn.discordapp.com/attachments/981632133191843852/1030952155181498459/trans.png"></a>
-    <span class="navbar-menu ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" role="button"><span class="btn-line"></span></span>
-    <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
-      <!-- Navbar menu-->
-      <!-- Navbar menu-->
-      <ul class="navbar-nav ml-auto navBar">
-        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
-        <!-- <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li> -->
-      </ul>
-    </div>
-    
-  </nav>
-  <!-- Home-->
-  <section class="home-area element-cover-bg video-variant" id="home" style="background-image:url(assets/img/backgroundAsset.jpg)">
-    <div class="player" id="homeVideo" data-property="{videoURL:'https://www.youtube.com/watch?v=I6OPscHzynw',containment:'#home',autoPlay:true, mute:false, showControls:false, stopMovieOnBlur:false, showYTLogo: false}"></div>
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-12 col-lg-8 home-content text-center">
-          <h1 class="home-name"><%= owner.username %> </h1>
-          <h4 class="cd-headline clip home-headline">I’m a <span class="cd-words-wrapper single-headline"><b class="is-visible">Web Developer</b><b>Voice Actor</b><b>Bot Developer</b><b>Software Developer</b><b>Moderator</b></span></h4>
+
+
+    <div class="kiyo_tm_topbar bg-white fixed top-0 left-0 right-0 h-[50px] z-[14] hidden">
+      <div class="topbar_inner w-full h-full clear-both flex items-center justify-between py-0 px-[20px]">
+        <div class="logo" data-type="image">
+          <a href="#">
+            <% if (owner.avatar.includes("a_")) { %>
+              <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="" />
+          <% } %>
+          <% if (!owner.avatar.includes("a_")) { %>
+            <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="" />
+             
+          <% } %>
+           
+            <h3 class="font-black font-poppins text-[25px] tracking-[4px]">kiyo</h3>
+          </a>
+        </div>
+        <div class="trigger relative top-[5px]">
+          <div class="hamburger hamburger--slider">
+            <div class="hamburger-box w-[30px]">
+              <div class="hamburger-inner"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="fixed-wrapper">
-      <!-- Languages list COMING SOON!-->
-      <!-- <div class="fixed-block block-left">
-        <ul class="list-unstyled languages-list">
-          <li><a href="#0"><span class="single-language">ENG</span></a></li>
-          <li><a href="#0"><span class="single-language">JAP</span></a></li>
-        </ul>
-      </div> -->
-<!-- 
-      <div class="fixed-block block-left">
-        <ul class="list-unstyled languages-list">
-          <li id="userProfile"><a><span class="single-language hidden" id="userProfile-1"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-person-circle" viewBox="0 0 16 16" id="userProfile-2">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
-          </svg></span></a></li>
-        </ul>
-      </div> -->
-       <!-- Social media icons-->
-      <div class="fixed-block block-right">
-        <ul class="list-unstyled social-icons">
-          <li><a href="https://twitter.com/lol_kiyodev"><svg data-bs-toggle="tooltip" data-bs-title="Twitter" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-          </svg></a></li>
-          <li><a href="https://github.com/kiyolol"><svg data-bs-toggle="tooltip" data-bs-title="Github" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-          </svg></a></li>
-          <li><a href="<%= supportServer %> "><svg data-bs-toggle="tooltip" data-bs-title="Discord" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
-            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
-          </svg></a></li>
-          <li><a href="https://stackoverflow.com/users/19972576/akenodev"><svg data-bs-toggle="tooltip" data-bs-title="Stack Overflow" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack-overflow" viewBox="0 0 16 16">
-            <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z"/>
-            <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z"/>
-          </svg></a></li>
-          <li><a href="https://steamcommunity.com/id/akenodevlol/"><svg data-bs-toggle="tooltip" data-bs-title="Steam" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">
-            <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"/>
-            <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/>
-          </svg></a></li>
-              <li>
-                <a href="https://myanimelist.net/animelist/predevlol"><svg data-bs-toggle="tooltip" data-bs-title="My Anime List" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
-                  <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
-                </svg></a>
-              </li>
+    <div class="kiyo_tm_mobile_menu fixed top-[50px] right-[-200px] h-[100vh] w-[200px] z-[15] bg-white transition-all duration-300">
+      <div class="menu_list w-full h-auto clear-both float-left text-right px-[20px] pt-[100px] pb-[0px]">
+        <ul class="transition_link list-none">
+          <li class="active mb-[7px]"><a class="text-black font-montserrat" href="#home">Home</a></li>
+          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#about">About</a></li>
+          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#service">Service</a></li>
+          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#portfolio">Portfolio</a></li>
+          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#news">News</a></li>
+          <li><a class="text-black font-montserrat" href="#contact">Contact</a></li>
         </ul>
       </div>
     </div>
-  </section>
 
-  <!-- About lightbox-->
-  <div class="lightbox-wrapper" id="about" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
+
+    <div class="leftpart w-[450px] h-[100vh] fixed flex items-center z-[12] px-[100px] py-[0px] bg-white">
+      <div class="leftpart_inner w-full h-auto">
+        <div class="logo" data-type="image">
+          <a href="https://procs.space/u/kiyo">
+            <% if (owner.avatar.includes("a_")) { %>
+              <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="" />
+          <% } %>
+          <% if (!owner.avatar.includes("a_")) { %>
+            <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="" />
+             
+          <% } %>
+            <h3 class="font-poppins font-black text-[31px] tracking-[5px]">kiyo</h3>
+          </a>
+        </div>
+        <div class="menu px-[0px] py-[50px] w-full float-left">
+          <ul class="transition_link m-0 list-none">
+            <li class="active m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#home">Home</a></li>
+            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#about">About</a></li>            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#portfolio">Portfolio</a></li>
+            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#news">News</a></li>
+            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="copyright w-full float-left">
+          <p class="text-[15px] text-[#999] font-montserrat leading-[25px]" id="copyright"></p>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <h2 class="section-title">About Me</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Info section-->
-            <div class="info-section single-section">
-              <div class="row align-items-center">
-                <!-- Picture part-->
-                <% if (owner.avatar.includes("a_")) { %>
-                    <div class="col-12 col-lg-5 info-img"><img class="img-fluid img-thumbnail" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="About Picture"></div>
+    </div>
+
+
+    <div class="rightpart w-full min-h-[100vh] float-left relative bg-[#f8f8f8] pl-[450px]">
+      <div class="rightpart_in relative w-full float-left clear-both border-solid border-[#ebebeb] border-l min-h-[100vh]">
+
+        <div id="home" class="kiyo_tm_section animated">
+          <div class="container">
+            <div class="kiyo_tm_home w-full min-h-[100vh] clear-both flex items-center justify-center relative">
+              <div class="home_content flex items-center">
+                <div class="avatar min-w-[300px] min-h-[300px] relative rounded-full" data-type="wave">
+                  <% if (owner.avatar.includes("a_")) { %>
+                    <div class="image absolute inset-0 bg-no-repeat bg-center bg-cover" data-img-url="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024"></div>
                 <% } %>
                 <% if (!owner.avatar.includes("a_")) { %>
-                    <div class="col-12 col-lg-5 info-img"><img class="img-fluid img-thumbnail" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="About Picture"></div>
+                  <div class="image absolute inset-0 bg-no-repeat bg-center bg-cover" data-img-url="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024"></div>
+                   
                 <% } %>
-                <!-- Content part-->
-                <div class="col-12 col-lg-7 info-content">
-                  <div class="content-block">
-                    <h2 class="content-subtitle">Who am i?</h2>
-                    <h6 class="content-title">I'm <%= owner.username %>, a Web Developer, Voice Actor, Discord Bot Developer, Moderator, Software Developer</h6>
-                    <div class="content-description" style="color:white">
-                      <p>I am a freelancer based in the United States and i have been building noteworthy Websites / Discord Bots / Applications for <strong>3</strong> Years!
-                    </p>
-                    </div>
-                    <address class="content-info">
-                      <div class="row">
-                        <div class="col-12 col-md-6 single-info"><span>Name:</span>
-                          <p style="color:white"><%= owner.username %> (HAYDEN) </p>
-                        </div>
-                        <div class="col-12 col-md-6 single-info"><span>Email:</span>
-                          <p class="sensitveData" style="color:white"><a href="mailto:connect@akenodev.me">connect@akenodev.me</a></p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-md-6 single-info"><span>Languages:</span>
-                          <p style="color:white">ENG | JAP</p>
-                        </div>
-                        <div class="col-12 col-md-6 single-info"><span>From:</span>
-                          <p class="sensitveData" style="color:white">Atlanta, Ga</p>
-                        </div>
-                      </div>
-                    </address>
-                    <div class="d-block d-sm-flex align-items-center"><a class="btn content-download button-main button-scheme" href="/cv" role="button">CV</a>
-                      <ul class="list-unstyled list-inline content-follow">
-                        <li class="list-inline-item"><a href="https://twitter.com/lol_kiyodev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
-                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
-                          </svg></a></li>
-                          <li class="list-inline-item"><a href="https://github.com/kiyolol"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
-                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
-                          </svg></a></li>
-                          <li class="list-inline-item"><a href="<%= supportServer %> "><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-discord" viewBox="0 0 16 16">
-                            <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
-                          </svg></a></li>
-                          
-                          <li class="list-inline-item"><a href="https://stackoverflow.com/users/19972576/akenodev"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-stack-overflow" viewBox="0 0 16 16">
-                            <path d="M12.412 14.572V10.29h1.428V16H1v-5.71h1.428v4.282h9.984z"/>
-                            <path d="M3.857 13.145h7.137v-1.428H3.857v1.428zM10.254 0 9.108.852l4.26 5.727 1.146-.852L10.254 0zm-3.54 3.377 5.484 4.567.913-1.097L7.627 2.28l-.914 1.097zM4.922 6.55l6.47 3.013.603-1.294-6.47-3.013-.603 1.294zm-.925 3.344 6.985 1.469.294-1.398-6.985-1.468-.294 1.397z"/>
-                          </svg></a></li>
-                          <li class="list-inline-item"><a href="https://steamcommunity.com/id/akenodevlol/"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-steam" viewBox="0 0 16 16">
-                            <path d="M.329 10.333A8.01 8.01 0 0 0 7.99 16C12.414 16 16 12.418 16 8s-3.586-8-8.009-8A8.006 8.006 0 0 0 0 7.468l.003.006 4.304 1.769A2.198 2.198 0 0 1 5.62 8.88l1.96-2.844-.001-.04a3.046 3.046 0 0 1 3.042-3.043 3.046 3.046 0 0 1 3.042 3.043 3.047 3.047 0 0 1-3.111 3.044l-2.804 2a2.223 2.223 0 0 1-3.075 2.11 2.217 2.217 0 0 1-1.312-1.568L.33 10.333Z"/>
-                            <path d="M4.868 12.683a1.715 1.715 0 0 0 1.318-3.165 1.705 1.705 0 0 0-1.263-.02l1.023.424a1.261 1.261 0 1 1-.97 2.33l-.99-.41a1.7 1.7 0 0 0 .882.84Zm3.726-6.687a2.03 2.03 0 0 0 2.027 2.029 2.03 2.03 0 0 0 2.027-2.029 2.03 2.03 0 0 0-2.027-2.027 2.03 2.03 0 0 0-2.027 2.027Zm2.03-1.527a1.524 1.524 0 1 1-.002 3.048 1.524 1.524 0 0 1 .002-3.048Z"/>
-                          </svg></a></li>
-                         
-                          <li class="list-inline-item"><a href="https://myanimelist.net/animelist/predevlol"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gem" viewBox="0 0 16 16">
-                            <path d="M3.1.7a.5.5 0 0 1 .4-.2h9a.5.5 0 0 1 .4.2l2.976 3.974c.149.185.156.45.01.644L8.4 15.3a.5.5 0 0 1-.8 0L.1 5.3a.5.5 0 0 1 0-.6l3-4zm11.386 3.785-1.806-2.41-.776 2.413 2.582-.003zm-3.633.004.961-2.989H4.186l.963 2.995 5.704-.006zM5.47 5.495 8 13.366l2.532-7.876-5.062.005zm-1.371-.999-.78-2.422-1.818 2.425 2.598-.003zM1.499 5.5l5.113 6.817-2.192-6.82L1.5 5.5zm7.889 6.817 5.123-6.83-2.928.002-2.195 6.828z"/>
-                          </svg></a></li>
-                      </ul>
-                    </div>
-                  </div>
                 </div>
-              </div>
-            </div>
-            <!-- Services section-->
-            <div class="services-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <h2 class="section-title">My Services</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-bootstrap-fill" viewBox="0 0 16 16">
-                        <path d="M6.375 7.125V4.658h1.78c.973 0 1.542.457 1.542 1.237 0 .802-.604 1.23-1.764 1.23H6.375zm0 3.762h1.898c1.184 0 1.81-.48 1.81-1.377 0-.885-.65-1.348-1.886-1.348H6.375v2.725z"/>
-                        <path d="M4.002 0a4 4 0 0 0-4 4v8a4 4 0 0 0 4 4h8a4 4 0 0 0 4-4V4a4 4 0 0 0-4-4h-8zm1.06 12V3.545h3.399c1.587 0 2.543.809 2.543 2.11 0 .884-.65 1.675-1.483 1.816v.1c1.143.117 1.904.931 1.904 2.033 0 1.488-1.084 2.396-2.888 2.396H5.062z"/>
-                      </svg>
-                    <h6 class="service-title">Discord Bot</h6>
-                    <p class="service-description" style="color:white">
-                        I can make a discord bot for you, I can make it do anything you want, I can make it do moderation, fun commands, music, and more!
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-hdd-fill" viewBox="0 0 16 16">
-                        <path d="M0 10a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-1zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zM.91 7.204A2.993 2.993 0 0 1 2 7h12c.384 0 .752.072 1.09.204l-1.867-3.422A1.5 1.5 0 0 0 11.906 3H4.094a1.5 1.5 0 0 0-1.317.782L.91 7.204z"/>
-                      </svg>
-                    <h6 class="service-title">Website Development</h6>
-                    <p class="service-description" style="color:white">
-                        I can make a website for you, Ecommerce, Blog, Portfolio, and more!
-                    </p>
-                  </div>
-                </div>
-                
-                <div class="col-12 col-md-6 col-lg-4">
-                  <div class="single-service">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-cloud-fill" viewBox="0 0 16 16">
-                      <path d="M4.406 3.342A5.53 5.53 0 0 1 8 2c2.69 0 4.923 2 5.166 4.579C14.758 6.804 16 8.137 16 9.773 16 11.569 14.502 13 12.687 13H3.781C1.708 13 0 11.366 0 9.318c0-1.763 1.266-3.223 2.942-3.593.143-.863.698-1.723 1.464-2.383z"/>
-                    </svg> <h6 class="service-title">Minecraft Plugin Development</h6>
-                    <p class="service-description" style="color:white">
-                       I can create a Minecraft Plugin for you.
-
-                       I can do: PvP, Economy, Minigames, and more!
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-                        <!-- Testimonials section-->
-            <div class="testimonials-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <h2 class="section-title">Testimonials</h2>
-                  </div>
-                </div>
-              </div>
-             
-              <div class="my-slider">
-                <% clients.forEach(user => { %>
-                
-                <div class="slider-item">
-                  
-                    <div class="single-review swiper-slide">
-                      <div class="review-header d-flex justify-content-between">
-                        <div class="review-client">
-    
-                          <div class="media"><img class="img-fluid rounded-circle client-avatar" src="<%= user.image %>" alt="<%= user.name %>">
-                            <div class="client-details">
-                              <% if (user.isInServer === false) { %>
-                              <h6 class="client-name"><%= user.name %>#<%= user.discriminator %></h6><span class="client-role"><%= user.whois.name %></span>
-                            <% } %>
-                            <% if (user.isInServer) { %>
-                              <h6 class="client-name"><%= user.name %>#<%= user.discriminator %></h6><span class="client-role"><a href="<%= user.whois.url %>"><%= user.whois.name %></a></span>
-                            <% } %>
-                            </div>
-                          </div>
-                        </div>
-                        <!-- <i class="fa fa-star" style="color:white" aria-hidden="true"></i> -->
-                      </div>
-                      <p class="review-content" style="color:white"><%= user.discription %></p>
-                    </div>
-
-   
-                </div>
-
-                <% }) %>
-                </div>
-                
-              </div>
-            </div>
-            <!-- Pricing section-->
-            <!-- <div class="pricing-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <h2 class="section-title">Choose a Service</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="row align-items-center">
-                
-                <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-laptop-code publicPath"></i>
-                    <h3 class="plan-type">Discord Bot</h3>
-                    <h2 class="plan-price">$10</h2>
-                    <ul class="list-unstyled plan-list">
-                      <li style="color:white">Mod Commands</li>
-                      <li style="color:white">Giveaway Commands</li>
-                      <li style="color:white">Leveling System ( + $5 )</li>
-                      <li style="color:white">Dashboard ( + $15 )</li>
-                      <li style="color:white">24/7 Support</li>
-                    </ul>
-
-                    <button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(8564564)">Get "<strong>Discord Bot</strong>"</button>
-                  </div>
-                </div>
-               
-                <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-industry publicPath"></i>
-                    <h3 class="plan-type">Website</h3>
-                    <h2 class="plan-price">$20</h2>
-                    <ul class="list-unstyled plan-list">
-                      <li style="color:white">Api ( + $5 )</li>
-                      <li style="color:white">Responsive Design ( + $7 )</li>
-                      <li style="color:white">Databases ( + $3 )</li>
-                      <li style="color:white">Discord / Twitch / Twitter / Instagram / Youtube Integration ( + $10 )</li>
-                      <li style="color:white">24/7 Support</li>
-                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(5473524)">Get "<strong>Website</strong>"</button>
-                  </div>
-                </div>
-
-                <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-bullhorn publicPath"></i>
-                    <h3 class="plan-type">Twitter Bot</h3>
-                    <h2 class="plan-price">$15</h2>
-                    <ul class="list-unstyled plan-list">
-                      <li style="color:white">Scan Hashtags</li>
-                      <li style="color:white">Reply to Certain Hashtags ( + $7 )</li>
-                      <li style="color:white">Databases ( + $3 ) (EACH)</li>
-                      <li style="color:white">24/7 Support</li>
-                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(4289640)">Get "<strong>Twitter Bot</strong>"</button>
-                  </div>
-                </div>
-
-                   <div class="col-lg-4">
-                  <div class="single-plan mb-4 mb-sm-5"><i class="fa-solid fa-tag publicPath"></i>
-                    <h3 class="plan-type">Minecraft Plugin</h3>
-                    <h2 class="plan-price">$10</h2>
-                    <ul class="list-unstyled plan-list">
-                      <li style="color:white">Discord Integration ( + $7 )</li>
-                      <li style="color:white">Server Integration ( + $9 )</li>
-                      <li style="color:white">Databases ( + $3 ) (EACH)</li>
-                      <li style="color:white">24/7 Support</li>
-                    </ul><button type="button" class="btn button-main button-scheme plan-btn" onclick="purchaseItem(78403650)">Get "<strong>Minecraft Plugin</strong>"</button>
-                  </div>
-                </div>
-              </div>
-            </div> -->
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Resume lightbox-->
-  <div class="lightbox-wrapper" id="resume" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <h2 class="section-title">Resume</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Resume section-->
-            <div class="resume-section single-section">
-              <div class="row">
-
-                <!-- Experience part-->
-                <div class="col-12 col-md-6">
-                  <div class="col-block experience">
-                    <h3 class="col-title">Experience</h3>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Owner / Lead Developer</h5><span class="item-details publicPath"><a href="https://procs.space">Procs.Space</a> / 2022 - 2023</span>
-                    </div>
-                    <div class="resume-item"><span class="item-arrow"></span>
-                      <h5 class="item-title">Back-End / Front-End Developer / Owner</h5><span class="item-details publicPath"><a href="https://redcafe.lol">Red Cafe</a> / 2022 - 2023</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Skills section-->
-            <div class="skills-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <h2 class="section-title">My Skills</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 col-md-6">
-                    <%  codingLanguages.forEach(element => { %>
-                        <div class="single-skill" data-percentage="<%= element.options.percentile %>">
-                            <div class="skill-info"><span class="skill-name"><%= element.name %></span><span class="skill-percentage"></span></div>
-                            <div class="progress skill-progress">
-                              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                    <% }) %>
-
-                </div>
-                <div class="col-12 col-md-6">
-                    <%  frameworks.forEach(element => { %>
-                        <div class="single-skill" data-percentage="<%= element.options.percentile %>">
-                            <div class="skill-info"><span class="skill-name"><%= element.name %></span><span class="skill-percentage"></span></div>
-                            <div class="progress skill-progress">
-                              <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
-                            </div>
-                          </div>
-                    <% }) %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Portfolio lightbox-->
-  <div class="lightbox-wrapper" id="portfolio" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <h2 class="section-title">Portfolio</h2>
-                  <p class="section-description publicPath">All of these Items on be found on my github!</p>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Portfolio section-->
-            <div class="portfolio-section single-section">
-              <div class="row">
-                <!-- Filter nav-->
-                <div class="col-12">
-                  <ul class="list-inline filter-control" role="group" aria-label="Filter Control">
-                    <li class="list-inline-item tab-active" data-filter="*">All</li>
-                    <li class="list-inline-item" data-filter=".bots">Bots</li>
-                    <li class="list-inline-item" data-filter=".websites">Websites</li>
-                    <li class="list-inline-item" data-filter=".tools">Tools</li>
-                    <li class="list-inline-item" data-filter=".packages">Packages</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Thumbnail list-->
-              <div class="portfolio-grid row">
-                <!-- Single item-->
-                <% projects.forEach(detials => { %>
-                <div class="single-item col-6 col-lg-4 <%= detials.role %>">
-                  <div class="portfolio-wrapper"><img class="img-fluid cimage" alt="<%= detials.name %>" src="<%= detials.image %>">
-                    <div class="item-content">
-                      <h6 class="content-title publicPath"><%= detials.name %></h6>
-                        <button class="btn btn-<%= detials.button.color %> " type="button" onclick="redirect('<%= detials.button.url %>', '<%= detials.button.warning %>')"><%= detials.button.name %> </button>
-                    </div>
-                  </div>
-                </div>
-                <% }) %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- News lightbox-->
-  <div class="lightbox-wrapper" id="news" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <h2 class="section-title">News</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <div class="blog-section single-section">
-              <div class="row justify-content-center">
-                <!-- Post-->
-                <% news.forEach(element => { %>
-                  <div class="col-12 col-sm-8 col-lg-4">
-                    <div class="card single-post"><a class="post-img" href="<%= element.link %>"><img class="card-img-top" src="<%= element.image %>" alt="News post"><span class="content-date"><%= element.date %></span></a>
-                      <div class="card-body post-content">
-                          <h5 class="card-title content-title"><%= element.title %></h5>
-                        <p class="card-text content-description publicPath"><%= element.description %></p>
-                      </div>
-                    </div>
-                  </div>
-                <% }) %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- Contact lightbox-->
-  <!-- <div class="lightbox-wrapper" id="contact" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close=""><span class="btn-line"></span></div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <p class="section-description publicPath">Feel free to contact me anytime</p>
-                  <h2 class="section-title">Get in Touch</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            Contact section
-            <div class="contact-section single-section">
-              <div class="row">
-                Contact form
-                <div class="col-12 col-lg-7">
-                  <form class="contact-form" id="contact-form">
-                    <h4 class="content-title">Message Me</h4>
-                    <div class="row">
-                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-name" type="text" name="name" placeholder="Name" required=""></div>
-                      <div class="col-12 col-md-6 form-group"><input class="form-control" id="contact-email" type="email" name="email" placeholder="Email" required=""></div>
-                      <div class="col-12 form-group"><input class="form-control" id="contact-subject" type="text" name="subject" placeholder="Subject" required=""></div>
-                      <div class="col-12 form-group form-message"><textarea class="form-control" id="contact-message" name="message" placeholder="Message" rows="5" required=""></textarea></div>
-                      <div class="col-12 form-submit"><button class="btn button-main button-scheme " id="contact-submit" type="submit" onclick="sendMessage()">Send Message</button>
-                        <p class="contact-feedback"></p>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-                Contact info
-                <div class="col-12 col-lg-5">
-                  <div class="contact-info">
-                    <h4 class="content-title">Contact Info</h4>
-                    <p class="info-description publicPath">Always available for freelance work if the right project comes along, Feel free to contact me!</p>
-                    <ul class="list-unstyled list-info">
-                      <li>
-                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-discord" viewBox="0 0 16 16">
-                          <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z"/>
-                        </svg></span>
-                          <div class="media-body info-details">
-                            <h6 class="info-type">Discord</h6><span class="info-value publicPath"><%= owner.username %>#<%= owner.discriminator %>  </span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                          <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
-                        </svg></span>
-                          <div class="media-body info-details">
-                            <h6 class="info-type">Location</h6><span class="info-value sensitveData publicPath">Waycross GA</span>
-                          </div>
-                        </div>
-                      </li>
-                      <li>
-                      </li>
-                      <li>
-                        <div class="media align-items-center"><span class="info-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="white" class="bi bi-envelope" viewBox="0 0 16 16">
-                          <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
-                        </svg></span>
-                          <div class="media-body info-details">
-                            <h6 class="info-type">Email Me</h6><span class="info-value sensitveData publicPath"><a href="mailto:connect@akenodev.me">connect@akenodev.me</a></span>
-                          </div>
-                        </div>
-                      </li>
+                <div class="details ml-[80px]">
+                  <h3 class="name text-[55px] font-extrabold uppercase mb-[14px]"><%= owner.username %></h3>
+                  <p class="job font-montserrat font-medium max-w-[450px] mb-[25px]">
+                    I'm a Software Developer, I love to code and create new things. I also love to play games and watch anime, and I am a vtuber!
+                  </p>
+                  <div class="social w-full float-left">
+                    <ul class="m-0 list-none">
+                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://twitter.com/lol_kiyodev"><i class="fa-brands fa-twitter"></i></a></li>
+                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://github.com/kiyolol"><i class="fa-brands fa-github"></i></a></li>
+                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://discord.com/invite/wGGp7PvT"><i class="fa-brands fa-discord"></i></a></li>
                     </ul>
                   </div>
                 </div>
@@ -605,42 +131,305 @@
             </div>
           </div>
         </div>
+
+
+        <div id="about" class="kiyo_tm_section">
+          <div class="container">
+            <div class="kiyo_tm_about w-full h-auto clear-both float-left py-[100px] px-0">
+              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
+                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
+                  <div class="left">
+                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">About</span>
+                    <h3 class="font-extrabold font-montserrat">About Me</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="top_author_image w-full h-auto clear-both float-left relative mb-[35px]">
+                <img class="min-w-full" src="https://www.animesenpai.net/wp-content/uploads/2022/08/D6uwJOAXkAAeKr1-1024x576.jpg.webp" alt="Bro Just Kill me." />
+              </div>
+              <div class="about_title w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[20px] mb-[30px]">
+                <h3 class="text-[22px] font-bold"><%= owner.username %></h3>
+                <span>Web Developer | Software Developer | Voice Actress | Vtuber</span>
+              </div>
+              <div class="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
+                <p class="mb-[11px]">
+                  Hi, I'm <%= owner.username %>, I'm a Web Developer, Software Developer, Voice Actress, and Vtuber. My Story Starts when I was 13 years old in middle school. My class was tasked to create a website (in notepad), and I loved it. I started learning Python and HTML, and soon began to learn 15+ Programming Languages.
+                </p>
+              </div>
+              <div class="kiyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
+                <div class="left w-1/2 pr-[50px]">
+                  <div class="kiyo_tm_info w-full h-auto clear-both float-left">
+                    <ul class="m-0 list-none">
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Sexuality:</span><span>She/Her (Transgender)</span></li>
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Name:</span><span>Stella (<%= owner.username %>) </span></li>
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Email:</span><span><a class="text-[#767676] transition-all duration-300 hover:text-black" href="mailto:kiyo@kiyodev.xyz	">kiyo@kiyodev.xyz</a></span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="right w-1/2 pl-[50px]">
+                  <div class="kiyo_tm_info">
+                    <ul class="m-0 list-none">
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Nationality:</span><span>USA</span></li>
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Interest:</span><span>Voice Acting</span></li>
+                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Freelance:</span><span>Available</span></li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="kiyo_tm_button" data-position="left">
+                <a href="#portfolio" download>
+                  <span>CV</span>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="kiyo_tm_progressbox w-full h-auto clear-both float-left bg-white pt-[93px] pr-[0px] pb-[100px] pl-[0px]">
+            <div class="container">
+              <div class="in w-full h-auto clear-both float-left flex">
+                <div class="left w-1/2 pr-[50px]">
+                  <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
+                    <h3 class="text-[20px] font-bold">Programming Skills</h3>
+                  </div>
+                  <div class="kiyo_progress">
+                    <% codingLanguages.forEach(language => { %>
+                      
+                      <div class="progress_inner" data-value="<%= language.options.percentile %>">
+                        <span><span class="label"><%= language.name %></span><span class="number"><%= language.options.percentile %>%</span></span>
+                        <div class="background">
+                          <div class="bar">
+                            <div class="bar_in"></div>
+                          </div>
+                        </div>
+                      </div>
+                    <% }) %>
+
+                  </div>
+                </div>
+                <div class="right w-1/2 pl-[50px]">
+                  <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
+                    <h3 class="text-[20px] font-bold">Language Skills</h3>
+                  </div>
+                  <div class="kiyo_progress">
+                    <div class="progress_inner" data-value="100">
+                      <span><span class="label">English</span><span class="number">100%</span></span>
+                      <div class="background">
+                        <div class="bar">
+                          <div class="bar_in"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="progress_inner" data-value="46">
+                      <span><span class="label">Japanese</span><span class="number">46%</span></span>
+                      <div class="background">
+                        <div class="bar">
+                          <div class="bar_in"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="kiyo_tm_testimonials w-full h-auto clear-both float-left py-[100px] px-0">
+            <div class="container">
+              <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
+                <h3 class="text-[20px] font-bold">Testimonials</h3>
+              </div>
+              <div class="list w-full h-auto clear-both float-left overflow-hidden">
+                <ul class="owl-carousel m-0 list-none cursor-e-resize">
+                  <li>
+                    <div class="list_inner w-full h-auto clear-both float-left relative">
+                      <div class="text w-full h-auto clear-both float-left border-solid border-[#E5EDF4] border-2 p-[40px] mb-[30px] relative">
+                        <p>Ordered a custom bot from <%= owner.username %>, and it was amazing! She was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend her to anyone who is looking for a custom bot!</p>
+                      </div>
+                      <div class="details w-full h-auto clear-both float-left flex items-center pl-[20px]">
+                        <div class="image relative w-[60px] h-[60px]">
+                          <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full" data-img-url="/assets/img/clients/remi.png"></div>
+                        </div>
+                        <div class="info pl-[20px]">
+                          <h3 class="text-[16px] mb-[2px] font-semibold">Remi#7095</h3>
+                          <span class="text-[14px]">Discord Server Member</span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="list_inner w-full h-auto clear-both float-left relative">
+                      <div class="text w-full h-auto clear-both float-left border-solid border-[#E5EDF4] border-2 p-[40px] mb-[30px] relative">
+                        <p>I have worked with <%= owner.username %>  on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer.</p>
+                      </div>
+                      <div class="details w-full h-auto clear-both float-left flex items-center pl-[20px]">
+                        <div class="image relative w-[60px] h-[60px]">
+                          <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full" data-img-url="assets/img/clients/default.png"></div>
+                        </div>
+                        <div class="info pl-[20px]">
+                          <h3 class="text-[16px] mb-[2px] font-semibold">LunarDev#1265</h3>
+                          <span class="text-[14px]">
+                            Client
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="kiyo_tm_portfolio_titles"></div>
+
+        <div id="portfolio" class="kiyo_tm_section">
+          <div class="container">
+            <div class="kiyo_tm_portfolio w-full h-auto clear-both float-left px-0 pt-[100px] pb-[40px]">
+              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
+                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
+                  <div class="left">
+                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">Portfolio</span>
+                    <h3 class="font-extrabold font-montserrat">Portfolio</h3>
+                  </div>
+                  <div class="portfolio_filter">
+                    <ul class="list-none">
+                      <li class="mr-[25px] inline-block"><a href="#" class="current text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" data-filter="*">All</a></li>
+                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".bots">Bots</a></li>
+                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".websites">Websites</a></li>
+                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".tools">Tools</a></li>
+                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".packages">Packages</a></li>                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="list_wrapper w-full h-auto clear-both float-left">
+                <ul class="portfolio_list gallery_zoom ml-[-40px] list-none">
+
+                  <% projects.forEach(projects => { %>
+                    <li class="<%= projects.role %> mb-[40px] float-left w-1/3 pl-[40px]">
+                      <div class="inner w-full h-auto clear-both float-left overflow-hidden relative">
+                        <div class="entry kiyo_tm_portfolio_animation_wrap" data-title="<%= projects.name %>" data-category="<%= projects.role %>">
+                          <a class="" href="<%= projects.button.url %>">
+                            <img class="opacity-0 min-w-full" src="<%= projects.image %>" alt="" />
+                            <div class="abs_image absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300" data-img-url="<%= projects.image %>"></div>
+                          </a>
+                        </div>
+                      </div>
+                    </li>
+                  <% }) %>
+
+
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="news" class="kiyo_tm_section">
+          <div class="container">
+            <div class="kiyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 pb-[45px]">
+              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
+                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
+                  <div class="left">
+                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">News</span>
+                    <h3 class="font-extrabold font-montserrat">Latest News</h3>
+                  </div>
+                </div>
+              </div>
+              <ul class="ml-[-50px] list-none">
+                <% news.forEach(newsElement => { %>
+                  <li class="mb-[50px] float-left w-1/2 pl-[50px]">
+                    <div class="list_inner w-full clear-both float-left h-auto relative">
+                      <div class="image relative overflow-hidden">
+                        <img class="min-w-full opacity-0" src="<%= newsElement.image %>" alt="" />
+                        <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300" data-img-url="<%= newsElement.image %>"></div>
+                       
+                      </div>
+                      <div class="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
+                        <div class="extra flex items-center justify-between mb-[25px] relative">
+                          <div class="short">
+                            <p class="date font-montserrat text-[13px] text-[#767676]">By <a class="text-[#767676] transition-all duration-300 hover:text-black" href="https://procs.space/u/kiyo"><%= owner.username %></a> <span class="relative"><%= newsElement.date %></span></p>
+                          </div>
+                        </div>
+                        <h3 class="title mb-[10px] leading-[1.4]"><%= newsElement.title %></h3>
+                        <div class="kiyo_tm_read_more">
+                          <a href="<%= newsElement.link %>"><span>Read More</span></a>
+                        </div>
+                      </div>
+                
+                    </div>
+                <% }) %>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+        <div id="contact" class="kiyo_tm_section">
+          <div class="container">
+            <div class="kiyo_tm_contact w-full float-left clear-both h-auto py-[100px] px-[0px]">
+              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
+                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
+                  <div class="left">
+                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">Contact</span>
+                    <h3 class="font-extrabold font-montserrat">Get in Touch</h3>
+                  </div>
+                </div>
+              </div>
+              <div class="fields w-full float-left clear-both h-auto">
+                <form action="/contact" method="post" class="contact_form" id="contact_form" autocomplete="off">
+                  <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
+                  <div class="empty_notice"><span>Please Fill Required Fields</span></div>
+                  <div class="first w-full float-left">
+                    <ul class="list-none">
+                      <li class="w-full mb-[30px] float-left">
+                        <input id="name" type="text" placeholder="Name">
+                      </li>
+                      <li class="w-full mb-[30px] float-left">
+                        <input id="email" type="text" placeholder="Email">
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="last">
+                    <textarea id="message" placeholder="Message"></textarea>
+                  </div>
+                  <div class="kiyo_tm_button" data-position="left">
+                    <a id="send_message" href="#">
+                      <span>Send Message</span>
+                    </a>
+                  </div>
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div> -->
-
-  <noscript>
-    <meta http-equiv="refresh" content="0; URL=/error?err=Please Enable Javascript for this Website!&code=505" />
-</noscript>>
 
 
+    <div class="mouse-cursor cursor-outer"></div>
+    <div class="mouse-cursor cursor-inner"></div>
 
-  <!-- Scripts-->
-  <script src="assets/js/jquery.min.js"></script>
-  <script src="assets/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/js/isotope.pkgd.min.js"></script>
-  <script src="assets/js/animatedModal.js"></script>
-  <script src="assets/js/tiny-slider.js"></script>
-  <script src="assets/js/lity.min.js"></script>
-  <script src="assets/js/simplebar.min.js"></script>
-  <script src="assets/js/jquery.mb.YTPlayer.min.js"></script>
-  <script src="assets/js/main.js"></script>
-  <!-- Custom JS (Add your custom JS scripts to this file)-->
-  <script src="assets/js/custom.js"></script>
-  <!-- Fontawesome support -->
+  </div>
+
+
+  
+  <script src="assets/js/jquery.js"></script>
+  <script src="assets/js/plugins.js"></script>
+  <script src="assets/js/init.js"></script>
   <script src="https://kit.fontawesome.com/b2ded0cdec.js" crossorigin="anonymous"></script>
-  <!-- JavaScript Bundle with Popper -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script> 
+    const copyright = document.getElementById('copyright');
+    const year = new Date().getFullYear();
 
-<script>
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
-</script>
-  <!--       _
-       .__(.)< (QUACK)
-        \___)   
- ~~~~~~~~~~~~~~~~~~-->
+    copyright.innerHTML = `&copy; ${year} All Rights Reserved <a href="https://procs.space/u/kiyo" target="_blank"><%= owner.username %></a>`;
+  </script>
+
 </body>
 
 </html>
