@@ -17,6 +17,8 @@ const axios = require("axios");
 const dotenv = require("dotenv");
 dotenv.config();
 const discordClient = new DiscordClient(process.env.token);
+const githubClient = require("./utils/githubClient");
+const github = new githubClient();
 
 
 
@@ -89,7 +91,7 @@ app.get("/", async (req, res) => {
       news: newsArray,
       projects: projectsArray,
       clients: clientUsers,
-
+      githubProjects: await github.getRepos(),
     });
   })
 });
