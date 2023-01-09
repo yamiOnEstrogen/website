@@ -1,12 +1,10 @@
-// await octokit.request("GET /repos/{owner}/{repo}/issues", {
-//     owner: "octocat",
-//     repo: "Spoon-Knife"
-//   });
 const { Octokit } = require("@octokit/core");
 const config = require("../config");
+const dotenv = require("dotenv");
+dotenv.config();
 
 const octokit = new Octokit({
-    auth: `${config.owner.githubToken}`,
+    auth: `${process.env.githubToken}`,
   })
 
 
@@ -15,20 +13,10 @@ class githubClient {
         this.octokit = octokit;
     }
 
-    async getIssues() {
-        const issues = await this.octokit.request("GET /repos/{owner}/{repo}/issues", {
-            owner: "akenolol",
-            repo: "akenodev.xyz",
-        });
-        return issues.data;
-    }
-
-    async getPullRequests(){
-        const pullRequests = await this.octokit.request("GET /repos/{owner}/{repo}/pulls", {
-            owner: "akenolol",
-            repo: "akenodev.xyz",
-        });
-        return pullRequests.data;
+    async getRepos() {
+        // Get all public repos for the authenticated user
+        const { data } = await this.octokit.request("GET /user/repos");
+        return data;
     }
 }
 
