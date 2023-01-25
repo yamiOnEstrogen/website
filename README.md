@@ -3,7 +3,7 @@
 
 ![App Banner](./.github/Images/repoBanner.png)
 
-![Discord](https://img.shields.io/discord/1014190469628055552?style=plastic)
+![Discord](https://img.shields.io/discord/1062574590406172692?style=plastic)
 [![MIT License](https://img.shields.io/github/license/akenolol/akenodev.xyz?color=blue)](https://choosealicense.com/licenses/gpl-3.0/)
 
 ____
