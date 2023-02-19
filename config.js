@@ -84,12 +84,12 @@ module.exports.webApp = {
 
 module.exports.projects = {
   1: {
-    name: "akenodev.xyz",
+    name: "kiyodev.xyz",
     image: "/assets/img/projects/akenoWebsite.gif",
     role: "websites",
     button: {
       name: "View Repository",
-      url: "https://github.com/kiyolol/akenodev.xyz",
+      url: "https://github.com/kiyolol/kiyodev.xyz",
       color: "primary",
     },
   },
