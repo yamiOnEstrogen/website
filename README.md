@@ -1,7 +1,5 @@
 
-# Akeno Dev Website
-
-![App Banner](./.github/Images/repoBanner.png)
+# Kiyo Dev Website
 
 ![Discord](https://img.shields.io/discord/1062574590406172692?style=plastic)
 [![MIT License](https://img.shields.io/github/license/akenolol/akenodev.xyz?color=blue)](https://choosealicense.com/licenses/gpl-3.0/)
@@ -35,13 +33,13 @@ ___
 Clone the project
 
 ```bash
-  git clone https://github.com/kiyolol/akenodev.xyz
+  git clone https://github.com/kiyolol/kiyodev.xyz
 ```
 
 Go to the project directory
 
 ```bash
-  cd akenodev.xyz
+  cd kiyodev.xyz
 ```
 
 Install dependencies
@@ -62,5 +60,5 @@ Start the server
 
 ## Support
 
-For support, email [connect@akenodev.me](mailto:connect@akenodev.me) or join our [Discord Server](https://akenodev.xyz/invite).
+For support, email [kiyo@kiyodev.xyz](mailto:kiyo@kiyodev.xyz) or join our [Discord Server](https://kiyodev.xyz/invite).
 
