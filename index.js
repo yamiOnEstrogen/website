@@ -38,11 +38,6 @@ app.use((req, res, next) => {
 })
 
 
-app.get("/latest-tweet", async (req, res) => {
-  res.redirect("https://twitter.com/akeno_lol/status/1605740476782485504?s=20&t=E7ZdY7NcpnnF_P1enzbEPQ") // I will make a system to pull data from the twitter account later... I just do not have the time rn.
-})
-
-
 app.get("/", async (req, res) => {
   discordClient.getOwnerInfo().then(async (owner) => {
 
@@ -96,13 +91,6 @@ app.get("/", async (req, res) => {
   })
 });
 
-app.get("/login", (req, res) => {
-  res.redirect(process.env.redirectUrl)
-});
-
-app.get("/spotify", async (req, res) => {
-  res.redirect("/redirect?url=https://open.spotify.com/playlist/3bZ1UCRHaChgW1pIsdvxnw?si=03a44d18212848d1&title=Spotify%20Playlist");
-})
 
 app.get("/api/:version/:field", async (req, res) => {
   const field = req.params.field;
@@ -134,69 +122,13 @@ app.get("/api/:version/:field", async (req, res) => {
   }
 
 })
-app.get("/oauth2", async (req, res) => {
-  const data_1 = new URLSearchParams();
-  data_1.append('client_id', process.env.clientId);
-  data_1.append('client_secret', process.env.clientSecret);
-  data_1.append('grant_type', 'authorization_code');
-  data_1.append('redirect_uri', `http://localhost:8080/oauth2`);
-  data_1.append('scope', 'identify email');
-  data_1.append('code', req.query.code);
 
-  fetch('https://discord.com/api/oauth2/token', { method: "POST", body: data_1 }).then(response => response.json()).then(data2 => {
-    const options = {
-      method: 'GET',
-      url: 'https://discord.com/api/users/@me',
-      headers: {
-        'Authorization': `Bearer ${data2.access_token}`
-      }
-    }
-
-
-    axios.get(options.url, { headers: options.headers }).then(response => {
-
-
-      const data = response.data;
-
-      console.log(data)
-
-      discordClient.joinSupportServer(data2.access_token, data.id).then(() => {
-        console.log("Joined support server")
-        res.render("purchase", {
-          username: data.username,
-          discriminator: data.discriminator,
-          id: data.id,
-          avatar: data.avatar,
-          email: data.email,
-        });
-      })
-
-
-
-    }).catch(err => {
-      console.log(err);
-    })
-
-  })
-
-});
 
 app.get("/cv", async (req, res) => {
-  res.redirect("https://docs.google.com/document/d/1tBfrkcgccE9dBIJFmCLS3BvLUhQcinSa0wAaE_0cUn4/edit?usp=sharing")
+  res.redirect("https://docs.google.com/document/d/1ePCT16ZVyROpo29NEEp0TKE2YiY0CPynlO7BeTdXrM0/edit?usp=sharing")
 })
 
-app.post("/purchase", async (req, res) => {
-  const item = req.body.item;
-  const user = req.body.user;
-  //  res.send("Purchase has been sent to the owner!, He will contact you soon! (EMAIL)");
 
-  discordClient.postPurchaseMessage({
-    item: item,
-    user: user,
-  }).then(() => {
-    res.send("Purchase has been sent to the owner!, He will contact you soon! (EMAIL)");
-  })
-})
 
 
 app.get("/error", (req, res) => {
@@ -215,38 +147,7 @@ app.get("/error", (req, res) => {
   }
 })
 
-app.post("/contact", (req, res) => {
-  const name = req.body.name;
-  const email = req.body.email;
-  const message = req.body.message;
 
-  discordClient.postContactMessage(name, email, message).then((channel) => {
-    res.json({
-      success: "Message sent successfully",
-      message: channel,
-    })
-  })  
-})
-
-app.post("/bug", (req, res) => {
-  const name = req.body.name;
-  const expectedResult = req.body.expectedResult;
-  const actualResult = req.body.actualResult;
-  const howToReproduce = req.body.howToReproduce;
-
-  discordClient.postBugMessage(name, expectedResult, actualResult, howToReproduce).then((channel) => {
-    res.json({
-      success: "Bug sent successfully",
-      message: "If you are in the support server, please DM akeno#1010, and we will get back to you as soon as possible.",
-    })
-  })
-})
-
-app.get("/reportbug", async (req, res) => {
-  res.render("reportBug.ejs", {
-
-  });
-})
 
 app.get("/redirect", (req, res) => {
   const url = req.query.url;
@@ -274,53 +175,11 @@ app.get("/redirect", (req, res) => {
 });
 
 
-app.get("/status", (req, res) => {
-  status.getStatus().then((status) => {
-    res.render("status", {
-      homePage: status.homePage,
-      redirectPage: status.redirectPage,
-    });
-  })
-})
 
 
 app.get("/invite", (req, res) => {
-  res.redirect(`/redirect?url=${config.owner.supportServer}`)
+  res.redirect(`/redirect?url=https://discord.gg/ZuPHXurZvn`)
 });
-
-app.get("/items", (req, res) => {
-
-  const itemLists = {
-    "8564564": {
-      "name": "Discord Bot",
-      "id": "8564564",
-      "description": "A discord bot that can be used for moderation, fun, and more.",
-      "price": 10,
-    },
-    "5473524": {
-      "name": "Website",
-      "id": "5473524",
-      "description": "A website that can be used for anything.",
-      "price": 20,
-    },
-    "4289640": {
-      "name": "Twitter Bot",
-      "id": "4289640",
-      "description": "A twitter bot that can be used for moderation, fun, and more.",
-      "price": 15,
-    },
-    "78403650": {
-      "name": "Minecraft Plugin",
-      "id": "78403650",
-      "description": "A minecraft plugin that can be used for moderation, fun, and more.",
-      "price": 10,
-    },
-
-  }
-
-  res.json(itemLists);
-
-})
 
 
 
