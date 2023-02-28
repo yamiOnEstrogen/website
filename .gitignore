@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+
+# Random Files
+.env
+package-lock.json
+css.whynot

@@ -1,4 +1,0 @@
-token = YOUR-TOKEN-HERE
-clientSecret = YOUR-CLIENT-SECRET
-clientId = YOUR-CLIENT-ID
-redirectUrl = YOUR-REDIRECT-FOR-DISCORD-LOGIN

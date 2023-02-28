@@ -1,642 +1,383 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kiyo - Home</title>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="kiyo">
-  <link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/plugins.css">
-  <link rel="stylesheet" href="assets/css/custom.css">
-  <link rel="stylesheet" href="assets/css/main.css">
-  <title>kiyo - Home</title>
-    <meta name="description" content="View the homepage of the most loved developer ❤">
-  <meta name="og:title" content="kiyo - Home">
-  <meta name="og:description" content="View the homepage of the most loved developer ❤">
-  <meta name="og:image" content="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024">
-  <meta name="og:url" content="https://kiyodev.xyz">
-  <meta name="og:site_name" content="kiyo">
-  <meta name="og:type" content="website">
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="kiyo - Home">
-  <meta name="twitter:description" content="View the homepage of the most loved developer ❤">
-  <meta name="twitter:image" content="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024">
-  <meta name="twitter:url" content="https://kiyodev.xyz">
-  <meta name="twitter:site" content="kiyo">
-  <meta name="twitter:creator" content="lol_kiyodev">
-  <meta name="theme-color" content="#F301EC">
-  <link rel="icon" href="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024">
-  <link rel="apple-touch-icon" href="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024">
-</head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
 
-<style>
-  .circleImage {
-    border-radius: 50%;
-  }
-</style>
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.min.css" />
+    <link rel="stylesheet" href="./assets/css/smooth-scrollbar.css" />
+    <link rel="stylesheet" href="./assets/css/lightbox.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link rel="stylesheet" href="./assets/css/responsive.css" />
+  </head>
+  <body class="home2-page">
+    <video class="body-overlay" muted autoplay loop>
+      <source src="./assets/img/video2.mp4" type="video/mp4" />
+    </video>
+    
 
-
-<body class="dark">
-
-  <div class="kiyo_tm_all_wrap" data-magic-cursor="show" data-enter="fadeInLeft" data-exit="">
-
-    <div id="preloader">
-      <div class="loader_line"></div>
+    <div class="left-sidebar">
+      <div
+        class="sidebar-header d-flex align-items-center justify-content-between"
+      >
+        
+      </div>
+      <img class="me" src="./assets/img/8c9bbff8c2e50f6633e08d4b29d39e3f.jpg" alt="Me" />
+      <h2 class="email">
+        <a href="mailto:kiyo@kiyodev.xyz">kiyo@kiyodev.xyz</a>
+      </h2>
+      <h2 class="address">Waycross GA</h2>
+      <p class="copyright">&copy; <script>document.write(new Date().getFullYear());</script> kiyodev.xyz</p>
+      <ul
+        class="social-profile d-flex align-items-center flex-wrap justify-content-center"
+      >
+      <li>
+        <a href="https://twitter.com/KiyoDeveloper"><i class="lab la-twitter"></i></a>
+      </li>
+      <li>
+        <a href="/invite"><i class="lab la-discord"></i></a>
+      </li>
+      <li>
+        <a href="https://github.com/kiyolol"><i class="lab la-github"></i></a>
+      </li>
+      </ul>
+      <a href="mailto:kiyo@kiyodev.xyz" class="theme-btn">
+        <i class="las la-envelope"></i> Hire Me!
+      </a>
     </div>
-
-
-    <div class="kiyo_tm_topbar bg-white fixed top-0 left-0 right-0 h-[50px] z-[14] hidden">
-      <div class="topbar_inner w-full h-full clear-both flex items-center justify-between py-0 px-[20px]">
-        <div class="logo" data-type="image">
-          <a href="#">
-            <% if (owner.avatar.includes("a_")) { %>
-              <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="" />
-          <% } %>
-          <% if (!owner.avatar.includes("a_")) { %>
-            <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="" />
+    <main class="kio-main">
+      <div id="smooth-wrapper">
+        <div id="smooth-content">
+          <div class="left-sidebar">
+            <div
+              class="sidebar-header d-flex align-items-center justify-content-between"
+            >
              
-          <% } %>
-           
-            <h3 class="font-black font-poppins text-[25px] tracking-[4px]">kiyo</h3>
-          </a>
-        </div>
-        <div class="trigger relative top-[5px]">
-          <div class="hamburger hamburger--slider">
-            <div class="hamburger-box w-[30px]">
-              <div class="hamburger-inner"></div>
             </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="kiyo_tm_mobile_menu fixed top-[50px] right-[-200px] h-[100vh] w-[200px] z-[15] bg-white transition-all duration-300">
-      <div class="menu_list w-full h-auto clear-both float-left text-right px-[20px] pt-[100px] pb-[0px]">
-        <ul class="transition_link list-none">
-          <li class="active mb-[7px]"><a class="text-black font-montserrat" href="#home">Home</a></li>
-          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#about">About</a></li>
-          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#service">Service</a></li>
-          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#portfolio">Portfolio</a></li>
-          <li class="mb-[7px]"><a class="text-black font-montserrat" href="#news">News</a></li>
-          <li><a class="text-black font-montserrat" href="#contact">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-
-
-    <div class="leftpart w-[450px] h-[100vh] fixed flex items-center z-[12] px-[100px] py-[0px] bg-white">
-      <div class="leftpart_inner w-full h-auto">
-        <div class="logo" data-type="image">
-          <a href="https://procs.space/u/kiyo">
-            <% if (owner.avatar.includes("a_")) { %>
-              <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024" alt="" />
-          <% } %>
-          <% if (!owner.avatar.includes("a_")) { %>
-            <img class="max-w-[100px] max-h-[40px] circleImage" src="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024" alt="" />
-             
-          <% } %>
-            <h3 class="font-poppins font-black text-[31px] tracking-[5px]">kiyo</h3>
-          </a>
-        </div>
-        <div class="menu px-[0px] py-[50px] w-full float-left">
-          <ul class="transition_link m-0 list-none">
-            <li class="active m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#home">Home</a></li>
-            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#about">About</a></li>
-            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#service">Service</a></li>            
-            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#portfolio">Portfolio</a></li>
-            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#news">News</a></li>
-            <li class="m-0 w-full float-left"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#contact">Contact</a></li>
+            <img class="me" src="./assets/img/8c9bbff8c2e50f6633e08d4b29d39e3f.jpg" alt="Me" />
+            <h2 class="email">
+              <a href="mailto:kiyo@kiyodev.xyz">kiyo@kiyodev.xyz</a>
+            </h2>
+            <h2 class="address">Waycross GA</h2>
+            <p class="copyright">&copy; <script>document.write(new Date().getFullYear());</script> kiyodev.xyz</p>
+            <ul
+            class="social-profile d-flex align-items-center flex-wrap justify-content-center"
+          >
+          <li>
+            <a href="https://twitter.com/KiyoDeveloper"><i class="lab la-twitter"></i></a>
+          </li>
+          <li>
+            <a href="/invite"><i class="lab la-discord"></i></a>
+          </li>
+          <li>
+            <a href="https://github.com/kiyolol"><i class="lab la-github"></i></a>
+          </li>
           </ul>
-        </div>
-        <div class="copyright w-full float-left">
-          <p class="text-[15px] text-[#999] font-montserrat leading-[25px]" id="copyright"></p>
-        </div>
-      </div>
-    </div>
-
-
-    <div class="rightpart w-full min-h-[100vh] float-left relative bg-[#f8f8f8] pl-[450px]">
-      <div class="rightpart_in relative w-full float-left clear-both border-solid border-[#ebebeb] border-l min-h-[100vh]">
-
-        <div id="home" class="kiyo_tm_section animated">
-          <div class="container">
-            <div class="kiyo_tm_home w-full min-h-[100vh] clear-both flex items-center justify-center relative">
-              <div class="home_content flex items-center">
-                <div class="avatar min-w-[300px] min-h-[300px] relative rounded-full" data-type="wave">
-                  <% if (owner.avatar.includes("a_")) { %>
-                    <div class="image absolute inset-0 bg-no-repeat bg-center bg-cover" data-img-url="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.gif?size=1024"></div>
-                <% } %>
-                <% if (!owner.avatar.includes("a_")) { %>
-                  <div class="image absolute inset-0 bg-no-repeat bg-center bg-cover" data-img-url="https://cdn.discordapp.com/avatars/<%= owner.id %>/<%= owner.avatar %>.png?size=1024"></div>
-                   
-                <% } %>
+            <a href="mailto:kiyo@kiyodev.xyz" class="theme-btn">
+              <i class="las la-envelope"></i> Hire Me!
+            </a>
+          </div>
+          <section class="hero-section page-section scroll-to-page" id="home">
+            <div class="custom-container">
+              <div class="hero-content content-width">
+                <div class="section-header">
+                  <h4
+                    class="subtitle scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-home"></i> Introduce
+                  </h4>
+                  <h1
+                    class="scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <span>Kiyo</span>
+                  </h1>
                 </div>
-                <div class="details ml-[80px]">
-                  <h3 class="name text-[55px] font-extrabold uppercase mb-[14px]"><%= owner.username %></h3>
-                  <p class="job font-montserrat font-medium max-w-[450px] mb-[25px]">
-                    I'm a Software Developer, I love to code and create new things. I also love to play games and watch anime, and I am a vtuber!
-                  </p>
-                  <div class="social w-full float-left">
-                    <ul class="m-0 list-none">
-                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://twitter.com/KiyoDeveloper"><i class="fa-brands fa-twitter"></i></a></li>
-                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://github.com/kiyolol"><i class="fa-brands fa-github"></i></a></li>
-                      <li class="mr-[8px] inline-block"><a class="text-black text-[20px] transition-all duration-300 hover:text-black" href="https://discord.com/invite/wGGp7PvT"><i class="fa-brands fa-discord"></i></a></li>
-                    </ul>
+                <p class="scroll-animation" data-animation="fade_from_bottom">
+                  I'm a <span>Full Stack Developer</span> and <span>Discord Bot Developer</span> from <span>Waycross GA</span> with over <span>3 years</span> of experience.
+                </p>
+                <a
+                  href="#portfolio"
+                  class="go-to-project-btn scroll-to scroll-animation"
+                  data-animation="rotate_up"
+                >
+                  <img src="./assets/img/round-text.png" alt="" />
+                  <i class="las la-arrow-down"></i>
+                </a>
+                <div class="facts d-flex">
+                  <div
+                    class="left scroll-animation"
+                    data-animation="fade_from_left"
+                  >
+                    <h1>3+</h1>
+                    <p>Years of <br />Experience</p>
+                  </div>
+                  <div
+                    class="right scroll-animation"
+                    data-animation="fade_from_right"
+                  >
+                    <h1><%= githubProjects.length - 1 %>+</h1>
+                    <p>projects completed</p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-
-
-        <div id="about" class="kiyo_tm_section">
-          <div class="container">
-            <div class="kiyo_tm_about w-full h-auto clear-both float-left py-[100px] px-0">
-              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
-                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
-                  <div class="left">
-                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">About</span>
-                    <h3 class="font-extrabold font-montserrat">About Me</h3>
-                  </div>
+          </section>
+          <section class="about-area page-section scroll-to-page" id="about">
+            <div class="custom-container">
+              <div class="about-content content-width">
+                <div class="section-header">
+                  <h4
+                    class="subtitle scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="lar la-user"></i> About
+                  </h4>
+                  <h1
+                    class="scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    Every great journey begins with<br />
+                    an even <span>better story</span>
+                  </h1>
                 </div>
-              </div>
-              <div class="top_author_image w-full h-auto clear-both float-left relative mb-[35px]">
-                <img class="min-w-full" src="https://www.animesenpai.net/wp-content/uploads/2022/08/D6uwJOAXkAAeKr1-1024x576.jpg.webp" alt="Bro Just Kill me." />
-              </div>
-              <div class="about_title w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[20px] mb-[30px]">
-                <h3 class="text-[22px] font-bold"><%= owner.username %></h3>
-                <span>Web Developer | Software Developer | Voice Actress | Vtuber</span>
-              </div>
-              <div class="about_text w-full h-auto clear-both float-left border-solid border-[#DFDFDF] border-b pb-[31px] mb-[30px]">
-                <p class="mb-[11px]">
-                  Hi, I'm <%= owner.username %>, I'm a Web Developer, Software Developer, Voice Actress, and Vtuber. My Story Starts when I was 13 years old in middle school. My class was tasked to create a website (in notepad), and I loved it. I started learning Python and HTML, and soon began to learn 15+ Programming Languages.
+                <p class="scroll-animation" data-animation="fade_from_bottom">
+                  Once upon a time, in the world of coding, there was a brilliant programmer named Kiyo. Kiyo spent countless hours writing code and building incredible software that amazed everyone who saw it. She were always experimenting with new technologies and exploring the latest trends in the programming world.
+
+                  One day, Kiyo stumbled upon GitHub, a platform where developers could share their code with the world. Eager to showcase their skills, Kiyo created a profile and began uploading their projects. She quickly gained a following of fellow developers who were amazed by the quality of their work.
+                  
+                  As time went on, Kiyo became more and more involved in the GitHub community, contributing to other people's projects and collaborating with other developers. She were always willing to help others and offer guidance to those who were struggling with their own projects. She would take the time to thoroughly review and provide feedback on other developers' code, helping them to improve and learn from their mistakes.
+                  
+                  But Kiyo's true impact on GitHub was not just in their code, but in their personality. She were always willing to help others and offer guidance to those who were struggling with their own projects. She would take the time to thoroughly review and provide feedback on other developers' code, helping them to improve and learn from their mistakes.
+                  
+                  As a result, Kiyo became known not just as a talented programmer, but as a kind and generous member of the GitHub community. Their contributions and impact were felt by countless developers around the world, who were inspired by Kiyo's dedication to their craft and willingness to help others.
                 </p>
               </div>
-              <div class="kiyo_tm_short_info w-full h-auto clear-both float-left flex border-solid border-[#DFDFDF] border-b pb-[30px] mb-[40px]">
-                <div class="left w-1/2 pr-[50px]">
-                  <div class="kiyo_tm_info w-full h-auto clear-both float-left">
-                    <ul class="m-0 list-none">
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Sexuality:</span><span>She/Her (Transgender)</span></li>
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Name:</span><span>Stella (<%= owner.username %>) </span></li>
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Email:</span><span><a class="text-[#767676] transition-all duration-300 hover:text-black" href="mailto:kiyo@kiyodev.xyz	">kiyo@kiyodev.xyz</a></span></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="right w-1/2 pl-[50px]">
-                  <div class="kiyo_tm_info">
-                    <ul class="m-0 list-none">
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Nationality:</span><span>USA</span></li>
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Interest:</span><span>Voice Acting</span></li>
-                      <li class="m-0"><span class="min-w-[100px] float-left mr-[10px] font-bold text-black">Freelance:</span><span>Available</span></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-             
             </div>
-          </div>
-          <div class="kiyo_tm_progressbox w-full h-auto clear-both float-left bg-white pt-[93px] pr-[0px] pb-[100px] pl-[0px]">
-            <div class="container">
-              <div class="in w-full h-auto clear-both float-left flex">
-                <div class="left w-1/2 pr-[50px]">
-                  <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                    <h3 class="text-[20px] font-bold">Programming Skills</h3>
-                  </div>
-                  <div class="kiyo_progress">
-                    <% codingLanguages.forEach(language => { %>
-                      
-                      <div class="progress_inner" data-value="<%= language.options.percentile %>">
-                        <span><span class="label"><%= language.name %></span><span class="number"><%= language.options.percentile %>%</span></span>
-                        <div class="background">
-                          <div class="bar">
-                            <div class="bar_in"></div>
-                          </div>
-                        </div>
-                      </div>
-                    <% }) %>
-
-                  </div>
+          </section>
+          <section class="resume-area page-section scroll-to-page" id="resume">
+            <div class="custom-container">
+              <div class="resume-content content-width">
+                <div class="section-header">
+                  <h4
+                    class="subtitle scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-briefcase"></i> Resume
+                  </h4>
+                  <h1
+                    class="scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    Education & <span>Experience</span>
+                  </h1>
                 </div>
-                <div class="right w-1/2 pl-[50px]">
-                  <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                    <h3 class="text-[20px] font-bold">Language Skills</h3>
-                  </div>
-                  <div class="kiyo_progress">
-                    <div class="progress_inner" data-value="100">
-                      <span><span class="label">English</span><span class="number">100%</span></span>
-                      <div class="background">
-                        <div class="bar">
-                          <div class="bar_in"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="progress_inner" data-value="46">
-                      <span><span class="label">Japanese</span><span class="number">46%</span></span>
-                      <div class="background">
-                        <div class="bar">
-                          <div class="bar_in"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="kiyo_tm_testimonials w-full h-auto clear-both float-left py-[100px] px-0">
-            <div class="container">
-              <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                <h3 class="text-[20px] font-bold">Testimonials</h3>
-              </div>
-              <div class="list w-full h-auto clear-both float-left overflow-hidden">
-                <ul class="owl-carousel m-0 list-none cursor-e-resize">
-                  <li>
-                    <div class="list_inner w-full h-auto clear-both float-left relative">
-                      <div class="text w-full h-auto clear-both float-left border-solid border-[#E5EDF4] border-2 p-[40px] mb-[30px] relative">
-                        <p>Ordered a custom bot from <%= owner.username %>, and it was amazing! She was very helpful and was able to make the bot exactly how I wanted it to be. I would highly recommend her to anyone who is looking for a custom bot!</p>
-                      </div>
-                      <div class="details w-full h-auto clear-both float-left flex items-center pl-[20px]">
-                        <div class="image relative w-[60px] h-[60px]">
-                          <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full" data-img-url="/assets/img/clients/remi.png"></div>
-                        </div>
-                        <div class="info pl-[20px]">
-                          <h3 class="text-[16px] mb-[2px] font-semibold">Remi#7095</h3>
-                          <span class="text-[14px]">Discord Server Member</span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                  <li>
-                    <div class="list_inner w-full h-auto clear-both float-left relative">
-                      <div class="text w-full h-auto clear-both float-left border-solid border-[#E5EDF4] border-2 p-[40px] mb-[30px] relative">
-                        <p>I have worked with <%= owner.username %>  on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer.</p>
-                      </div>
-                      <div class="details w-full h-auto clear-both float-left flex items-center pl-[20px]">
-                        <div class="image relative w-[60px] h-[60px]">
-                          <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center rounded-full" data-img-url="assets/img/clients/default.png"></div>
-                        </div>
-                        <div class="info pl-[20px]">
-                          <h3 class="text-[16px] mb-[2px] font-semibold">LunarDev#1265</h3>
-                          <span class="text-[14px]">
-                            Client
-                          </span>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
- <div id="service" class="kiyo_tm_section">
-          <div class="container">
-            <div class="kiyo_tm_services w-full h-auto clear-both float-left py-[100px] px-0">
-              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
-                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
-                  <div class="left">
-                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">Services</span>
-                    <h3 class="font-extrabold font-montserrat">What I Do</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="list w-full h-auto clear-both float-left">
-                <ul class="ml-[-40px] list-none flex flex-wrap">
-                  <li class="mb-[40px] w-1/3 pl-[40px]">
-                    <div class="list_inner w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[30px] pb-[40px] pl-[30px] transition-all duration-300">
-                      <span class="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">01</span>
-                      <h3 class="title font-bold text-black text-[18px] mb-[15px]">Web Development</h3>
-                      <p class="text">
-                        I am a web developer and I can make websites for you. I can make websites for you using HTML, CSS, JavaScript, and Node.js. I can also make websites using frameworks such as React.js, Vue.js, and Angular.js.
-                      </p>
+                <div class="resume-timeline">
+                  <div
+                    class="item scroll-animation"
+                    data-animation="fade_from_right"
+                  >
+                    <span class="date">2022 - Present</span>
+                    <h2>Founder & Developer</h2>
+                    <p>
+                      <a href="https://unfatal.xyz">Unfatal</a>
+                    </p>
+                    <h2>
+                      Student
+                    </h2>
+                    <p>
+                      Penn Foster College
+                    </p>
                     
-      
-                    </div>
-                  </li>
-                  <li class="mb-[40px] w-1/3 pl-[40px]">
-                    <div class="list_inner w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[30px] pb-[40px] pl-[30px] transition-all duration-300">
-                      <span class="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">02</span>
-                      <h3 class="title font-bold text-black text-[18px] mb-[15px]">
-                        Moderation
-                      </h3>
-                      <p class="text">
-                       I moderate a few servers and I am very good at it. I am very active and I am always willing to help.
-                      </p>
-                     
-      
-                    </div>
-                  </li>
-                  <li class="mb-[40px] w-1/3 pl-[40px]">
-                    <div class="list_inner w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border bg-white pt-[45px] pr-[30px] pb-[40px] pl-[30px] transition-all duration-300">
-                      <span class="number inline-block mb-[25px] relative w-[60px] h-[60px] leading-[60px] text-center rounded-full bg-[rgba(0,0,0,.03)] font-bold text-black font-montserrat transition-all duration-300">03</span>
-                      <h3 class="title font-bold text-black text-[18px] mb-[15px]">
-                        Discord Bot Development
-                      </h3>
-                      <p class="text">
-                        I am a Discord bot developer and I can make Discord bots for you. I can make Discord bots for you using JavaScript and Node.js. I can also make Discord bots using frameworks such as Discord.js and Eris.
-                      </p>
-                     
-      
-                    </div>
-                  </li>
-                 
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="kiyo_tm_partners w-full h-auto clear-both float-left bg-white py-[100px] px-0">
-            <div class="container">
-              <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                <h3 class="text-[20px] font-bold">Partners</h3>
-              </div>
-              <div class="partners_inner w-full h-auto clear-both float-left">
-                <ul class="mt-[-2px] mr-[-10px] mb-[-2px] ml-[-2px] list-none pt-[2px] float-left pl-[2px]">
-                  <li class="m-0 float-left w-1/4 border-solid border-[#eee] border-2 text-center h-[145px] leading-[145px] relative mt-[-2px] ml-[-2px] overflow-hidden">
-                    <div class="list_inner w-full h-full clear-both float-left opacity-50 transition-all duration-300 hover:opacity-100">
-                      <a href="https://procs.space/partners/1043681395194728530" target="_blank">
-                        <img class="max-w-[50%] max-h-[100px] inline-block circleImage" src="https://cdn.discordapp.com/icons/1043681395194728530/5131e3ed2de793b1524d99683e5708df.webp" alt="" />
-
-                      </a>
-                    </div>
-                  </li>
-                
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="kiyo_tm_facts w-full h-auto clear-both float-left px-0 pt-[100px] pb-[60px]">
-            <div class="container">
-              <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                <h3 class="text-[20px] font-bold">Fun Facts</h3>
-              </div>
-              <div class="list w-full h-auto clear-both float-left">
-                <ul class="ml-[-40px] list-none">
-                  <li class="mb-[40px] pl-[40px] w-1/3 float-left">
-                    <div class="list_inner  w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border text-center px-[20px] py-[40px]">
-                      <h3 class="font-semibold text-[20px] mb-[3px]"><%= githubProjects.length %> </h3>
-                      <span>Projects Opened Sourced
-                      </span>
-                    </div>
-                  </li>
-                  <li class="mb-[40px] pl-[40px] w-1/3 float-left">
-                    <div class="list_inner  w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border text-center px-[20px] py-[40px]">
-                      <h3 class="font-semibold text-[20px] mb-[3px]">45</h3>
-                      <span>Happy Clients</span>
-                    </div>
-                  </li>
-                  <li class="mb-[40px] pl-[40px] w-1/3 float-left">
-                    <div class="list_inner  w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border text-center px-[20px] py-[40px]">
-                      <h3 class="font-semibold text-[20px] mb-[3px]">1M+</h3>
-                      <span>Lines of Code</span>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="kiyo_tm_pricing w-full h-auto clear-both float-left px-[0px] pt-[100px] pb-[60px] bg-white">
-            <div class="container">
-              <div class="kiyo_section_title w-full h-auto clear-both float-left mb-[40px]">
-                <h3 class="text-[20px] font-bold">Pricing</h3>
-              </div>
-              <div class="list w-full h-auto clear-both float-left">
-                <ul class="ml-[-40px]">
-                  <li class="mb-[40px] pl-[40px] w-1/3 float-left">
-                    <div class="list_inner w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border px-[40px] pt-[27px] pb-[45px]">
-                      <div class="price w-full float-left">
-                        <h3 class="text-[40px] font-semibold"><span>5<span class="currency">$</span></span></h3>
-                      </div>
-                      <div class="plan w-full float-left">
-                        <h3 class="font-semibold text-[20px] border-solid border-[rgba(0,0,0,.1)] border-b mb-[20px] pb-[20px]">
-                          Website
-                        </h3>
-                      </div>
-                      <ul class="item list-none">
-                        <li class="active">
-                          <p>
-                            Api Support
-                          </p>
-                        </li>
-                        <li class="active">
-                          <p>
-                            1 Year Support
-                          </p>
-                        </li>
-                        <li class="active">
-                          <p>
-                           Database Support (+$5)
-                          </p>
-                        </li>
-                        
-                      </ul>
-                      <div class="kiyo_tm_button" data-position="left">
-                        <a href="https://py.pl/3C2J5pj5RMy">
-                          <span>Purchase</span>
-                        </a>
-                      </div>
-                    </div>
-                  </li>
-                  <li class="mb-[40px] pl-[40px] w-1/3 float-left">
-                    <div class="list_inner w-full h-auto clear-both float-left relative border-solid border-[rgba(0,0,0,.1)] border px-[40px] pt-[27px] pb-[45px]">
-                      <div class="price w-full float-left">
-                        <h3 class="text-[40px] font-semibold"><span>10<span class="currency">$</span></span></h3>
-                      </div>
-                      <div class="plan w-full float-left">
-                        <h3 class="font-semibold text-[20px] border-solid border-[rgba(0,0,0,.1)] border-b mb-[20px] pb-[20px]">Discord bot</h3>
-                      </div>
-                      <ul class="item list-none">
-                        <li class="active">
-                          <p>
-                            Api Support
-                          </p>
-                        </li>
-                        <li class="active">
-                          <p>
-                            1 Year Support
-                          </p>
-                        </li>
-                        <li class="active">
-                          <p>
-                            Auto Moderation (+$5)
-                          </p>
-                        </li>
-                        <li class="active">
-                          <p>
-                            Database Support (+$5)
-                          </p>
-                        </li>
-                        
-                      </ul>
-                      <div class="kiyo_tm_button" data-position="left">
-                        <a href="https://py.pl/vUvSY">
-                          <span>Purchase</span>
-                        </a>
-                      </div>
-                      <span class="popular absolute inline-block bg-black text-white text-[13px] px-[20px] pb-[3px] pt-0 top-[-17px] right-[10px]">Popular</span>
-                    </div>
-                  </li>
-                 
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="kiyo_tm_portfolio_titles"></div>
-
-        <div id="portfolio" class="kiyo_tm_section">
-          <div class="container">
-            <div class="kiyo_tm_portfolio w-full h-auto clear-both float-left px-0 pt-[100px] pb-[40px]">
-              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
-                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
-                  <div class="left">
-                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">Portfolio</span>
-                    <h3 class="font-extrabold font-montserrat">Portfolio</h3>
                   </div>
-                  <div class="portfolio_filter">
-                    <ul class="list-none">
-                      <li class="mr-[25px] inline-block"><a href="#" class="current text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" data-filter="*">All</a></li>
-                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".bots">Bots</a></li>
-                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".websites">Websites</a></li>
-                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".tools">Tools</a></li>
-                      <li class="mr-[25px] inline-block"><a class="text-[#767676] inline-block font-medium font-montserrat transition-all duration-300 hover:text-black" href="#" data-filter=".packages">Packages</a></li>                    </ul>
+                
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="services-area page-section scroll-to-page"
+            id="services"
+          >
+            <div class="custom-container">
+              <div class="services-content content-width">
+                <div class="section-header">
+                  <h4
+                    class="subtitle scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-stream"></i> Services
+                  </h4>
+                  <h1
+                    class="scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    My <span>Specializations</span>
+                  </h1>
+                </div>
+                <div class="services-items">
+                  <div
+                    class="service-item scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-bezier-curve"></i>
+                    <h2>Website Development</h2>
+                    <p>
+                      I build websites with Next.js, React, and Tailwind CSS. Html, CSS, and JavaScript are my bread and butter.
+                    </p>
+                   
+                  </div>
+                  <div
+                    class="service-item scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-code"></i>
+                    <h2>Discord Bot Development</h2>
+                    <p>
+                      I build Discord bots with Node.js and Discord.js. I also have experience with Python and Discord.py.
+                    </p>
+          
                   </div>
                 </div>
               </div>
-              <div class="list_wrapper w-full h-auto clear-both float-left">
-                <ul class="portfolio_list gallery_zoom ml-[-40px] list-none">
+            </div>
+          </section>
+          <section
+            class="portfolio-area page-section scroll-to-page"
+            id="portfolio"
+          >
+            <div class="custom-container">
+              <div class="portfolio-content content-width">
+                <div class="section-header">
+                  <h4
+                    class="subtitle scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <i class="las la-grip-vertical"></i> portfolio
+                  </h4>
+                  <h1
+                    class="scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    Featured <span>Projects</span>
+                  </h1>
+                </div>
+                <div class="row portfolio-items">
 
-                  <% projects.forEach(projects => { %>
-                    <li class="<%= projects.role %> mb-[40px] float-left w-1/3 pl-[40px]">
-                      <div class="inner w-full h-auto clear-both float-left overflow-hidden relative">
-                        <div class="entry kiyo_tm_portfolio_animation_wrap" data-title="<%= projects.name %>" data-category="<%= projects.role %>">
-                          <a class="" href="<%= projects.button.url %>">
-                            <img class="opacity-0 min-w-full" src="<%= projects.image %>" alt="" />
-                            <div class="abs_image absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300" data-img-url="<%= projects.image %>"></div>
-                          </a>
-                        </div>
+                  <% projects.forEach(project => { %>
+                    <div
+                    class="col-md-12 scroll-animation"
+                    data-animation="fade_from_bottom"
+                  >
+                    <div class="portfolio-item portfolio-full">
+                      <div class="portfolio-item-inner">
+                        <a
+                          href="<%= project.image %>"
+                          data-lightbox="example-1"
+                        >
+                          <img
+                            src="<%= project.image %>"
+                            alt="Portfolio"
+                          />
+                        </a>
+                        <ul class="portfolio-categories">
+                          <% project.tags.forEach(tag => { %>
+                            <li>
+                              <span><%= tag %></span>
+                             </li>
+                          <% }) %>
+                          
+                          
+                        </ul>
                       </div>
-                    </li>
+                      <h2>
+                        <a href="<%= project.button.url %>"><%= project.name %></a>
+                      </h2>
+                    </div>
+                  </div>
                   <% }) %>
 
 
 
-
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div id="news" class="kiyo_tm_section">
-          <div class="container">
-            <div class="kiyo_tm_news w-full clear-both float-left h-auto pt-[100px] px-0 pb-[45px]">
-              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
-                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
-                  <div class="left">
-                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">News</span>
-                    <h3 class="font-extrabold font-montserrat">Latest News</h3>
-                  </div>
                 </div>
               </div>
-              <ul class="ml-[-50px] list-none">
-                <% news.forEach(newsElement => { %>
-                  <li class="mb-[50px] float-left w-1/2 pl-[50px]">
-                    <div class="list_inner w-full clear-both float-left h-auto relative">
-                      <div class="image relative overflow-hidden">
-                        <img class="min-w-full opacity-0" src="<%= newsElement.image %>" alt="" />
-                        <div class="main absolute inset-0 bg-no-repeat bg-cover bg-center transition-all duration-300" data-img-url="<%= newsElement.image %>"></div>
-                       
-                      </div>
-                      <div class="details w-full float-left px-[40px] pt-[30px] pb-[25px] bg-white transition-all duration-300">
-                        <div class="extra flex items-center justify-between mb-[25px] relative">
-                          <div class="short">
-                            <p class="date font-montserrat text-[13px] text-[#767676]">By <a class="text-[#767676] transition-all duration-300 hover:text-black" href="https://procs.space/u/kiyo"><%= owner.username %></a> <span class="relative"><%= newsElement.date %></span></p>
-                          </div>
-                        </div>
-                        <h3 class="title mb-[10px] leading-[1.4]"><%= newsElement.title %></h3>
-                        <div class="kiyo_tm_read_more">
-                          <a href="<%= newsElement.link %>"><span>Read More</span></a>
-                        </div>
-                      </div>
-                
-                    </div>
-                <% }) %>
-              </ul>
             </div>
-          </div>
+          </section>
         </div>
-
-
-        <div id="contact" class="kiyo_tm_section">
-          <div class="container">
-            <div class="kiyo_tm_contact w-full float-left clear-both h-auto py-[100px] px-[0px]">
-              <div class="kiyo_tm_title w-full h-auto clear-both float-left mb-[62px]">
-                <div class="title_flex w-full h-auto clear-both flex justify-between items-end">
-                  <div class="left">
-                    <span class="inline-block bg-[rgba(0,0,0,.04)] uppercase py-[4px] px-[10px] font-semibold text-[12px] text-[#333] font-montserrat tracking-[0px] mb-[11px]">Contact</span>
-                    <h3 class="font-extrabold font-montserrat">Get in Touch</h3>
-                  </div>
-                </div>
-              </div>
-              <div class="fields w-full float-left clear-both h-auto">
-                <form action="/contact" method="post" class="contact_form" id="contact_form" autocomplete="off">
-                  <div class="returnmessage" data-success="Your message has been received, We will contact you soon."></div>
-                  <div class="empty_notice"><span>Please Fill Required Fields</span></div>
-                  <div class="first w-full float-left">
-                    <ul class="list-none">
-                      <li class="w-full mb-[30px] float-left">
-                        <input id="name" type="text" placeholder="Name">
-                      </li>
-                      <li class="w-full mb-[30px] float-left">
-                        <input id="email" type="text" placeholder="Email">
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="last">
-                    <textarea id="message" placeholder="Message"></textarea>
-                  </div>
-                  <div class="kiyo_tm_button" data-position="left">
-                    <a id="send_message" href="#">
-                      <span>Send Message</span>
-                    </a>
-                  </div>
-
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-
       </div>
-    </div>
-
-
-    <div class="mouse-cursor cursor-outer"></div>
-    <div class="mouse-cursor cursor-inner"></div>
-
-  </div>
-
-
-  
-  <script src="assets/js/jquery.js"></script>
-  <script src="assets/js/plugins.js"></script>
-  <script src="assets/js/init.js"></script>
-  <script src="https://kit.fontawesome.com/b2ded0cdec.js" crossorigin="anonymous"></script>
-  <script> 
-    const copyright = document.getElementById('copyright');
-    const year = new Date().getFullYear();
-
-    copyright.innerHTML = `&copy; ${year} All Rights Reserved <a href="https://procs.space/u/kiyo" target="_blank"><%= owner.username %></a>`;
-  </script>
-
-</body>
-
+    </main>
+    <script
+      data-cfasync="false"
+      src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+    ></script>
+    <script
+      src="./assets/js/jquery.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/bootstrap.bundle.min.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/owl.carousel.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/gsap.min.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/ScrollTrigger.min.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/ScrollToPlugin.min.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/lightbox.min.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/main.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/ajax-form.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="./assets/js/color.js"
+      type="6874a4ecb8a19d41d7cec226-text/javascript"
+    ></script>
+    <script
+      src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+      data-cf-settings="6874a4ecb8a19d41d7cec226-|49"
+      defer=""
+    ></script>
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+      integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+      data-cf-beacon='{"rayId":"7a06cfd54d9cec11","version":"2023.2.0","r":1,"token":"52ad871770524b3e8ca1e53094efe67a","si":100}'
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>

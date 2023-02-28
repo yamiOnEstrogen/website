@@ -28,14 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 app.engine(".ejs", ejs.__express);
 app.use(express.static("public"));
-app.use((req, res, next) => {
-  if (config.webApp.isOffline) {
-    res.render("down.ejs", {
-    });
-  } else {
-    next();
-  }
-})
 
 
 app.get("/", async (req, res) => {
@@ -45,10 +37,8 @@ app.get("/", async (req, res) => {
     const codingLanguagesArray = [];
     const clientUsers = [];
     const projectsArray = [];
-    const newsArray = [];
-    const serverWidget = await discordClient.getServerWidget(`1014190469628055552`, "shield");
+    const serverWidget = await discordClient.getServerWidget(`1062574590406172692`, "shield");
 
-    const socials = config.profile.socials;
     const codingLanguages = config.languages;
     const projects = config.projects;
 
@@ -62,34 +52,30 @@ app.get("/", async (req, res) => {
     for (const language in codingLanguages) {
       codingLanguagesArray.push(codingLanguages[language]);
     }
-
-
-
-    for (const news in config.news) {
-      newsArray.push(config.news[news]);
-    }
     
     
     for (const client in config.clients) {
       clientUsers.push(config.clients[client]);
     }
-  
 
     
+    console.log(serverWidget)
     res.render("index", {
       owner: owner,
       supportServer: config.owner.supportServer,
       codingLanguages: codingLanguagesArray,
-      aboutMe: config.profile.aboutMe,
-      socials: socials,
       serverWidget: serverWidget,
-      news: newsArray,
       projects: projectsArray,
       clients: clientUsers,
       githubProjects: await github.getRepos(),
     });
   })
 });
+
+
+app.get("/unfatal", async (req, res) => {
+  res.redirect("https://home.unfatal.xyz/user/547923574833545226");
+})
 
 
 app.get("/api/:version/:field", async (req, res) => {
