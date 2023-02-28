@@ -19,6 +19,7 @@ dotenv.config();
 const discordClient = new DiscordClient(process.env.token);
 const githubClient = require("./utils/githubClient");
 const github = new githubClient();
+const Status = require("./utils/status.js");
 
 
 
@@ -71,6 +72,17 @@ app.get("/", async (req, res) => {
     });
   })
 });
+
+app.get("/status", async (req, res) => {
+  const statusCodes = await Status.getStatusCodes();
+  
+
+  if (process.env.NODE_ENV === "development") console.log(statusCodes);
+
+  res.render("status", {
+    statusCodes: statusCodes,
+  });
+})
 
 
 app.get("/unfatal", async (req, res) => {
