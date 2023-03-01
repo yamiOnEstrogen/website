@@ -197,15 +197,18 @@ app.listen(port, () => {
 
 
 
-  logger.log(`To View on your Machine go to: http://localhost:${port}`);
-  logger.log(`To View on your Network go to: http://${addresses[0]}:${port}`);
+  logger.log(`To View on your Machine go to: http://localhost:${port}`, "websocket");
+  logger.log(`To View on your Network go to: http://${addresses[0]}:${port}`, "websocket");
+
+  status.updateStatusCodes();
+
+  logger.log("Status codes have been updated", "status");
+
+
+
+  setInterval(() => {
+    Status.updateStatusCodes(); // Update status codes every 5 minutes
+    logger.log("Status codes have been updated", "status");
+  }, 300000); // 5 minutes
 
 });
-
-
-
-
-
-
-
-
