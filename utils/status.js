@@ -60,6 +60,7 @@ class Status {
         const statusCodes = [];
         for (const url of urls) {
             const response = await axios.get(url.url);
+            console.log(response.status)
             statusCodes.push({
                 name: url.name,
                 link: url.url,
