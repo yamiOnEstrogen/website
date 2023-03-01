@@ -9,6 +9,10 @@ const urls = [
     {
         url: "https://1.kiyodev.xyz",
         name: "kiyodev.xyz",
+    },
+    {
+        url: "https://ranrom.xyz",
+        name: "ranrom.xyz",
     }
 ];
 
