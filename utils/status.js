@@ -1,4 +1,6 @@
 const axios = require("axios");
+const Logger = require("./logger.js");
+const logger = new Logger({ debug: true });
 
 
 const urls = [
@@ -93,7 +95,10 @@ const listOfCodes = [
         code: 599,
         name: "Network Connect Timeout Error",
     }
-]
+];
+
+
+let statusQueue = [];
 
 
 class Status {
@@ -101,13 +106,17 @@ class Status {
 
 
     async getStatusCodes() {
-        const statusCodes = [];
+        if (statusQueue.length === 0) await this.updateStatusCodes();
+        return statusQueue;
+    };
+
+    async updateStatusCodes() {
         for (const url of urls) {
             try {
                 const response = await axios.get(url.url); // Get the status code
 
-                console.log(`[STATUS] ${url.name} returned ${response.status}`); // Log that the status code is good
-                statusCodes.push({
+                logger.log(`${url.name} is ${response.status}`); // Log the status code
+                statusQueue.push({
                     name: url.name, // Push the status code to the array
                     link: url.url, // Push the link to the array
                     code: {
@@ -118,9 +127,8 @@ class Status {
                 });
             }
             catch (error) {
-                console.log(error);
-                console.log(`[STATUS] ${url.name} returned ${error.response.status}`); // Log that the status code is bad
-                statusCodes.push({
+               logger.log(`${url.name} returned ${error.response.status}`, "error"); // Log that the status code is bad
+                statusQueue.push({
                     name: url.name, // Push the status code to the array
                     link: url.url, // Push the link to the array
                     code: {
@@ -136,7 +144,7 @@ class Status {
            
             
         }
-        return statusCodes;
+        return true;
     }
 }
 
