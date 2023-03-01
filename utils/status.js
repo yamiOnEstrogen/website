@@ -111,6 +111,7 @@ class Status {
     };
 
     async updateStatusCodes() {
+        if (statusQueue.length > 0) statusQueue = [];
         for (const url of urls) {
             try {
                 const response = await axios.get(url.url); // Get the status code
