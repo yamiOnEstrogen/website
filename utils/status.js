@@ -44,6 +44,10 @@ const listOfCodes = [
     {
         code: 503,
         name: "Service Unavailable",
+    },
+    {
+        code: 530,
+        name: "Frozen / Down"
     }
 ]
 
