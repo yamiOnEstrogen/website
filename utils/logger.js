@@ -1,33 +1,29 @@
 const chalk = require("chalk");
 
+const log_levels = {
+  debug: 0,
+  info: 1,
+  warn: 2,
+  error: 3,
+  fatal: 4,
+};
+
 class Logger {
   constructor(options) {
     this.options = options;
   }
 
-  log(...args) {
-    console.log(chalk.green(`[${new Date().toLocaleString()}]`, ...args));
+  log(message, level) {
+    if (!level) level = "info";
+    if (log_levels[level] < log_levels[this.options.level]) return;
+    console.log(
+      `[${chalk.blueBright(new Date().toLocaleString())}] [${chalk.greenBright(
+        level.toUpperCase()
+      )}] ${message}`
+    );
   }
 
-  error(...args) {
-    console.error(chalk.red(`[${new Date().toLocaleString()}]`, ...args));
-  }
-
-  warn(...args) {
-    console.warn(chalk.yellow(`[${new Date().toLocaleString()}]`, ...args));
-  }
-
-  info(...args) {
-    console.info(chalk.blue(`[${new Date().toLocaleString()}]`, ...args));
-  }
-
-  debug(...args) {
-    if (this.options.debug) {
-      console.debug(chalk.magenta(`[${new Date().toLocaleString()}]`, ...args));
-    } else {
-      this.log(...args);
-    }
-  }
+  
 }
 
 module.exports = Logger;
