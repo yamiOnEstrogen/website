@@ -200,7 +200,7 @@ app.listen(port, () => {
   logger.log(`To View on your Machine go to: http://localhost:${port}`, "websocket");
   logger.log(`To View on your Network go to: http://${addresses[0]}:${port}`, "websocket");
 
-  status.updateStatusCodes();
+  Status.updateStatusCodes();
 
   logger.log("Status codes have been updated", "status");
 
