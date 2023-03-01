@@ -10,11 +10,10 @@ const urls = [
         url: "https://1.kiyodev.xyz",
         name: "kiyodev.xyz",
     },
-//     Removed due to testing....
-//     {
-//         url: "https://ranrom.xyz",
-//         name: "ranrom.xyz",
-//     }
+    {
+        url: "https://ranrom.xyz",
+        name: "ranrom.xyz",
+    }
 ];
 
 const listOfCodes = [
@@ -47,8 +46,52 @@ const listOfCodes = [
         name: "Service Unavailable",
     },
     {
+        code: 504,
+        name: "Gateway Timeout",
+    },
+    {
+        code: 520,
+        name: "Unknown Error",
+    },
+    {
+        code: 521,
+        name: "Web Server Is Down",
+    },
+    {
+        code: 522,
+        name: "Connection Timed Out",
+    },
+    {
+        code: 523,
+        name: "Origin Is Unreachable",
+    },
+    {
+        code: 524,
+        name: "A Timeout Occurred",
+    },
+    {
+        code: 525,
+        name: "SSL Handshake Failed",
+    },
+    {
+        code: 526,
+        name: "Invalid SSL Certificate",
+    },
+    {
+        code: 527,
+        name: "Railgun Error",
+    },
+    {
         code: 530,
-        name: "Frozen / Down"
+        name: "Origin DNS Error",
+    },
+    {
+        code: 598,
+        name: "Network Read Timeout Error",
+    },
+    {
+        code: 599,
+        name: "Network Connect Timeout Error",
     }
 ]
 
@@ -60,17 +103,38 @@ class Status {
     async getStatusCodes() {
         const statusCodes = [];
         for (const url of urls) {
-            const response = await axios.get(url.url);
-            console.log(response.status)
-            statusCodes.push({
-                name: url.name,
-                link: url.url,
-                code: {
-                    code: response.status,
-                    name: listOfCodes.find((code) => code.code === response.status).name,
-                    isBad: response.status >= 400 ? true : false,
-                }
-            });
+            try {
+                const response = await axios.get(url.url); // Get the status code
+
+                console.log(`[STATUS] ${url.name} returned ${response.status}`); // Log that the status code is good
+                statusCodes.push({
+                    name: url.name, // Push the status code to the array
+                    link: url.url, // Push the link to the array
+                    code: {
+                        code: response.status, // Push the status code to the array
+                        name: listOfCodes.find((code) => code.code === response.status).name, // Push the website name to the array
+                        isBad: response.status >= 400 ? true : false, // Push whether the status code is bad or not to the array
+                    }
+                });
+            }
+            catch (error) {
+                console.log(error);
+                console.log(`[STATUS] ${url.name} returned ${error.response.status}`); // Log that the status code is bad
+                statusCodes.push({
+                    name: url.name, // Push the status code to the array
+                    link: url.url, // Push the link to the array
+                    code: {
+                        code: error.response.status, // Push the status code to the array
+                        name: listOfCodes.find((code) => code.code === error.response.status).name, // Push the website name to the array
+                        isBad: error.response.status >= 400 ? true : false, // Push whether the status code is bad or not to the array
+
+                    }
+                });
+
+                continue; // Skip to the next iteration
+            }
+           
+            
         }
         return statusCodes;
     }
