@@ -10,7 +10,7 @@ module.exports.webApp = {
 
 
 
-
+// Adding Soon!
   module.exports.languages = {
     "JavaScript": {
       name: "JavaScript",
@@ -67,20 +67,6 @@ module.exports.webApp = {
 
 module.exports.projects = {
   1: {
-    name: "Unfatal",
-    image: "https://wallpapercave.com/uwp/uwp599191.gif",
-    tags: [
-      "Website",
-      "Game",
-      "Personal"
-    ],
-    button: {
-      name: "View Project",
-      url: "https://home.unfatal.xyz?utm_campaign=kiyodev.xyz&utm_source=kiyodev.xyz&utm_medium=referral",
-      color: "primary",
-    },
-  },
-  2: {
     name: "Kiyodev.xyz",
     image: "/assets/img/backgroundAsset.jpg",
     tags: [
@@ -94,7 +80,7 @@ module.exports.projects = {
       color: "primary",
     },
   },
-  3: {
+  2: {
     name: "Chika Bot",
     image: "https://repository-images.githubusercontent.com/604447888/85ec0c3b-e72e-48fb-870e-971bfd2c38a6",
     tags: [
