@@ -16,7 +16,7 @@ const showHelp = () => {
     console.log("");
     console.log("Example: npm run start_service -- verbose");
     console.log("");
-    console.log("For more information, please visit https://github.com/zenithvt/zenithlive.lol/wiki");
+    console.log("For more information, please visit https://github.com/zenithvt/zenithlive.lol/wiki/Start-Service");
     console.log("");
     process.exit(0);
 }
