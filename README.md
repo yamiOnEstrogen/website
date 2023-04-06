@@ -99,8 +99,4 @@ Start the server
     * `skills` - The things you can do!
     * `socials` - Your social accounts!
     * `education` - Where you went to school!
-<<<<<<< HEAD
     * `experience` - Do you have any experiences?
-=======
-    * `experience` - Do you have any experiences?
->>>>>>> d2b5f6c4d0a83c227363068ea01be9bf681db297
