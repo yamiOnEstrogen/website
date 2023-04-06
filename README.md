@@ -36,12 +36,6 @@ The Highly Customizable Website made for and by Zenith.
 ```
 
 
-
-## Demo
-
-![Demo](https://cdn.discordapp.com/attachments/1015727807566987296/1093338587304558632/brave_SI2gtofaWp.gif)
-
-
 ## Variables
 
 To run this project, you will need to add the following environment variables to your .env file
