@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zenith - Home</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+
+  <link rel="stylesheet"
+    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
+  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
+  <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
+  <link rel="stylesheet" href="./assets/css/animate.min.css" />
+  <link rel="stylesheet" href="./assets/css/smooth-scrollbar.css" />
+  <link rel="stylesheet" href="./assets/css/lightbox.min.css" />
+  <link rel="stylesheet" href="./assets/css/themes/<%= theme || 'pink' %>.css" />
+  <link rel="stylesheet" href="./assets/css/responsive.css" />
+
+  <style>
+    button[disabled] {
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+  </style>
+</head>
+
+<body class="home2-page">
+  <video class="body-overlay" muted autoplay loop>
+    <source src="./assets/img/1654499284069.mp4" type="video/mp4" />
+  </video>
+
+
+  <div class="left-sidebar">
+    <div class="sidebar-header d-flex align-items-center justify-content-between">
+
+    </div>
+    <img class="me" src="./assets/img/zenith.jpg" alt="Me" />
+    <h2 class="email">
+      <a href="mailto:<%= owner.email %>">
+        <%= owner.email.split('@')[0] %>
+      </a>
+    </h2>
+    <h2 class="address"><%= owner.location %></h2>
+    <p class="copyright">&copy;
+      <script>document.write(new Date().getFullYear());</script> <%= host %>
+    </p>
+    <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
+      <% owner.socials.forEach(social => { %>
+        <li>
+          <a href="<%= social.link %>"><i class="bi bi-<%= social.name.toLowerCase() %>"></i></a>
+        </li> 
+      <% }) %>
+    </ul>
+    <% if (owner.isLooking4Work) { %>
+      <button class="theme-btn" onclick="popup('mailto:<%= owner.email %>')">
+        <i class="las la-envelope"></i> Hire Me!
+      </button>
+      <% } else { %>
+        <button class="theme-btn" disabled>
+          <i class="las la-envelope"></i> Not Available
+        </button>
+    <% } %>
+  </div>
+  <main class="kio-main">
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <div class="left-sidebar">
+          <div class="sidebar-header d-flex align-items-center justify-content-between">
+
+          </div>
+          <img class="me" src="./assets/img/zenith.jpg" alt="Me" />
+          <h2 class="email">
+            <a href="mailto:<%= owner.email %>">
+              <%= owner.email.split('@')[0] %>
+            </a>
+          </h2>
+          <h2 class="address"><%= owner.location %></h2>
+          <p class="copyright">&copy;
+            <script>document.write(new Date().getFullYear());</script> <%= host %>
+          </p>
+          <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
+            <% owner.socials.forEach(social => { %>
+              <li>
+                <a href="<%= social.link %>"><i class="bi bi-<%= social.name.toLowerCase() %>"></i></a>
+              </li> 
+            <% }) %>
+          </ul>
+          <% if (owner.isLooking4Work) { %>
+            <button class="theme-btn" onclick="popup('mailto:<%= owner.email %>')">
+              <i class="las la-envelope"></i> Hire Me!
+            </button>
+            <% } else { %>
+              <button class="theme-btn" disabled>
+                <i class="las la-envelope"></i> Not Available
+              </button>
+          <% } %>
+          
+        </div>
+        <section class="hero-section page-section scroll-to-page" id="home">
+          <div class="custom-container">
+            <div class="hero-content content-width">
+              <div class="section-header">
+                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                  <i class="las la-home"></i> Introduce
+                </h4>
+                <h1 class="scroll-animation" data-animation="fade_from_bottom">
+                  <span>
+                    <%= owner.name %>
+                  </span>
+                </h1>
+              </div>
+              <p class="scroll-animation" data-animation="fade_from_bottom">
+                <%= owner.tag %>
+              </p>
+              <a href="#portfolio" class="go-to-project-btn scroll-to scroll-animation" data-animation="rotate_up">
+                <img src="./assets/img/round-text.png" alt="" />
+                <i class="las la-arrow-down"></i>
+              </a>
+              <div class="facts d-flex">
+                <div class="left scroll-animation" data-animation="fade_from_left">
+                  <h1>3+</h1>
+                  <p>Years of <br />Experience</p>
+                </div>
+                <div class="right scroll-animation" data-animation="fade_from_right">
+                  <h1>
+                   <%= github.length %>
+                  </h1>
+                  <p>projects completed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="about-area page-section scroll-to-page" id="about">
+          <div class="custom-container">
+            <div class="about-content content-width">
+              <div class="section-header">
+                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                  <i class="lar la-user"></i> About
+                </h4>
+                <h1 class="scroll-animation" data-animation="fade_from_bottom">
+                  Every great journey begins with<br />
+                  an even <span>better story</span>
+                </h1>
+              </div>
+              <p class="scroll-animation" data-animation="fade_from_bottom">
+                <%- owner.story %>
+              </p>
+            </div>
+          </div>
+        </section>
+        <section class="resume-area page-section scroll-to-page" id="resume">
+          <div class="custom-container">
+            <div class="resume-content content-width">
+              <div class="section-header">
+                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                  <i class="las la-briefcase"></i> Resume
+                </h4>
+                <h1 class="scroll-animation" data-animation="fade_from_bottom">
+                  Education & <span>Experience</span>
+                </h1>
+              </div>
+              <div class="resume-timeline">
+                <div class="item scroll-animation" data-animation="fade_from_right">
+                  <% owner.education.forEach(edu => { %>
+                    
+                    <h2>
+                      <%= edu.school %>
+                    </h2>
+                    <p>
+                      <%= edu.degree %>
+                    </p>
+                  <% }) %>
+
+                  <% owner.experience.forEach(exp => { %>
+                    <h2>
+                      <%= exp.company %>
+                    </h2>
+                    <p>
+                      <%= exp.position %>
+                    </p>
+                  <% }) %>
+                  
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="services-area page-section scroll-to-page" id="services">
+          <div class="custom-container">
+            <div class="services-content content-width">
+              <div class="section-header">
+                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                  <i class="las la-stream"></i> Services
+                </h4>
+                <h1 class="scroll-animation" data-animation="fade_from_bottom">
+                  My <span>Specializations</span>
+                </h1>
+              </div>
+              <div class="services-items">
+                  <% owner.skills.forEach(skill => { %>
+                    <div class="service-item scroll-animation" data-animation="fade_from_bottom">
+                      <i class="bi bi-<%= skill.icon %>" style="width: 16px; height: 16px"></i>
+                      <h2><%= skill.title %></h2>
+                      <p>
+                        <%= skill.description %>
+                      </p>
+    
+                    </div>
+                  <% }) %>
+            </div>
+          </div>
+        </section>
+        <section class="portfolio-area page-section scroll-to-page" id="portfolio">
+          <div class="custom-container">
+            <div class="portfolio-content content-width">
+              <div class="section-header">
+                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
+                  <i class="las la-grip-vertical"></i> portfolio
+                </h4>
+                <h1 class="scroll-animation" data-animation="fade_from_bottom">
+                  Featured <span>Projects</span>
+                </h1>
+              </div>
+              <div class="row portfolio-items">
+
+                <% projects.forEach(project=> { %>
+                  <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
+                    <div class="portfolio-item portfolio-full">
+                      <div class="portfolio-item-inner">
+                        <a href="<%= project.image %>" data-lightbox="example-1">
+                          <img src="<%= project.image %>" alt="Portfolio" />
+                        </a>
+                        <ul class="portfolio-categories">
+                          <% project.tags.forEach(tag=> { %>
+                            <li>
+                              <span>
+                                <%= tag %>
+                              </span>
+                            </li>
+                            <% }) %>
+
+
+                        </ul>
+                      </div>
+                      <h2>
+                        <a href="<%= project.url %>">
+                          <%= project.title %>
+                        </a>
+                      </h2>
+                    </div>
+                  </div>
+                  <% }) %>
+
+
+
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="./assets/js/jquery.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/bootstrap.bundle.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/owl.carousel.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/gsap.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/ScrollTrigger.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/ScrollToPlugin.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/lightbox.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/main.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/ajax-form.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="./assets/js/color.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
+  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
+    data-cf-settings="6874a4ecb8a19d41d7cec226-|49" defer=""></script>
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
+    integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
+    data-cf-beacon='{"rayId":"7a06cfd54d9cec11","version":"2023.2.0","r":1,"token":"52ad871770524b3e8ca1e53094efe67a","si":100}'
+    crossorigin="anonymous"></script>
+
+    <script src="/assets/js/wediwect.js">
+
+    </script>
+</body>
+
+</html>
