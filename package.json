@@ -1,0 +1,30 @@
+{
+  "name": "hylias-website",
+  "version": "1.0.0",
+  "description": "A simple portfolio website in a terminal style",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xhylia/hylia.codes.git"
+  },
+  "author": "0xhylia",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0xhylia/hylia.codes/issues"
+  },
+  "homepage": "https://github.com/0xhylia/hylia.codes#readme",
+  "dependencies": {
+    "@octokit/core": "^4.2.0",
+    "axios": "^1.4.0",
+    "body-parser": "^1.20.2",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.9",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.22"
+  }
+}

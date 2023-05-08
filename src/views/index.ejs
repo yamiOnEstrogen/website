@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Hylia Terminal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="View my portfolio website in a terminal.">
+    <meta name="keywords"
+        content="Hylia, Hylia Terminal, Hylia Codes, Hylia Terminal Codes, Hylia Terminal Portfolio, Hylia Terminal Portfolio Website, Hylia Terminal Website, Hylia Terminal Portfolio Website">
+    <meta name="author" content="Hylia">
+    <meta name="theme-color" content="#000000">
+    <meta property="og:title" content="Hylia Terminal">
+    <meta property="og:description" content="View my portfolio website in a terminal.">
+    <meta property="og:image" content="https://i.pinimg.com/originals/82/84/4e/82844e4237d25e9d67deb7b77d61bf91.gif">
+    <meta property="og:url" content="https://hylia.codes">
+    <meta property="og:site_name" content="Hylia Terminal">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@hylia">
+    <meta name="twitter:creator" content="@vthylia">
+    <meta name="twitter:title" content="Hylia Terminal">
+    <meta name="twitter:description" content="View my portfolio website in a terminal.">
+    <meta name="twitter:image" content="https://i.pinimg.com/originals/82/84/4e/82844e4237d25e9d67deb7b77d61bf91.gif">
+    <meta name="twitter:image:alt" content="Hylia Terminal">
+
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.goddessanime.com/api/user/547923574833545226/avatar">
+    <link rel="icon" type="image/png" sizes="32x32"
+        href="https://www.goddessanime.com/api/user/547923574833545226/avatar">
+    <link rel="icon" type="image/png" sizes="16x16"
+        href="https://www.goddessanime.com/api/user/547923574833545226/avatar">
+    <link rel="mask-icon" href="https://www.goddessanime.com/api/user/547923574833545226/avatar" color="#5bbad5">
+    <link rel="shortcut icon" href="https://www.goddessanime.com/api/user/547923574833545226/avatar">
+    <meta name="msapplication-TileColor" content="#000000">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E85TLW0B9F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-E85TLW0B9F');
+    </script>
+
+</head>
+
+<body>
+    <div id="player" style="display: none;"></div>
+    <div class="terminal">
+        <% if (error) { %>
+            <div class="alert alert-danger" role="alert">
+                <p><%= error %></p>
+              </div>
+
+              <script>
+                setTimeout(() => {
+                    window.location.href = "/"
+                }, 5000);
+              </script>
+        <% } else { %>
+            <ul class="output">
+                <li id="start"></li>
+                <li>Type 'help' for a list of commands.</li>
+            </ul>
+            <div>
+                <span class="prompt">$&gt;</span>
+                <input type="text" id="input" autofocus>
+            </div>
+        <% } %>
+    </div>
+    <noscript>
+        <div class="nojs">
+            <p>This website requires JavaScript. Please enable JavaScript in your browser.</p>
+        </div>
+    </noscript>
+    <script src="/scripts/keys.js"></script>
+    <script src="/scripts/secret.js"></script>
+    <script src="/scripts/modal.js"></script>
+    <!-- <script src="/scripts/music.js"></script> -->
+    <script>
+
+        const eSound = `<%= errorsound %>`;
+        var isMuted = false
+
+        const hasJavascript = document.querySelector(".nojs");
+
+
+
+        async function processCommand() {
+            var input = document.getElementById("input").value;
+            var args = input.split(" ");
+            var cmd = args[0].toLowerCase();
+            args.shift();
+
+
+            await fetch(`/cmd/${cmd}`, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({ cmd: cmd, args: args })
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(JSON.stringify(data));
+                    if (data.error) {
+                        window.location.href = "/?error=" + data.error;
+                    }
+
+                    const canBeExecuted = data.canBeExecuted;
+
+                    if (canBeExecuted) {
+                        const r = eval(data.output);
+                        if (r) {
+                            const output = document.createElement("li");
+                            output.id = "output";
+                            output.innerHTML = `<pre>Executed: ${cmd}</pre>`;
+                            document.querySelector(".output").appendChild(output);
+
+                            document.getElementById("input").value = "";
+                            output.scrollIntoView();
+                        }
+                        else {
+                            document.getElementById("input").value = "";
+                        }
+                    } else {
+                        const output = document.createElement("li");
+                        output.id = "output";
+                        output.innerHTML = data.output;
+                        document.querySelector(".output").appendChild(output);
+
+                        document.getElementById("input").value = "";
+
+                        output.scrollIntoView();
+                    }
+                });
+        }
+
+        document.getElementById("input").addEventListener("keyup", async function (event) {
+            if (event.keyCode === 13) {
+                if (document.getElementById("input").value !== "") {
+                    if (hasJavascript) {
+                        hasJavascript.remove();
+                    }
+                    else {
+                       await processCommand();
+
+                    }
+                }
+                else {
+                    window.location.href = "/?error=Please enter a command.";
+                }
+            }
+        });
+        document.addEventListener("DOMContentLoaded", function () {
+            document.getElementById("input").focus();
+            document.getElementById("start").innerHTML = `
+            <p>Welcome to Hylia Terminal.</p>
+            <p>This is my portfolio website, but in a terminal.</p>
+            <p>We are at <%= version %> version.</p>
+            <p>We are protected by the <strong><a href="https://opensource.org/license/<%= license.toLowerCase() %>"><%= license %></a></strong> license.</p>
+            <img src="https://img.shields.io/github/followers/0xhylia?color=red&label=Followers&logo=github&logoColor=pink&style=flat-square" alt="GitHub followers" title="GitHub followers" />
+
+            <img src="https://img.shields.io/github/stars/0xhylia/0xhylia.codes?color=red&label=Github%20Stars&logo=github&logoColor=pink&style=flat-square" alt="GitHub stars" title="GitHub stars" />
+            `;
+        });
+    </script>
+    <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+
+</html>
