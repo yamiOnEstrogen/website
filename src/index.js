@@ -80,7 +80,7 @@ app.get("/redirect", (req, res) => {
   }
 });
 
-app.get("/conact", (req, res) => {
+app.get("/contact", (req, res) => {
   res.redirect("/#contact-info")
 });
 
