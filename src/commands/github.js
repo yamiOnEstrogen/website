@@ -12,7 +12,7 @@ module.exports = {
         
         const repo = await octokit.request('GET /repos/{owner}/{repo}', {
             owner: '0xhylia',
-            repo: 'zenithlive.lol'
+            repo: 'hylia.dev'
         }).then((response) => {
             return response.data;
         }).catch((error) => {
