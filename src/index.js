@@ -80,12 +80,15 @@ app.get("/redirect", (req, res) => {
   }
 });
 
+app.get("/conact", (req, res) => {
+  res.redirect("/#contact-info")
+});
+
 app.get("/discord", (req, res) => {
   res.redirect("/redirect?url=https://discord.gg/hCqQDuUY3r8&title=Join%20the%20Discord%20Server");
 });
 
 app.post("/contact", async (req, res) => {
-  console.log(req.body);
 
   const { name, email, message } = req.body;
 
