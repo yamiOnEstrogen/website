@@ -12,45 +12,31 @@ dotenv.config();
 const Github = require("./utils/github");
 const github = new Github();
 const os = require("os");
-const { owner, webApp } = require("./config.js");
-const Project = require("./services/project");
-const project = new Project();
-const Status = require("./services/status");
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, "public")));
+app.use(express.static(path.join(__dirname, "public/assets")));
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.use("/api", require("./services/api.js"));
+
+app.use((req, res, next) => {
+  // Check if the request is asking for the favicon
+  if (req.url == "/favicon.ico" || req.url == "/favicon") {
+      res.redirect("https://www.goddessanime.com/api/user/547923574833545226/avatar");
+  }
+  else {
+      next();
+  }
+});
 
 
 app.get("/", async (req, res) => {
-    console.log(webApp.theme)
     res.render("index", {
-        owner: owner,
         host: req.headers.host,
         github: await github.getPublicRepos(),
         pinned: await github.getPinnedRepos(),
-        projects: await project.getProjects(),
-        theme: webApp.theme,
     });
-});
-
-
-app.get("/website-themes", async (req, res) => {
-  res.redirect("https://github.com/zenithvt/zenithlive.lol/wiki/Website-Themes#adding-colors-to-your-website-theme");
-});
-
-app.get("/status", async (req, res) => {
-  const statusCodes = await Status.getStatusCodes();
-  
-
-  if (process.env.NODE_ENV === "development") console.log(statusCodes);
-
-  res.render("status", {
-    statusCodes: statusCodes,
-  });
 });
 
 app.get("/error", (req, res) => {
@@ -94,8 +80,8 @@ app.get("/redirect", (req, res) => {
   }
 });
 
-app.get("/invite", (req, res) => {
-  res.redirect("/redirect?url=https://discord.gg/RyzuKecPX8&title=Join%20the%20Discord%20Server");
+app.get("/discord", (req, res) => {
+  res.redirect("/redirect?url=https://discord.gg/hCqQDuUY3r8&title=Join%20the%20Discord%20Server");
 })
 
 app.listen(process.env.PORT || 3000, () => {
@@ -118,15 +104,4 @@ app.listen(process.env.PORT || 3000, () => {
   logger.log(`To View on your Machine go to: http://localhost:${process.env.PORT || 3000}`, "websocket");
   logger.log(`To View on your Network go to: http://${addresses[0]}:${process.env.PORT || 3000}`, "websocket");
 
-
-  setInterval(async () => {
-    Status.updateStatusCodes();
-    logger.log("Status codes have been updated", "status");
-  } , 300000);
-
- 
-
-
 });
-
-

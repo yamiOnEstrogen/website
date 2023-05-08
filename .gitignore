@@ -107,9 +107,4 @@ dist
 # Random Files
 .env
 package-lock.json
-<<<<<<< HEAD
-g.txt
-.github
-=======
-css.whynot
->>>>>>> d2b5f6c4d0a83c227363068ea01be9bf681db297
+unused.txt

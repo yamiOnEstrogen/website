@@ -19,7 +19,7 @@ class github {
 
     async getPublicRepos() {
         const { data } = await this.octokit.request("GET /users/{owner}/repos", {
-            owner: "zenithvt",
+            owner: "0xhylia",
         });
 
         return data;
@@ -34,7 +34,7 @@ class github {
         let list = [];
 
         // Get the repos that have the "pinned" topic but only for the ones that the user owns
-        const { data } = await this.octokit.request("GET /search/repositories", { q: "topic:pinned+user:zenithvt" });
+        const { data } = await this.octokit.request("GET /search/repositories", { q: "topic:pinned+user:0xhylia" });
 
         // Loop through the repos and add them to the list
         data.items.forEach((repo) => {

@@ -1,313 +1,559 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html class="no-js" lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zenith - Home</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
-    rel="stylesheet" />
+  <!-- Page Title Here -->
+  <title>Home | Hylia</title>
 
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.4/font/bootstrap-icons.css">
+  <!-- Meta -->
+  <!-- Page Description Here -->
+  <meta name="description" content="Just my personal website, made with love.">
 
-  <link rel="stylesheet"
-    href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css" />
-  <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="./assets/css/owl.carousel.min.css" />
-  <link rel="stylesheet" href="./assets/css/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="./assets/css/animate.min.css" />
-  <link rel="stylesheet" href="./assets/css/smooth-scrollbar.css" />
-  <link rel="stylesheet" href="./assets/css/lightbox.min.css" />
-  <link rel="stylesheet" href="./assets/css/themes/<%= theme || 'pink' %>.css" />
-  <link rel="stylesheet" href="./assets/css/responsive.css" />
-  
-  <meta name="description" content="An 18-year-old developer with a passion for technology and innovation.">
-  <meta name="title" content="Zenith - Home">
-  <meta name="keywords" content="Shoob, Unfatal, Procs, Anime, Cards, Game Zenith">
-  <meta name="author" content="zenith">
-     <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Zenith - Home">
-  <meta property="og:title" content="An 18-year-old developer with a passion for technology and innovation.">
-  <meta property="og:description" content="Hi, my name is Zenith and I'm an 18-year-old developer. I've been coding for three years now and it's been an incredible journey...">
-  <meta property="og:image" content="./assets/img/zenith.jpg">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:site" content="Zenith - Home">
-  <meta name="twitter:creator" content="Zenith - Home">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+  <!-- Disable screen scaling-->
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, user-scalable=0">
 
-  <style>
-    button[disabled] {
-            cursor: not-allowed;
-            opacity: 0.5;
-        }
-  </style>
+  <!-- Twitter Meta -->
+  <meta name="twitter:site" content="@vthylia">
+  <meta name="twitter:creator" content="@vthylia">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Welcome to the official website of Hylia">
+  <meta name="twitter:description" content="Just my personal website, made with love.">
+  <meta name="twitter:image" content="/img/backgroundAsset.jpg">
+
+  <!-- Facebook Meta -->
+  <meta property="og:url" content="https://hylia.dev">
+  <meta property="og:title" content="Welcome to the official website of Hylia">
+  <meta property="og:description" content="Just my personal website, made with love.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/img/backgroundAsset.jpg">
+  <meta property="og:image:secure_url" content="/img/backgroundAsset.jpg">
+  <meta property="og:image:type" content="image/jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- Web fonts and Web Icons -->
+  <link rel="stylesheet" href="./fonts/opensans/stylesheet.css">
+  <link rel="stylesheet" href="./fonts/montserrat/stylesheet.css">
+  <link rel="stylesheet" href="./fonts/roboto/stylesheet.css">
+  <link rel="stylesheet" href="./fonts/playfair/stylesheet.css">
+  <link rel="stylesheet" href="./fonts/ionicons.min.css">
+  <link rel="stylesheet" href="./fonts/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+
+  <!-- Vendor CSS style -->
+  <link rel="stylesheet" href="./css/pageloader.css">
+
+  <!-- Uncomment below to load individualy vendor CSS -->
+  <link rel="stylesheet" href="./css/bootstrap.min.css">
+  <link rel="stylesheet" href="./js/vendor/swiper.min.css">
+  <link rel="stylesheet" href="./js/vendor/jquery.fullpage.min.css">
+  <link rel="stylesheet" href="./js/vegas/vegas.min.css">
+
+  <!-- Main CSS files -->
+  <link rel="stylesheet" href="./css/main.css">
+
+  <!-- add alt layout here -->
+  <link rel="stylesheet" href="./css/style-color2.css">
+
+  <script src="./js/vendor/modernizr-2.7.1.min.js"></script>
 </head>
 
-<body class="home2-page">
-  <video class="body-overlay" muted autoplay loop>
-    <source src="./assets/img/1654499284069.mp4" type="video/mp4" />
-  </video>
+<body id="menu" class="body-page">
+  <!--[if lt IE 8]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
 
+  <!-- Page Loader : just comment these lines to remove it -->
+  <div class="page-loader" id="page-loader">
+    <div>
+      <div class="icon ion-spin"></div>
+      <p>loading</p>
+    </div>
+  </div>
 
-  <div class="left-sidebar">
-    <div class="sidebar-header d-flex align-items-center justify-content-between">
+  <!-- BEGIN OF site header Menu -->
+  <header class="page-header navbar page-header-alpha scrolled-white menu-left logo-center topmenu-right">
+
+    <!-- Begin of menu icon toggler -->
+    <button class="navbar-toggler site-menu-icon" id="navMenuIcon">
+      <!-- Available class : menu-icon-dot / menu-icon-thick /menu-icon-random -->
+      <span class="menu-icon menu-icon-random">
+        <span class="bars">
+          <span class="bar1"></span>
+          <span class="bar2"></span>
+          <span class="bar3"></span>
+        </span>
+      </span>
+    </button>
+    <!-- End of menu icon toggler -->
+
+    <!-- Begin of logo/brand -->
+    <a class="navbar-brand" href="https://www.goddessanime.com/api/user/547923574833545226/avatar">
+      <span class="logo">
+        <img class="light-logo" src="https://www.goddessanime.com/api/user/547923574833545226/avatar" alt="Logo" style="width: 150px; height: 150px; border-radius: 50%;">
+      </span>
+    </a>
+    <!-- End of logo/brand -->
+
+    <!-- begin of menu wrapper -->
+    <div class="all-menu-wrapper" id="navbarMenu">
+      <!-- Begin of top menu -->
+      <nav class="navbar-topmenu d-none d-lg-flex">
+        <ul class="navbar-nav navbar-nav-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/discord">Discord</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of top menu -->
+
+      <!-- Begin of hamburger mainmenu menu -->
+      <nav class="navbar-mainmenu">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="/">Home
+              <span class="sr-only">(current)</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/discord">Discord</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://terminal.hylia.dev/">Terminal</a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of hamburger mainmenu menu -->
+
+      <!-- Begin of sidebar nav menu params class: text-only / icon-only-->
+      <nav class="navbar-sidebar icon-only">
+        <ul class="navbar-nav" id="qmenu">
+          <li class="nav-item" data-menuanchor="home">
+            <a href="#home">
+              <i class="bi bi-house"></i>
+              <span class="txt">Home</span>
+            </a>
+          </li>
+          <li class="nav-item" data-menuanchor="projects">
+            <a href="#projects">
+              <i class="bi bi-kanban"></i>
+              <span class="txt">Projects</span>
+            </a>
+          </li>
+          <li class="nav-item" data-menuanchor="terminal">
+            <a href="https://terminal.hylia.dev/">
+              <i class="bi bi-terminal-fill"></i>
+              <span class="txt">Terminal</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <!-- End of sidebar nav menu -->
 
     </div>
-    <img class="me" src="./assets/img/zenith.jpg" alt="Me" />
-    <h2 class="email">
-      <a href="mailto:<%= owner.email %>">
-        <%= owner.email.split('@')[0] %>
-      </a>
-    </h2>
-    <h2 class="address"><%= owner.location %></h2>
-    <p class="copyright">&copy;
-      <script>document.write(new Date().getFullYear());</script> <%= host %>
-    </p>
-    <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
-      <% owner.socials.forEach(social => { %>
-        <li>
-          <a href="<%= social.link %>"><i class="bi bi-<%= social.name.toLowerCase() %>"></i></a>
-        </li> 
-      <% }) %>
-    </ul>
-    <% if (owner.isLooking4Work) { %>
-      <button class="theme-btn" onclick="popup('mailto:<%= owner.email %>')">
-        <i class="las la-envelope"></i> Hire Me!
-      </button>
-      <% } else { %>
-        <button class="theme-btn" disabled>
-          <i class="las la-envelope"></i> Not Available
-        </button>
-    <% } %>
+    <!-- end of menu wrapper -->
+
+  </header>
+  <!-- END OF site header Menu-->
+
+  <!-- BEGIN OF page cover -->
+  <div class="page-cover">
+    <!-- Cover Background -->
+    <div class="cover-bg bg-img" data-image-src="https://wallpapercave.com/wp/wp2760959.gif"></div>
+
+    <!-- Transluscent mask as filter -->
+    <div class="cover-bg-mask bg-color" data-bgcolor="rgba(2, 3, 10, 0.7)"></div>
+
   </div>
-  <main class="kio-main">
-    <div id="smooth-wrapper">
-      <div id="smooth-content">
-        <div class="left-sidebar">
-          <div class="sidebar-header d-flex align-items-center justify-content-between">
+  <!--END OF page cover -->
 
-          </div>
-          <img class="me" src="./assets/img/zenith.jpg" alt="Me" />
-          <h2 class="email">
-            <a href="mailto:<%= owner.email %>">
-              <%= owner.email.split('@')[0] %>
-            </a>
-          </h2>
-          <h2 class="address"><%= owner.location %></h2>
-          <p class="copyright">&copy;
-            <script>document.write(new Date().getFullYear());</script> <%= host %>
-          </p>
-          <ul class="social-profile d-flex align-items-center flex-wrap justify-content-center">
-            <% owner.socials.forEach(social => { %>
-              <li>
-                <a href="<%= social.link %>"><i class="bi bi-<%= social.name.toLowerCase() %>"></i></a>
-              </li> 
-            <% }) %>
-          </ul>
-          <% if (owner.isLooking4Work) { %>
-            <button class="theme-btn" onclick="popup('mailto:<%= owner.email %>')">
-              <i class="las la-envelope"></i> Hire Me!
-            </button>
-            <% } else { %>
-              <button class="theme-btn" disabled>
-                <i class="las la-envelope"></i> Not Available
-              </button>
-          <% } %>
-          
-        </div>
-        <section class="hero-section page-section scroll-to-page" id="home">
-          <div class="custom-container">
-            <div class="hero-content content-width">
-              <div class="section-header">
-                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                  <i class="las la-home"></i> Introduce
-                </h4>
-                <h1 class="scroll-animation" data-animation="fade_from_bottom">
-                  <span>
-                    <%= owner.name %>
-                  </span>
+  <!-- BEGIN OF page main content -->
+  <main class="page-main page-fullpage main-anim scroll-slideshow" id="mainpage">
+
+    <!-- Begin of home section -->
+    <div class="section section-home fullscreen-md fp-auto-height-responsive main-home section-centered"
+    data-section="home">
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+        <!-- content -->
+        <div class="section-content anim">
+          <div class="row justify-content-center c-wrapper">
+            <div class="col-12 col-lg-12 text-center">
+              <!-- title and description -->
+              <div class="title-desc mb-0">
+                <h1 class="display-4 display-title home-title anim-blur anim-2 mt-4 mb-4">Hylia
+                  <span class="lite"></span>
                 </h1>
               </div>
-              <p class="scroll-animation" data-animation="fade_from_bottom">
-                <%= owner.tag %>
-              </p>
-              <a href="#portfolio" class="go-to-project-btn scroll-to scroll-animation" data-animation="rotate_up">
-                <img src="./assets/img/round-text.png" alt="" />
-                <i class="las la-arrow-down"></i>
-              </a>
-              <div class="facts d-flex">
-                <div class="left scroll-animation" data-animation="fade_from_left">
-                  <h1>3+</h1>
-                  <p>Years of <br />Experience</p>
-                </div>
-                <div class="right scroll-animation" data-animation="fade_from_right">
-                  <h1>
-                   <%= github.length %>
-                  </h1>
-                  <p>projects completed</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="about-area page-section scroll-to-page" id="about">
-          <div class="custom-container">
-            <div class="about-content content-width">
-              <div class="section-header">
-                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                  <i class="lar la-user"></i> About
-                </h4>
-                <h1 class="scroll-animation" data-animation="fade_from_bottom">
-                  Every great journey begins with<br />
-                  an even <span>better story</span>
-                </h1>
-              </div>
-              <p class="scroll-animation" data-animation="fade_from_bottom">
-                <%- owner.story %>
-              </p>
-            </div>
-          </div>
-        </section>
-        <section class="resume-area page-section scroll-to-page" id="resume">
-          <div class="custom-container">
-            <div class="resume-content content-width">
-              <div class="section-header">
-                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                  <i class="las la-briefcase"></i> Resume
-                </h4>
-                <h1 class="scroll-animation" data-animation="fade_from_bottom">
-                  Education & <span>Experience</span>
-                </h1>
-              </div>
-              <div class="resume-timeline">
-                <div class="item scroll-animation" data-animation="fade_from_right">
-                  <% owner.education.forEach(edu => { %>
-                    
-                    <h2>
-                      <%= edu.school %>
-                    </h2>
-                    <p>
-                      <%= edu.degree %>
-                    </p>
-                  <% }) %>
 
-                  <% owner.experience.forEach(exp => { %>
-                    <h2>
-                      <%= exp.company %>
-                    </h2>
-                    <p>
-                      <%= exp.position %>
-                    </p>
-                  <% }) %>
-                  
-
-                </div>
-
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="services-area page-section scroll-to-page" id="services">
-          <div class="custom-container">
-            <div class="services-content content-width">
-              <div class="section-header">
-                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                  <i class="las la-stream"></i> Services
-                </h4>
-                <h1 class="scroll-animation" data-animation="fade_from_bottom">
-                  My <span>Specializations</span>
-                </h1>
-              </div>
-              <div class="services-items">
-                  <% owner.skills.forEach(skill => { %>
-                    <div class="service-item scroll-animation" data-animation="fade_from_bottom">
-                      <i class="bi bi-<%= skill.icon %>" style="width: 16px; height: 16px"></i>
-                      <h2><%= skill.title %></h2>
-                      <p>
-                        <%= skill.description %>
-                      </p>
-    
+              <!-- Begin of Home Action button -->
+              <div class="btns-action anim-4">
+                <div class="btns-divided">
+                  <div class="row no-gutters btns-divided">
+                    <div class="col-12 col-sm-6 side left-side">
+                      <a class="btn btn-divided btn-left" href="#about">
+                        <span class="b-title">About me</span>
+                        <span class="b-subtitle">Who am I?</span>
+                      </a>
                     </div>
-                  <% }) %>
-            </div>
-          </div>
-        </section>
-        <section class="portfolio-area page-section scroll-to-page" id="portfolio">
-          <div class="custom-container">
-            <div class="portfolio-content content-width">
-              <div class="section-header">
-                <h4 class="subtitle scroll-animation" data-animation="fade_from_bottom">
-                  <i class="las la-grip-vertical"></i> portfolio
-                </h4>
-                <h1 class="scroll-animation" data-animation="fade_from_bottom">
-                  Featured <span>Projects</span>
-                </h1>
-              </div>
-              <div class="row portfolio-items">
-
-                <% projects.forEach(project=> { %>
-                  <div class="col-md-12 scroll-animation" data-animation="fade_from_bottom">
-                    <div class="portfolio-item portfolio-full">
-                      <div class="portfolio-item-inner">
-                        <a href="<%= project.url %>" data-lightbox="example-1">
-                          <img src="<%= project.image %>" alt="Portfolio" />
-                        </a>
-                        <ul class="portfolio-categories">
-                          <% project.tags.forEach(tag=> { %>
-                            <li>
-                              <span>
-                                <%= tag %>
-                              </span>
-                            </li>
-                            <% }) %>
-
-
-                        </ul>
-                      </div>
-                      <h2>
-                        <a href="<%= project.url %>">
-                          <%= project.title %>
-                        </a>
-                      </h2>
+                    <div class="col-12 col-sm-6 side right-side">
+                      <a class="btn btn-divided btn-right" href="#projects">
+                        <span class="b-title">Projects</span>
+                        <span class="b-subtitle">What I do?</span>
+                      </a>
                     </div>
                   </div>
-                  <% }) %>
-
-
-
+                </div>
               </div>
+              <!-- End of Home Action button -->
             </div>
           </div>
-        </section>
+        </div>
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Learn more about me</span>
+          </a>
+        </footer>
       </div>
+      <!-- End of section wrapper -->
     </div>
+    <!-- End of home section -->
+
+    <!-- Begin of title section -->
+    <div class="section section-description section-title-layout fp-auto-height-responsive"
+    data-section="about">
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+        <!-- title -->
+        <div class="section-title decor decor-anim text-center">
+          <h5 class="title">About me</h5>
+        </div>
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of title section -->
+    <!-- Begin of description section -->
+    <div class="section section-description fp-auto-height-responsive fp-auto-height-responsive section-about-1"
+    data-section="about-us">
+
+      <div class="section-cover-full bg-img bg-pos-right cover-anim" data-image-src="./img/sections/bg-2.png"></div>
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+
+        <!-- content -->
+        <div class="section-content anim">
+          <div class="row">
+            <div class="col-12 col-md-6 text-left">
+              <!-- title and description -->
+              <div class="title-desc">
+                <h2 class="display-3 display-title anim-2 decor">Programming</h2>
+                <p class="anim-3">As a programmer with a passion for coding, I have dedicated my career to mastering the art of programming. With extensive experience in multiple programming languages and frameworks, I have a deep understanding of the intricacies involved in writing efficient and effective code. In addition to my professional experience, I am currently furthering my education through the Penn Foster Academy, where I am studying advanced programming techniques and honing my skills in emerging technologies.
+
+                  My interest in programming is not just limited to the technical aspects of coding. I am constantly seeking out new challenges and opportunities to push the boundaries of what is possible with code. Whether it's building complex software applications or designing innovative solutions to business problems, I am always looking for ways to leverage my programming skills to make a positive impact on the world.
+                  
+                  Through my combination of hands-on experience and ongoing education, I am well-equipped to take on any programming challenge that comes my way. Whether it's developing new software solutions, optimizing existing code, or troubleshooting complex technical issues, I have the skills and expertise needed to get the job done.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Mission</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of description section -->
+    <!-- Begin of description section -->
+    <div class="section section-description fp-auto-height-responsive fp-auto-height-responsive section-about-2"
+    data-section="mission">
+
+      <div class="section-cover-full bg-img bg-pos-left cover-anim" data-image-src="./img/sections/bg-1.png"></div>
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+
+        <!-- content -->
+        <div class="section-content anim">
+          <div class="row justify-content-md-end">
+            <div class="col-12 col-md-6 text-left pl-lg-0">
+              <!-- title and description -->
+              <div class="title-desc">
+                <h2 class="display-3 display-title anim-2 decor">Analytics</h2>
+                <p class="anim-3">As a professional in the digital marketing industry, I have honed my skills in the fields of analytics and web SEO. With a deep understanding of data analysis, I am able to turn raw information into actionable insights that help clients make informed decisions about their online presence. Additionally, I am well-versed in the latest SEO strategies and techniques, which allows me to optimize websites and improve their visibility in search engines. By combining my expertise in analytics and web SEO, I am able to help businesses achieve their digital marketing goals and drive measurable results.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of description section -->
+
+
+    <!-- Begin of title section -->
+    <div class="section section-description section-title-layout fp-auto-height-responsive"
+    data-section="services">
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+        <!-- title -->
+        <div class="section-title decor decor-anim text-center">
+          <h5 class="title">Services</h5>
+        </div>
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of title section -->
+    <!-- Begin of list services/features section -->
+    <div class="section section-list-feature fp-auto-height-responsive fp-auto-height-responsive"
+    data-section="services-list">
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+        <!-- content -->
+        <div class="section-content anim">
+
+          <!-- service list -->
+          <div class="list-items row">
+            <div class="col-12 col-lg-4">
+              <a class="item media media-service" href="#">
+                <div class="media-body">
+                  <h4 class="">Coding</h4>
+                  <p>I do Discord bots, websites, and more!</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-lg-4">
+              <a class="item media media-service" href="./#">
+                <div class="media-body">
+                  <h4 class="">Analytics</h4>
+                  <p>I do analytics for websites and more!</p>
+                </div>
+              </a>
+            </div>
+            <div class="col-12 col-lg-4">
+              <a class="item media media-service" href="./#">
+                <div class="media-body">
+                  <h4 class="">Moderation</h4>
+                  <p>I currently moderate over <b>5</b> servers!</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <!-- end of service list -->
+        </div>
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of list services/features section -->
+
+    <!-- Begin of title section -->
+    <div class="section section-description section-title-layout fp-auto-height-responsive"
+    data-section="projects">
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper with-margin">
+        <!-- title -->
+        <div class="section-title decor decor-anim text-center">
+          <h5 class="title">Projects</h5>
+        </div>
+
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of title section -->
+    <!-- Begin of projects/two-column section -->
+    <div class="section section-twoside fp-auto-height-responsive fp-auto-height-responsive content-white"
+    data-section="projects-page-1">
+      <!-- Begin of a side : left-->
+      <div class="section-side side-left side-anim">
+        <div class="section-cover mask-black bg-img" data-image-src="./img/projects/Screen+Shot+2021-03-09+at+10.14.39+AM.png">
+        </div>
+        <div class="section-wrapper">
+          <!-- content -->
+          <div class="section-content anim">
+            <div class="row">
+              <div class="col-12 text-left text-white">
+                <!-- title and description -->
+                <div class="title-desc">
+                  <h2 class="display-3 display-title anim-2 decor">File Organizer</h2>
+                  <p class="anim-3">TThis is a Python script that organizes files in a directory based on their file type.</p>
+                </div>
+
+                <!-- Action button -->
+                <div class="btns-action anim-4">
+                  <a class="btn btn-outline-white" href="https://github.com/0xhylia/file-organizer">
+                    <span class="text">View Project</span>
+                    <span class="icon">
+                      <i class="arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End of a side-->
+
+      <!-- Begin of a side : right-->
+      <div class="section-side side-right side-anim">
+        <div class="section-cover mask-black bg-img" data-image-src="https://external-preview.redd.it/IekkI4j1jacT3k9Nx4mICt96Z_qnGpuVD3jUPnnJhNY.jpg?auto=webp&amp;s=adbb5ede3b47b5bd2f29cf89003e204e710e12b2">
+        </div>
+        <div class="section-wrapper">
+          <!-- content -->
+          <div class="section-content anim">
+            <div class="row">
+              <div class="col-12 text-left text-white">
+                <!-- title and description -->
+                <div class="title-desc">
+                  <h2 class="display-3 display-title anim-2 decor">Goddess Anime</h2>
+                  <p class="anim-3">Goddess Anime Cards is a free-to-play anime trading card game. Collect cards and trade with other players.</p>
+                </div>
+
+                <!-- Action button -->
+                <div class="btns-action anim-4">
+                  <a class="btn btn-outline-white" href="https://goddessanime.com">
+                    <span class="text">View Project</span>
+                    <span class="icon">
+                      <i class="arrow-right"></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <!-- End of a side-->
+
+      <!-- Begin of section wrapper -->
+      <div class="section-wrapper">
+        <!-- Arrows scroll down/up -->
+        <footer class="section-footer scrolldown">
+          <a class="down">
+            <span class="icon"></span>
+            <span class="txt">Scroll</span>
+          </a>
+        </footer>
+      </div>
+      <!-- End of section wrapper -->
+    </div>
+    <!-- End of projects/two-column section -->
+
+
   </main>
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-  <script src="./assets/js/jquery.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/bootstrap.bundle.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/owl.carousel.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/gsap.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/ScrollTrigger.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/ScrollToPlugin.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/lightbox.min.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/main.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/ajax-form.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="./assets/js/color.js" type="6874a4ecb8a19d41d7cec226-text/javascript"></script>
-  <script src="/cdn-cgi/scripts/7d0fa10a/cloudflare-static/rocket-loader.min.js"
-    data-cf-settings="6874a4ecb8a19d41d7cec226-|49" defer=""></script>
-  <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vaafb692b2aea4879b33c060e79fe94621666317369993"
-    integrity="sha512-0ahDYl866UMhKuYcW078ScMalXqtFJggm7TmlUtp0UlD4eQk0Ixfnm5ykXKvGJNFjLMoortdseTfsRT8oCfgGA=="
-    data-cf-beacon='{"rayId":"7a06cfd54d9cec11","version":"2023.2.0","r":1,"token":"52ad871770524b3e8ca1e53094efe67a","si":100}'
-    crossorigin="anonymous"></script>
+  <!-- END OF page main content -->
 
-    <script src="/assets/js/wediwect.js">
+  <!-- BEGIN OF page footer -->
+  <footer id="site-footer" class="page-footer d-none d-lg-block">
 
-    </script>
+    <!-- Right content -->
+    <div class="footer-right">
+      <ul class="social">
+        <li>
+          <a href="https://www.github.com/0xhylia">
+            <i class="bi bi-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://twitter.com/vthylia">
+            <i class="bi bi-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.reddit.com/user/AethericNebula">
+            <i class="bi bi-reddit"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </footer>
+  <!-- END OF site footer -->
+
+  <!-- scripts -->
+  <!-- All Javascript plugins goes here -->
+  <script src="./js/vendor/jquery-1.12.4.min.js"></script>
+  <script src="./js/slick/slick.min.js"></script>
+
+  <!-- All vendor scripts -->
+  <script src="./js/vendor/scrolloverflow.min.js"></script>
+  <script src="./js/vendor/all.js"></script>
+  <script src="./js/particlejs/particles.min.js"></script>
+
+  <!-- Countdown script -->
+  <script src="./js/jquery.downCount.js"></script>
+
+  <!-- Form script -->
+  <script src="./js/form_script.js"></script>
+
+  <!-- Javascript main files -->
+  <script src="./js/main.js"></script>
+
+
 </body>
 
 </html>
