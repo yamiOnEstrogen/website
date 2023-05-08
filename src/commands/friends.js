@@ -1,5 +1,5 @@
 module.exports = {
-    name: 'friends =',
+    name: 'friends',
     description: `Shows some of my friends and people who I owe a lot to`,
     canBeExecuted: false,
     execute(message, args) {
