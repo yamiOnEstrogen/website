@@ -12,7 +12,7 @@ dotenv.config();
 const Github = require("./utils/github");
 const github = new Github();
 const os = require("os");
-
+const EmailService = require("./Services/mailer");
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -23,20 +23,20 @@ app.set("view engine", "ejs");
 app.use((req, res, next) => {
   // Check if the request is asking for the favicon
   if (req.url == "/favicon.ico" || req.url == "/favicon") {
-      res.redirect("https://www.goddessanime.com/api/user/547923574833545226/avatar");
+    res.redirect("https://www.goddessanime.com/api/user/547923574833545226/avatar");
   }
   else {
-      next();
+    next();
   }
 });
 
 
 app.get("/", async (req, res) => {
-    res.render("index", {
-        host: req.headers.host,
-        github: await github.getPublicRepos(),
-        pinned: await github.getPinnedRepos(),
-    });
+  res.render("index", {
+    host: req.headers.host,
+    github: await github.getPublicRepos(),
+    pinned: await github.getPinnedRepos(),
+  });
 });
 
 app.get("/error", (req, res) => {
@@ -82,12 +82,32 @@ app.get("/redirect", (req, res) => {
 
 app.get("/discord", (req, res) => {
   res.redirect("/redirect?url=https://discord.gg/hCqQDuUY3r8&title=Join%20the%20Discord%20Server");
-})
+});
 
-app.listen(process.env.PORT || 3000, () => {
-    console.clear();
+app.post("/contact", async (req, res) => {
+  console.log(req.body);
 
-    
+  const { name, email, message } = req.body;
+
+
+  try {
+    await EmailService.accpetContactRequest(name, email, message)
+
+    res.status(200).json({
+      message: "Email Sent"
+    });
+
+  } catch (err) {
+    res.status(500).json({
+      error: err
+    });
+  }
+});
+
+app.listen(process.env.PORT || 3000, async () => {
+  console.clear();
+
+
   const interfaces = os.networkInterfaces();
   const addresses = [];
   for (k in interfaces) {
