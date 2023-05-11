@@ -33,9 +33,7 @@ app.use((req, res, next) => {
 
 app.get("/", async (req, res) => {
   res.render("index", {
-    host: req.headers.host,
-    github: await github.getPublicRepos(),
-    pinned: await github.getPinnedRepos(),
+    host: req.headers.host
   });
 });
 
