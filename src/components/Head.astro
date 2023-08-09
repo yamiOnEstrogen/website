@@ -31,6 +31,21 @@ const image = await getImage({
 });
 
 const siteImg = getSiteURL(image.src as string, Astro.url).toString();
+
+const createCppStyleTitle = (title: string) => {
+    const titleParts = title.split("::");
+    if (titleParts.length > 1) {
+        var _ = titleParts.map((part) => part.trim()).join("::");
+        const spaceIndex = _.indexOf(" ");
+        if (spaceIndex > -1) {
+            _ = _.substring(0, spaceIndex) + "<" + _.substring(spaceIndex + 1) + ">";
+        }
+
+        return _;
+    } else {
+        return title;
+    }
+};
 ---
 
 <!-- Base meta tags -->
@@ -56,7 +71,7 @@ const siteImg = getSiteURL(image.src as string, Astro.url).toString();
     type="application/rss+xml"
     title="My Website RSS feed"
 />
-<title>{title}</title>
+<title>{createCppStyleTitle(title)}</title>
 
 <SEO
     image={siteImg}
