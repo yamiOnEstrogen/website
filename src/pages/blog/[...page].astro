@@ -28,7 +28,7 @@ const desc = "A collection of blog posts by me, about web development, design, a
                 <Card
                     title={data.title}
                     pubDate={data.pubDate}
-                    description={data.description}
+                    description={data.description.slice(0, 50)}
                     url={`/blog/${slug}`}
                     tags={data.tags}
                 />

@@ -43,7 +43,7 @@ const { page } = Astro.props;
                 <Card
                     title={data.title}
                     pubDate={data.pubDate}
-                    description={data.description}
+                    description={data.description.slice(0, 50)}
                     url={`/blog/${slug}`}
                     tags={data.tags}
                 />
