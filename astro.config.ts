@@ -4,14 +4,13 @@ import compress from "astro-compress";
 import prefetch from "@astrojs/prefetch";
 
 import { loadEnv } from "vite";
-const { SITE_URL, BASE_URL } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 // https://astro.build/config
 import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-    site: SITE_URL,
-    base: BASE_URL,
+    site: "https://hylia.dev",
+    base: "/",
     markdown: {
         shikiConfig: {
             theme: "github-dark",
