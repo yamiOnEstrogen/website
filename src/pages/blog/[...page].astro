@@ -16,7 +16,7 @@ export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
     return paginate(posts, { pageSize: 9 });
 }
 const { page } = Astro.props;
-const PageTitle = "Blog";
+const PageTitle = "Hylia :: Blog Posts";
 const desc = "A collection of blog posts by me, about web development, design, and other things I find interesting.";
 ---
 
