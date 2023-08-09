@@ -24,7 +24,7 @@ export interface Site {
     siteName: string;
     title: string;
     description: string;
-    image: string;
+    image: ImageMetadata;
     twitterCreator: string;
     author: Author;
 }
@@ -36,7 +36,7 @@ export const site: Site = {
     title: "Hylia :: Personal Site",
     description:
         "Hi, my name is Stella, I'm building discord bots and open source solutions at hyperstar. I am also a TransFemale, She/Her.",
-    image: "https://avatars.githubusercontent.com/u/93791569?v=4",
+    image: image,
     twitterCreator: "@HyperHylia",
     author: {
         os: "ArchLinux",
