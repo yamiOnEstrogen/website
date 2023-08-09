@@ -10,6 +10,23 @@ import CmdHeader from "../components/CmdHeader.astro";
 import { site } from "../data/site";
 
 const { className = "container", ...head } = Astro.props;
+
+const createCppStyleTitle = (title: string) => {
+    const titleParts = title.split("::");
+    if (titleParts.length > 1) {
+        var _ = titleParts.map((part) => part.trim()).join("::");
+        // If there is a space like this: Hylia::Personal Site
+        // Then make it like this: Hylia::Personal<Site>
+        const spaceIndex = _.indexOf(" ");
+        if (spaceIndex > -1) {
+            _ = _.substring(0, spaceIndex) + "<" + _.substring(spaceIndex + 1) + ">";
+        }
+
+        return _;
+    } else {
+        return title;
+    }
+};
 ---
 
 <!DOCTYPE html>
@@ -19,7 +36,7 @@ const { className = "container", ...head } = Astro.props;
     </head>
     <body>
         <slot name="header">
-            <CmdHeader title={head.title} />
+            <CmdHeader title={createCppStyleTitle(head.title)} />
         </slot>
         <Navigation />
         <main class={className} id="main">

@@ -1,10 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getRandomQuote } from "../data/randomQuotes";
 ---
 
 <BaseLayout title={"Hylia :: Personal Site"} description={"Hi, my name is Stella, I'm building discord bots and open source solutions at hyperstar. I am also a TransFemale, She/Her."}>
     <Fragment slot="main">
-        <h1>Hello world</h1>
+        <h1>Hi, I'm Stella.</h1>
         <article><p>A cute Happy Fox Girl and a skilled Software/AI developer.</p></article>
+    </br>
+        <article><p>{getRandomQuote()}</p></article>
     </Fragment>
 </BaseLayout>
