@@ -1,0 +1,12 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import "../styles/components/AuthorCard.scss";
+import { site } from "../data/site";
+import AuthorCard from "../components/AuthorCard.astro";
+const a = site.author;
+const description = `About ${a.firstname} ${a.lastname}`;
+---
+
+<BaseLayout title="About" description={description}>
+    <AuthorCard />
+</BaseLayout>

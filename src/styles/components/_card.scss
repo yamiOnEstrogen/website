@@ -1,0 +1,37 @@
+.card {
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    padding: 0.3rem;
+    max-width: 35ch;
+    padding: 1.4rem;
+    display: grid;
+    grid-template-areas:
+        "title date"
+        "content content"
+        "tags tags";
+    &-link {
+        position: absolute;
+        inset: 0;
+    }
+    &-title {
+        grid-area: title;
+        color: hsl(var(--accent));
+        font-family: "HackBold";
+    }
+    &-pubDate {
+        grid-area: date;
+        color: hsl(var(--neutral));
+        font-size: 0.8rem;
+        justify-self: end;
+    }
+
+    &-content {
+        grid-area: content;
+        padding-block: 1em;
+        text-align: center;
+    }
+    &-tags {
+        grid-area: tags;
+    }
+}

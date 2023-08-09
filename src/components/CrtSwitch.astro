@@ -1,0 +1,70 @@
+---
+import { Icon } from "astro-icon";
+---
+
+<crt-switcher class="switcher-wrapper">
+    <label for="crtSwicth">
+        <Icon name="computer" size={18} aria-hidden="true" />
+        <input
+            title="Toggle CRT effect"
+            type="checkbox"
+            name="crtSwitch"
+            id="crtSwicth"
+        />
+    </label>
+</crt-switcher>
+
+<script>
+    class CrtSwitcher extends HTMLElement {
+        root: DOMTokenList;
+        svgPath: SVGPathElement;
+        input: HTMLInputElement;
+        fill: string;
+        constructor() {
+            super();
+            this.root = document.documentElement.classList;
+            this.input = this.querySelector("input") as HTMLInputElement;
+            this.svgPath = this.querySelector(
+                "svg > path.crt-screen"
+            ) as SVGPathElement;
+            this.fill = "none";
+        }
+
+        connectedCallback() {
+            this.getSessionStorage();
+            this.fill === "currentColor"
+                ? (this.input.checked = true)
+                : (this.input.checked = false);
+            this.input.addEventListener("change", (e) => this.handleToggle(e));
+        }
+
+        getSessionStorage(): void {
+            if (sessionStorage.getItem("fill")) {
+                this.fill = sessionStorage.getItem("fill") as string;
+            }
+            this.changeEffect();
+        }
+
+        private handleToggle(e: Event) {
+            const target = e.target as HTMLInputElement;
+            if (target.checked) {
+                this.fill = "currentColor";
+            } else {
+                this.fill = "none";
+            }
+            this.changeEffect();
+        }
+
+        private changeEffect() {
+            if (this.fill === "none") {
+                this.root.remove("crt");
+            } else {
+                this.root.add("crt");
+            }
+            sessionStorage.setItem("fill", this.fill);
+            this.svgPath.setAttribute("fill", this.fill);
+        }
+    }
+
+    customElements.define("crt-switcher", CrtSwitcher);
+</script>

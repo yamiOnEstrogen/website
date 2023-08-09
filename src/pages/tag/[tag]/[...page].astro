@@ -1,0 +1,85 @@
+---
+import Card from "../../../components/Card.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import type { Page, GetStaticPathsOptions } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import { getSiteURL } from "../../../utils/getSiteUrl";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const allPosts = await getCollection("blog");
+    const uniqueTag = [...new Set(allPosts.map((p) => p.data.tags).flat())];
+    return uniqueTag.map((tag) => {
+        const filtered = allPosts.filter(
+            (p) => p.data.tags.includes(tag) && !p.data.draft
+        );
+        return paginate(filtered, {
+            params: { tag },
+            pageSize: 9,
+        });
+    });
+}
+
+interface page extends Omit<Page, "data"> {
+    data: CollectionEntry<"blog">[];
+}
+
+interface Props {
+    page: page;
+}
+
+const { tag } = Astro.params;
+const { page } = Astro.props;
+---
+
+<BaseLayout
+    title={`tag/${tag}`}
+    description={`Collection of posts tagged with ${tag}`}
+    className={"grid"}
+    canonicalURL={`tag/${tag}`}
+>
+    <Fragment slot="main">
+        {
+            page.data.map(({ slug, data }) => (
+                <Card
+                    title={data.title}
+                    pubDate={data.pubDate}
+                    description={data.description}
+                    url={`/blog/${slug}`}
+                    tags={data.tags}
+                />
+            ))
+        }
+        {
+            page.lastPage > 1 && (
+                <nav aria-label="pagination" class="nav-paginate">
+                    <ul>
+                        {page.url.prev ? (
+                            <li class="btn">
+                                <a
+                                    href={getSiteURL(
+                                        page.url.prev,
+                                        Astro.site
+                                    ).toString()}
+                                >
+                                    Previous
+                                </a>
+                            </li>
+                        ) : null}
+                        {page.url.next ? (
+                            <li class="btn">
+                                <a
+                                    href={getSiteURL(
+                                        page.url.next,
+                                        Astro.site
+                                    ).toString()}
+                                >
+                                    Next
+                                </a>
+                            </li>
+                        ) : null}
+                    </ul>
+                </nav>
+            )
+        }
+    </Fragment>
+</BaseLayout>

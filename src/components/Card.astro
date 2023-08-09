@@ -1,0 +1,47 @@
+---
+import "../styles/components/_card.scss";
+import { site } from "../data/site";
+import type { CollectionEntry } from "astro:content";
+import { getSiteURL } from "../utils/getSiteUrl";
+
+export type Props = Omit<CollectionEntry<"blog">["data"], "draft"> & {
+    url: string;
+};
+const { title, url, description, tags, pubDate } = Astro.props;
+---
+
+<article class="card term">
+    <a class="card-title" href={getSiteURL(url, Astro.site).toString()}
+        ><h3>{title}</h3>
+        <span aria-hidden="true" class="card-link"></span>
+    </a>
+    <p class="card-pubDate">
+        <time datetime={pubDate.toString()}
+            >{
+                new Date(pubDate).toLocaleString(site.lang, {
+                    dateStyle: "medium",
+                })
+            }</time
+        >
+    </p>
+    <p class="card-content">
+        {description}...
+    </p>
+    <ul class="flex-wrap card-tags">
+        {
+            tags.map((t) => (
+                <li class="tag-link">
+                    <a
+                        href={`${getSiteURL(
+                            `tag/${t}`,
+                            Astro.site
+                        ).toString()}`}
+                    >
+                        <span aria-hidden="true"># </span>
+                        {t}
+                    </a>
+                </li>
+            ))
+        }
+    </ul>
+</article>

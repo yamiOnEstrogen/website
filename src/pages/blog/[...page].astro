@@ -1,0 +1,70 @@
+---
+type Props = {
+    page: Page<CollectionEntry<"blog">>;
+};
+
+import type { Page } from "astro";
+import Card from "../../components/Card.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import type { GetStaticPathsOptions } from "astro";
+import { CollectionEntry, getCollection } from "astro:content";
+import { getSiteURL } from "../../utils/getSiteUrl";
+
+export async function getStaticPaths({ paginate }: GetStaticPathsOptions) {
+    const allPosts = await getCollection("blog");
+    const posts = allPosts.filter((post) => !post.data.draft);
+    return paginate(posts, { pageSize: 9 });
+}
+const { page } = Astro.props;
+const PageTitle = "Blog";
+const desc = "A collection of blog posts by me, about web development, design, and other things I find interesting.";
+---
+
+<BaseLayout title={PageTitle} description={desc} canonicalURL={"blog"}>
+    <section slot="main" class="grid">
+        <h2 class="sr-only">List of blog posts</h2>
+        {
+            page.data.map(({ data, slug }) => (
+                <Card
+                    title={data.title}
+                    pubDate={data.pubDate}
+                    description={data.description}
+                    url={`/blog/${slug}`}
+                    tags={data.tags}
+                />
+            ))
+        }
+        {
+            page.lastPage > 1 && (
+                <nav aria-label="pagination" class="nav-paginate">
+                    <ul>
+                        {page.url.prev ? (
+                            <li class="btn">
+                                <a
+                                    href={getSiteURL(
+                                        page.url.prev,
+                                        Astro.site
+                                    ).toString()}
+                                >
+                                    Previous
+                                </a>
+                            </li>
+                        ) : null}
+                        {page.url.next ? (
+                            <li class="btn">
+                                <a
+                                    href={getSiteURL(
+                                        page.url.next,
+                                        Astro.site
+                                    ).toString()}
+                                >
+                                    Next
+                                </a>
+                            </li>
+                        ) : null}
+                    </ul>
+                </nav>
+            )
+        }
+    </section>
+</BaseLayout>

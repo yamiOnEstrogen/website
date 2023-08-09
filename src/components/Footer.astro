@@ -1,0 +1,37 @@
+---
+import { Icon } from "astro-icon";
+import { getSiteURL } from "../utils/getSiteUrl";
+const year = new Date().getFullYear();
+---
+
+<footer class="footer">
+    <address class="footer-contacts">
+        <a
+            class="footer-links--github"
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="github"
+            href="https://github.com/0xhylia"
+        >
+            <span class="sr-only">github</span>
+            <Icon name="github" size={18} aria-hidden="true" />
+        </a>
+
+    </address>
+    <p class="footer-links">
+        <a
+            class="footer-links--rss"
+            href={getSiteURL("rss.xml", Astro.site).toString()}
+            target="_blank"
+            ><span class="sr-only">RSS Feed</span>
+            <Icon name="rss" size={18} aria-hidden="true" />
+        </a>
+    </p>
+    <p class="footer-copyright">
+        <span> &#xa9; {year} Hylia.</span>
+        <span>
+            Built with <a href="https://astro.build">Astro</a> and{" "}
+            <a href="https://vercel.com">Vercel</a>.
+        </span>
+    </p>
+</footer>

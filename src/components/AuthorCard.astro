@@ -1,0 +1,62 @@
+---
+import "../styles/components/AuthorCard.scss";
+import { site } from "../data/site";
+const a = site.author;
+import { Picture } from "@astrojs/image/components";
+---
+
+<article class="term card-author">
+    <header class="card-author--header">
+        <Picture
+            alt=""
+            sizes="(max-width: 375px) 75px, 150px"
+            src={a.profilePic}
+            class="rounded"
+            widths={[75, 150]}
+            aspectRatio={1}
+        />
+        <div class="card-author--spec">
+            <h3 style={`--length: ${a.firstname.length}ch;`}>
+                {a.firstname}
+                {a.lastname}
+            </h3>
+            <ul aria-hidden="true">
+                <li style="color: hsl(var(--accent));">
+                    {"".padEnd(a.lastname.length + a.firstname.length + 3, "-")}
+                </li>
+                <li>
+                    <strong>OS:</strong>
+                    {` ${a.os}` || " OrchLinux"}
+                </li>
+                <li>
+                    <strong>Kernel:</strong> 6.0.19
+                </li>
+                <li>
+                    <strong>Shell:</strong>
+                    {` ${a.shell}` || " bash"}
+                </li>
+                <li>
+                    <strong>Theme:</strong> cmd_theme
+                </li>
+            </ul>
+            <ul>
+                {
+                    a.socials.map((s) => (
+                        <li>
+                            <strong>{s.name}: </strong>
+                            <a
+                                href={s.link}
+                                rel="nofollow noreferrer"
+                                target="_blank"
+                            >
+                                {s.link}
+                            </a>
+                        </li>
+                    ))
+                }
+                <li aria-hidden="true" class="tilted">~</li>
+            </ul>
+        </div>
+    </header>
+    <p class="card-author--content">{a.bio}</p>
+</article>
