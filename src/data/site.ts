@@ -1,9 +1,12 @@
 import type { ImageMetadata } from "@astrojs/image/dist/vite-plugin-astro-image";
 
+// @ts-ignore
+import image from "../assets/93791569.jpg";
+
 export interface Author {
     firstname: string;
     bio: string;
-    profilePic: string;
+    profilePic: ImageMetadata;
     os?: string;
     shell?: string;
     lastname: string;
@@ -37,7 +40,7 @@ export const site: Site = {
     twitterCreator: "@HyperHylia",
     author: {
         os: "ArchLinux",
-        profilePic: "https://avatars.githubusercontent.com/u/93791569?v=4",
+        profilePic: image,
         shell: "Zsh",
         bio: `Hi, I'm Stella (hylia)! I'm a developer and a vtuber from the United States. I'm currently working as a full-stack developer at Hyperstar.
 
