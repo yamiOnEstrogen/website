@@ -16,7 +16,6 @@ const year = new Date().getFullYear();
             <span class="sr-only">github</span>
             <Icon name="github" size={18} aria-hidden="true" />
         </a>
-
     </address>
     <p class="footer-links">
         <a
@@ -36,11 +35,34 @@ const year = new Date().getFullYear();
     </p>
 
     <script>
-        kofiWidgetOverlay.draw('unsignedint32', {
-            'type': 'floating-chat',
-            'floating-chat.donateButton.text': 'Support me',
-            'floating-chat.donateButton.background-color': '#ff38b8',
-            'floating-chat.donateButton.text-color': '#fff'
+        kofiWidgetOverlay.draw("unsignedint32", {
+            type: "floating-chat",
+            "floating-chat.donateButton.text": "Support me",
+            "floating-chat.donateButton.background-color": "#ff38b8",
+            "floating-chat.donateButton.text-color": "#fff",
         });
-      </script>
+    </script>
+
+    <script async>
+        document.addEventListener("keydown", function (event) {
+            const audio = new Audio("/sounds/mech-keyboard-02-102918.mp3");
+            audio.play();
+        });
+
+        const links = document.querySelectorAll("a[href^='http']");
+        const buttons = document.querySelectorAll("button");
+
+        links.forEach((_) => {
+            _.addEventListener("click", function (event) {
+                const audio = new Audio("/sounds/rclick-13693.mp3");
+                audio.play();
+            });
+        });
+        buttons.forEach((x) => {
+            x.addEventListener("click", function (event) {
+                const audio = new Audio("/sounds/rclick-13693.mp3");
+                audio.play();
+            });
+        });
+    </script>
 </footer>
