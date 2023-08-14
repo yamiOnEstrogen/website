@@ -4,12 +4,12 @@ export interface Props {
     cmd?: string;
 }
 import "../styles/components/_cmd.scss";
-const { title, cmd = "cat" } = Astro.props;
+const { title, cmd = "" } = Astro.props;
 const titleLen = title.length + 5;
 ---
 
 <header class="cmd container">
     <h1 class="cmd-title" style={`--steps: ${titleLen};`}>
-        <span aria-hidden="true" class="ter-cmd">~ {cmd}&#32;</span>{title}
+        <span aria-hidden="true" class="ter-cmd">➜  {cmd}&#32;</span>{title}
     </h1>
 </header>
