@@ -5,54 +5,57 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="footer">
-    <address class="footer-contacts">
-        <a
-            class="footer-links--github"
-            target="_blank"
-            rel="nofollow noopener noreferrer"
-            aria-label="github"
-            href="https://github.com/0xhylia"
-        >
-            <span class="sr-only">github</span>
-            <Icon name="github" size={18} aria-hidden="true" />
-        </a>
-    </address>
-    <p class="footer-links">
-        <a
-            class="footer-links--rss"
-            href={getSiteURL("rss.xml", Astro.site).toString()}
-            target="_blank"
-            ><span class="sr-only">RSS Feed</span>
-            <Icon name="rss" size={18} aria-hidden="true" />
-        </a>
-    </p>
-    <p class="footer-copyright">
-        <span> &#xa9; {year} Hylia.</span>
-        <span>
-            Built with {" "}
-            <a href="https://vercel.com">Vercel</a>.
-        </span>
-    </p>
-    <script async>
-        document.addEventListener("keydown", function (event) {
-            const audio = new Audio("/sounds/mech-keyboard-02-102918.mp3");
-            audio.play();
-        });
+  <address class="footer-contacts">
+    <a
+      class="footer-links--github"
+      target="_blank"
+      rel="nofollow noopener noreferrer"
+      aria-label="github"
+      href="https://github.com/0xhylia"
+    >
+      <span class="sr-only">github</span>
+      <Icon name="github" size={18} aria-hidden="true" />
+    </a>
+  </address>
+  <p class="footer-links">
+    <a
+      class="footer-links--rss"
+      href={getSiteURL("rss.xml", Astro.site).toString()}
+      target="_blank"
+      ><span class="sr-only">RSS Feed</span>
+      <Icon name="rss" size={18} aria-hidden="true" />
+    </a>
+  </p>
+  <p class="footer-copyright">
+    <span> &#xa9; {year} Hylia.</span>
+    <span>
+      Built with {" "}
+      <a href="https://vercel.com">Vercel</a>.
+    </span>
+  </p>
+  <script async>
+    function playAudio(audioPath) {
+      const audio = new Audio(audioPath);
+      audio.play();
+    }
 
-        const links = document.querySelectorAll("a[href^='http']");
-        const buttons = document.querySelectorAll("button");
+    document.addEventListener("keydown", () => {
+      playAudio("/sounds/mech-keyboard-02-102918.mp3");
+    });
 
-        links.forEach((_) => {
-            _.addEventListener("click", function (event) {
-                const audio = new Audio("/sounds/rclick-13693.mp3");
-                audio.play();
-            });
-        });
-        buttons.forEach((x) => {
-            x.addEventListener("click", function (event) {
-                const audio = new Audio("/sounds/rclick-13693.mp3");
-                audio.play();
-            });
-        });
-    </script>
+    const links = document.querySelectorAll("a[href^='http']");
+    const buttons = document.querySelectorAll("button");
+
+    links.forEach((link) => {
+      link.addEventListener("click", () => {
+        playAudio("/sounds/rclick-13693.mp3");
+      });
+    });
+
+    buttons.forEach((button) => {
+      button.addEventListener("click", () => {
+        playAudio("/sounds/rclick-13693.mp3");
+      });
+    });
+  </script>
 </footer>
