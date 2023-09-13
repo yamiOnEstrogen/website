@@ -32,7 +32,8 @@ const { title, description, img } = Astro.props;
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
-      content={img || "https://assets.hylia.dev/assets/images/default_banner.jpg"}
+      content={img ||
+        "/assets/images/default_banner.jpg"}
     />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="int32" />
@@ -47,30 +48,85 @@ const { title, description, img } = Astro.props;
       href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/icons.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/pink.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/bootstrap-custom.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/tiny-slider.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/lity.min.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/simplebar.min.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/jquery.mb.YTPlayer.min.css" />
-    <link rel="stylesheet" href="https://assets.hylia.dev/assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="/assets/css/icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/pink.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/bootstrap-custom.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/tiny-slider.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/lity.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/simplebar.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/jquery.mb.YTPlayer.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/main.css"
+    />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
     <script is:inline src="https://code.jquery.com/jquery-3.4.1.min.js"
     ></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/c.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/animatedModal.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/bootstrap.bundle.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/imagesloaded.pkgd.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/jquery.mb.YTPlayer.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/lity.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/main.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/isotope.pkgd.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/simplebar.min.js"></script>
-    <script is:inline async src="https://assets.hylia.dev/assets/js/tiny-slider.js"></script>
+    <script is:inline async src="/assets/js/c.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/animatedModal.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/bootstrap.bundle.min.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/imagesloaded.pkgd.min.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/jquery.mb.YTPlayer.min.js"
+    ></script>
+    <script is:inline async src="/assets/js/lity.min.js"
+    ></script>
+    <script is:inline async src="/assets/js/main.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/isotope.pkgd.min.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/simplebar.min.js"
+    ></script>
+    <script
+      is:inline
+      async
+      src="/assets/js/tiny-slider.js"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
@@ -179,26 +235,29 @@ const { title, description, img } = Astro.props;
       }
 
       @keyframes fadeLine {
+        0%,
+        100% {
+          opacity: 0;
+          /* At the beginning and end of the animation, the line is fully transparent */
+        }
 
-0%,
-100% {
-    opacity: 0;
-    /* At the beginning and end of the animation, the line is fully transparent */
-}
-
-50% {
-    opacity: 1;
-    /* At 50% of the animation, the line is fully opaque (white) */
-}
-}
+        50% {
+          opacity: 1;
+          /* At 50% of the animation, the line is fully opaque (white) */
+        }
+      }
     </style>
   </head>
   <body class="theme-dark">
     <div class="preloader">
-		<div class="preloader-block">
-		  <div class="preloader-icon"><span class="loading-dot loading-dot-1"></span><span class="loading-dot loading-dot-2"></span><span class="loading-dot loading-dot-3"></span></div>
-		</div>
-	  </div>
+      <div class="preloader-block">
+        <div class="preloader-icon">
+          <span class="loading-dot loading-dot-1"></span><span
+            class="loading-dot loading-dot-2"></span><span
+            class="loading-dot loading-dot-3"></span>
+        </div>
+      </div>
+    </div>
     <div id="overlay-effect"></div>
     <Header />
     <slot />
@@ -210,15 +269,35 @@ const { title, description, img } = Astro.props;
       }, 2000);
 
       setTimeout(() => {
-        document.getElementById("snackbar").innerHTML = `<i class="bi bi-heart-fill" style="color: red; font-size: 20px;"></i> This website is <a href="https://git.hylia.dev/hylia.dev" target="_blank">open source</a>.`;
+        document.getElementById(
+          "snackbar"
+        ).innerHTML = `<i class="bi bi-heart-fill" style="color: red; font-size: 20px;"></i> This website is <a href="https://git.hylia.dev/hylia.dev" target="_blank">open source</a>.`;
         // Remove the class hid, and add the class show
         document.getElementById("snackbar").classList.remove("d-none");
         document.getElementById("snackbar").classList.add("show");
 
         setTimeout(function () {
-            document.body.removeChild(document.getElementById("snackbar"));
+          document.body.removeChild(document.getElementById("snackbar"));
         }, 3000);
-      }, 2000)
+      }, 2000);
+
+      // Check if YTPlayer is running
+      $(function () {
+        setTimeout(() => {
+          const p = $.mbYTPlayer;
+
+          if (p == null || p == undefined) {
+            window.location.reload();
+          }
+          else {
+            const video = document.getElementById("homeVideo");
+
+            // Click the element
+            video.click();
+            console.debug(`Because Browser is ${navigator.userAgent}, we needed to click the video element, so it can play.`);
+          }
+        }, 4000);
+      });
     </script>
   </body>
 </html>
