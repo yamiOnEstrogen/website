@@ -1,0 +1,224 @@
+---
+import Header from "../components/Header.astro";
+interface Props {
+  title: string;
+  description?:
+    | string
+    | "Hello, I'm Stella, a developer specializing in creating Discord bots and open-source solutions at Hyperstar. Additionally, I identify as a TransFemale, using She/Her pronouns.";
+  img?: string;
+}
+
+// import "isotope-layout";
+// import "jquery";
+
+const { title, description, img } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://avatars.githubusercontent.com/u/93791569"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="int32" />
+    <meta property="og:title" content="int32" />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={img || "/asssets/images/default_banner.jpg"}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="int32" />
+    <meta name="twitter:creator" content="HyperHylia" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="keywords"
+      content="hylia, Hylia, Developer, int32, char32, transgender, x, twitter, anime, blog, Virtual YouTuber, Streaming, Virtual persona, 2D avatar, Live chat interaction, Virtual world, Kawaii, Virtual reality, Twitch, Hololive, Software development, Coding, Programming languages, GitHub, Code repositories, Open-source projects, Web development, App development, API integration, Debugging, Gaming, Esports, Twitch streamer, Let's Plays, Gaming hardware, Console gaming, PC gaming, Game reviews, Online multiplayer, Gaming community"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/css/icons.css" />
+    <link rel="stylesheet" href="/assets/css/pink.css" />
+    <link rel="stylesheet" href="/assets/css/bootstrap-custom.css" />
+    <link rel="stylesheet" href="/assets/css/tiny-slider.css" />
+    <link rel="stylesheet" href="/assets/css/lity.min.css" />
+    <link rel="stylesheet" href="/assets/css/simplebar.min.css" />
+    <link rel="stylesheet" href="/assets/css/jquery.mb.YTPlayer.min.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <script is:inline src="https://code.jquery.com/jquery-3.4.1.min.js"
+    ></script>
+    <script is:inline async src="/assets/js/c.js"></script>
+    <script is:inline async src="/assets/js/animatedModal.js"></script>
+    <script is:inline async src="/assets/js/bootstrap.bundle.min.js"></script>
+    <script is:inline async src="/assets/js/imagesloaded.pkgd.min.js"></script>
+    <script is:inline async src="/assets/js/jquery.mb.YTPlayer.min.js"></script>
+    <script is:inline async src="/assets/js/lity.min.js"></script>
+    <script is:inline async src="/assets/js/main.js"></script>
+    <script is:inline async src="/assets/js/isotope.pkgd.min.js"></script>
+    <script is:inline async src="/assets/js/simplebar.min.js"></script>
+    <script is:inline async src="/assets/js/tiny-slider.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <style is:inline is:global>
+      #snackbar {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 250px; /* Set a default minimum width */
+        background-color: #333; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 50px; /* Rounded borders */
+        padding: 16px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        bottom: 30px; /* 30px from the bottom */
+        transform: translateX(
+          -50%
+        ); /* Move the snackbar back by half its width */
+      }
+
+      /* Show the snackbar when clicking on a button (class added with JavaScript) */
+      #snackbar.show {
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      /* Animations to fade the snackbar in and out */
+      @-webkit-keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+      .tooltip-main {
+        color: #fff;
+        text-decoration: none;
+        position: relative;
+        cursor: default;
+      }
+
+      .tooltip-main::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        /* Position the pseudo-element just below the text */
+        left: 0;
+        width: 100%;
+        /* Make the pseudo-element cover the full width of the link */
+        height: 1px;
+        /* Set the height of the line */
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          #ffffff,
+          rgba(255, 255, 255, 0)
+        );
+        /* Use a linear gradient to create a fading effect */
+        opacity: 0;
+        /* Set initial opacity to 0 (fully transparent) */
+        animation: fadeLine 2s infinite;
+        /* Use the 'fadeLine' animation to make it fade over 2 seconds infinitely */
+        cursor: default;
+      }
+
+      @keyframes fadeLine {
+
+0%,
+100% {
+    opacity: 0;
+    /* At the beginning and end of the animation, the line is fully transparent */
+}
+
+50% {
+    opacity: 1;
+    /* At 50% of the animation, the line is fully opaque (white) */
+}
+}
+    </style>
+  </head>
+  <body class="theme-dark">
+    <div class="preloader">
+		<div class="preloader-block">
+		  <div class="preloader-icon"><span class="loading-dot loading-dot-1"></span><span class="loading-dot loading-dot-2"></span><span class="loading-dot loading-dot-3"></span></div>
+		</div>
+	  </div>
+    <div id="overlay-effect"></div>
+    <Header />
+    <slot />
+    <script is:inline>
+      setTimeout(() => {
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+      }, 2000);
+
+      setTimeout(() => {
+        document.getElementById("snackbar").innerHTML = `<i class="bi bi-heart-fill" style="color: red; font-size: 20px;"></i> This website is <a href="https://git.hylia.dev/hylia.dev" target="_blank">open source</a>.`;
+        // Remove the class hid, and add the class show
+        document.getElementById("snackbar").classList.remove("d-none");
+        document.getElementById("snackbar").classList.add("show");
+
+        setTimeout(function () {
+            document.body.removeChild(document.getElementById("snackbar"));
+        }, 3000);
+      }, 2000)
+    </script>
+  </body>
+</html>

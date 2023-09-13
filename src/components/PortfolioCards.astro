@@ -1,0 +1,24 @@
+---
+interface Props {
+    name: string;
+    image: string;
+    url: string;
+    type: string;
+}
+
+const { name, image, url, type } = Astro.props;
+---
+
+
+<div class=`single-item col-6 col-lg-4 portfolio-item ${type}`>
+    <a class="portfolio-item" href={url}>
+      <div class="portfolio-wrapper">
+        <img class="img-fluid" alt="Item" src={image} />
+        <div class="item-content">
+          <h6 class="content-title">{name}</h6><span
+            class="content-more">More Info</span
+          >
+        </div>
+      </div>
+    </a>
+  </div>

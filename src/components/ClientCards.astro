@@ -1,0 +1,30 @@
+---
+interface Props {
+    name: string;
+    image?: string;
+    role: string,
+    review: string,
+}
+
+const { name, image, role, review } = Astro.props;
+
+function createImageUrl(image: string) {
+    return `https://avatars.githubusercontent.com/u/${image}`
+}
+
+---
+
+<div class="slider-item">
+    <div class="single-review swiper-slide">
+      <div class="review-header d-flex justify-content-between">
+        <div class="review-client">
+          <div class="media"><img class="img-fluid rounded-circle client-avatar" src={`https://avatars.githubusercontent.com/u/${image || 0}`} alt="Client" title={name}>
+            <div class="client-details">
+              <h6 class="client-name">{name}</h6><span class="client-role">{role}</span>
+            </div>
+          </div>
+        </div><i class="icon bi bi-chat-square-quote-fill review-icon"></i>
+      </div>
+      <p class="review-content">{review}</p>
+    </div>
+  </div>

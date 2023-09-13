@@ -1,0 +1,15 @@
+---
+interface Props {
+    name: string;
+    precentage: number;
+}
+
+const { name, precentage } = Astro.props;
+---
+
+<div class="single-skill" data-percentage={precentage}>
+    <div class="skill-info"><span class="skill-name">{name}</span><span class="skill-percentage"></span></div>
+    <div class="progress skill-progress">
+      <div class="progress-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+</div>

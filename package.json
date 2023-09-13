@@ -1,0 +1,21 @@
+{
+  "name": "hylia.dev",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "2.2.0",
+    "isotope-layout": "^3.0.6",
+    "jquery": "^3.4.1"
+  },
+  "devDependencies": {
+    "@types/isotope-layout": "^3.0.9",
+    "@types/jquery": "^3.5.18"
+  }
+}
