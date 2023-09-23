@@ -1,0 +1,23 @@
+---
+import MiscLayout from "../layouts/MiscLayout.astro";
+---
+
+<MiscLayout
+  title="char32 | lmay"
+  description="The person who calls me a furry and bullies me.">
+  <div>
+    <h1>Lmay sucks.</h1>
+    <h2>He is really bad at making furry jokes.</h2>
+    <div class="d-none" id="secret"></div>
+
+    <h3>Here is an example:</h3>
+    <iframe src="https://www.ranrom.xyz/akeno.php" frameborder="0" style="position:absolute; width:100%; height:100%;"></iframe>
+  </div>
+
+  <script is:inline>
+    setTimeout(() => {
+        document.getElementById("secret").innerHTML = `<h4>But in all honesty, I love him. He's my best friend. <a href="https://ranrom.xyz" target="_blank">Go check him out!</a></h4>`;
+        document.getElementById("secret").classList.remove("d-none");
+    }, 3000)
+  </script>
+</MiscLayout>
