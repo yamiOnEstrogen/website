@@ -3,6 +3,7 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 import Sidebar from "../../components/Blog/Sidebar.astro";
 import { fDate } from "developer-toolkit-utils";
 import createExcerpt from "../../utils/createExcerpt";
+import ToastController from "../../components/ToastController.astro";
 
 import CreateShareLinks from "../../utils/CreateShareLinks";
 
@@ -76,6 +77,8 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
         <div class="col-lg-4">
           <Sidebar />
         </div>
+
+        <ToastController />
       </div>
     </div>
   </section>

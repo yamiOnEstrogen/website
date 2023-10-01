@@ -5,6 +5,7 @@ import Sidebar from "../../../components/Blog/Sidebar.astro";
 import createExcerpt from "../../../utils/createExcerpt";
 
 import { fDate } from "developer-toolkit-utils";
+import ToastController from "../../../components/ToastController.astro";
 
 export const getStaticPaths = async () => {
   const posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(
@@ -88,6 +89,8 @@ const content = post.compiledContent();
         <div class="col-lg-4">
           <Sidebar />
         </div>
+
+		<ToastController />
       </div>
     </div>
   </section>

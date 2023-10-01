@@ -86,7 +86,6 @@ const { title, description, img, isPost } = Astro.props;
     ></script>
     <script
       is:inline
-      async
       src="https://storage.hylia.dev/blog/js/bootstrap.min.js"
     ></script>
     <script
@@ -181,6 +180,9 @@ const { title, description, img, isPost } = Astro.props;
       } catch (error) {
         window.location.reload();
       }
+      const toastLiveExample = document.getElementById("liveToast");
+      const toastBootstrap = new bootstrap.Toast(toastLiveExample);
+      toastBootstrap.show();
     </script>
   </body>
 </html>
