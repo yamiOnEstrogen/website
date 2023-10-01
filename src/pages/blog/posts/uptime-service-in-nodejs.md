@@ -104,3 +104,7 @@ In this example, the service will monitor two websites, send HEAD requests with 
 ## Conclusion
 
 Monitoring website uptime is a critical part of maintaining a reliable online presence. With the simple Node.js code provided in this blog post, you can start monitoring your websites' availability and receive timely notifications of any issues. You can also extend this code to integrate with alerting systems or store historical data for further analysis. By proactively monitoring website uptime, you can ensure that your online services are consistently accessible to users, fostering trust and satisfaction.
+
+## Gist
+
+<script src="https://gist.github.com/0xhylia/8bd7273d539018c4c60aaae4e19f1433.js"></script>
