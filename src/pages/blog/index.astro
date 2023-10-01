@@ -37,20 +37,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
                     <div class="details">
                       <ul class="meta list-inline mb-0">
                         <li class="list-inline-item">
-                          <a href="#">
-                            <img
-                              src="https://avatars.githubusercontent.com/u/93791569"
-                              class="author"
-                              width="35"
-                              height="35"
-                              style="border-radius: 50%;"
-                              alt="author"
-                            />
-                            Hylia
-                          </a>
-                        </li>
-                        <li class="list-inline-item">
-                          {fDate(new Date(post.frontmatter.pubDate))}
+                          <i class="bi bi-calendar"> {fDate(new Date(post.frontmatter.pubDate))}</i>
                         </li>
                       </ul>
                       <h5 class="post-title mb-3 mt-3">
