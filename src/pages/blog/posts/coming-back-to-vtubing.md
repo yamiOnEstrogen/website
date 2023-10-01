@@ -2,7 +2,7 @@
 title: "Returning to VTubing: A New Chapter Begins"
 excerpt: "Rediscover VTubing's Magic: Reasons for My Return"
 slug: coming-back-to-vtubing
-image: https://www.dexerto.com/cdn-cgi/image/width=3840,quality=75,format=auto/https://editors.dexerto.com/wp-content/uploads/2022/06/10/veibae-smiling-in-new-model.jpg
+image: blog/images/posts/coming-back-to-vtubing.jpg
 pubDate: 2023-10-01 12:00
 categories:
   - Online

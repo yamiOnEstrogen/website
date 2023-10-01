@@ -2,7 +2,7 @@
 title: "Recursive Madness: Is Overindulgence in Fractals Detrimental to Practical Programming?"
 excerpt: "Balancing aesthetics and pragmatism in fractal-based programming."
 slug: is-overindulgence-in-fractals-detrimental-to-practical-programming
-image: https://upload.wikimedia.org/wikipedia/commons/2/26/Fr137.jpg
+image: blog/images/posts/Fr137.jpg
 pubDate: 2023-08-18 11:30
 categories:
   - CodeAesthetics

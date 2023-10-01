@@ -2,7 +2,7 @@
 title: "Is NPM Worth It?"
 excerpt: "NPM is an essential tool for managing dependencies and packages in the Node.js ecosystem."
 slug: is-npm-worth-it
-image: https://kinsta.com/wp-content/uploads/2022/06/what-is-npm-1024x512.png
+image: blog/images/posts/is-npm-worth-it.png
 pubDate: 2023-08-18 12:00
 categories:
   - NPM

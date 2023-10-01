@@ -27,7 +27,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
                       <a href={post.frontmatter.image}>
                         <div class="inner">
                           <img
-                            src={post.frontmatter.image}
+                            src={`https://storage.hylia.dev/${post.frontmatter.image}`}
                             alt={post.frontmatter.title}
                             title={post.frontmatter.title}
                           />
@@ -37,7 +37,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
                     <div class="details">
                       <ul class="meta list-inline mb-0">
                         <li class="list-inline-item">
-                          <i class="bi bi-calendar"> {fDate(new Date(post.frontmatter.pubDate))}</i>
+                          <i class="bi bi-calendar" style="padding-right: 5px;"> {fDate(new Date(post.frontmatter.pubDate))}</i>
                         </li>
                       </ul>
                       <h5 class="post-title mb-3 mt-3">
