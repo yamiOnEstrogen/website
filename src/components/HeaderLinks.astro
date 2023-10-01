@@ -1,0 +1,29 @@
+---
+
+interface Link {
+    text: string;
+    href: string;
+}
+
+
+interface Props {
+    liClass?: string;
+    aClass?: string;
+    links: Link[];
+}
+
+const { liClass, aClass, links } = Astro.props;
+---
+
+{
+    links.map((link) => (
+        <li class={`${liClass}`}>
+            <a class={`${aClass}`} href={link.href}>{link.text}</a>
+        </li>
+    ))
+}
+<!-- <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+<li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
+<li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+<li class="nav-item"><a class="nav-link" href="https://blog.hylia.dev">Blog</a></li>
+<li class="nav-item"><a class="nav-link" href="https://docs.hylia.dev">Documentation</a></li> -->

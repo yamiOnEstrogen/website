@@ -4,6 +4,7 @@ import ServiceCard from "../components/ServiceCard.astro";
 import ClientCards from "../components/ClientCards.astro";
 import Skills from "../components/Skills.astro";
 import PortfolioCards from "../components/PortfolioCards.astro";
+import Socials from "../components/Socials.astro";
 ---
 
 <Layout
@@ -38,22 +39,7 @@ import PortfolioCards from "../components/PortfolioCards.astro";
       <!-- Social media icons-->
       <div class="fixed-block block-right">
         <ul class="list-unstyled social-icons">
-          <li>
-            <a href="https://x.com/HyperHylia/" target="_blank"
-              ><i class="icon bi bi-twitter"></i></a>
-          </li>
-          <li>
-            <a href="https://git.hylia.dev/" target="_blank"
-              ><i class="icon bi bi-github"></i></a>
-          </li>
-          <li>
-            <a href="https://twitch.com/0xhylia" target="_blank"
-              ><i class="icon bi bi-twitch"></i></a>
-          </li>
-          <li>
-            <a href="https://steamcommunity.com/id/hyliavt/" target="_blank"
-              ><i class="icon bi bi-steam"></i></a>
-          </li>
+          <Socials />
         </ul>
       </div>
     </div>
@@ -143,23 +129,7 @@ import PortfolioCards from "../components/PortfolioCards.astro";
                         role="button">Github</a
                       >
                       <ul class="list-unstyled list-inline content-follow">
-                        <li class="list-inline-item">
-                          <a href="https://x.com/HyperHylia/" target="_blank"
-                            ><i class="icon bi bi-twitter"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="https://git.hylia.dev/" target="_blank"
-                            ><i class="icon bi bi-github"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a href="https://twitch.com/0xhylia" target="_blank"
-                            ><i class="icon bi bi-twitch"></i></a>
-                        </li>
-                        <li class="list-inline-item">
-                          <a
-                            href="https://steamcommunity.com/id/hyliavt/"
-                            target="_blank"><i class="icon bi bi-steam"></i></a>
-                        </li>
+                        <Socials classes="list-inline-item" />
                       </ul>
                     </div>
                   </div>

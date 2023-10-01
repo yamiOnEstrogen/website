@@ -1,5 +1,5 @@
 ---
-
+import HeaderLinks from "./HeaderLinks.astro";
 ---
 
 <nav class="navbar-expand-md navbar fixed-top" id="navbar"><a class="navbar-brand" data-scroll="" href="#home-area">
@@ -9,11 +9,7 @@
   <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
     <!-- Navbar menu-->
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-      <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-      <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
-      <li class="nav-item"><a class="nav-link" href="https://blog.hylia.dev">Blog</a></li>
-      <li class="nav-item"><a class="nav-link" href="https://docs.hylia.dev">Documentation</a></li>
+      <HeaderLinks liClass="nav-item" aClass="nav-link" links={[{ text: "Home", href: "/" }, { text: "About", href: "#about" }, { text: "Portfolio", href: "#portfolio" }, { text: "Blog", href: "/blog" }, { text: "Documentation", href: "https://docs.hylia.dev" }]} />
     </ul>
   </div>
 </nav>

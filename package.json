@@ -6,14 +6,19 @@
     "dev": "astro dev --host",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "astro preview --host",
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/preact": "^3.0.0",
+    "@astrojs/rss": "^3.0.0",
     "astro": "2.2.0",
     "astro-compress": "^2.0.15",
+    "developer-toolkit-utils": "^1.0.9",
     "isotope-layout": "^3.0.6",
-    "jquery": "^3.4.1"
+    "jquery": "^3.4.1",
+    "rehype-pretty-code": "^0.10.1",
+    "remark-toc": "^9.0.0"
   },
   "devDependencies": {
     "@types/isotope-layout": "^3.0.9",

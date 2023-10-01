@@ -1,0 +1,156 @@
+---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import Socials from "../../../components/Socials.astro";
+import Sidebar from "../../../components/Blog/Sidebar.astro";
+import createExcerpt from "../../../utils/createExcerpt";
+
+import { fDate } from "developer-toolkit-utils"
+
+export const getStaticPaths = async () => {
+  const posts = (
+    await Astro.glob("../posts/*.{md,mdx}")
+  ).sort(
+    (a, b) =>
+      new Date(b.frontmatter.pubDate).valueOf() -
+      new Date(a.frontmatter.pubDate).valueOf()
+  );
+  return posts.map((post) => {
+    return {
+      params: { slug: post.frontmatter.slug },
+      props: { slug: post.frontmatter.slug },
+    };
+  });
+};
+
+const { slug } = Astro.params;
+
+const post = (
+  await Astro.glob("../posts/*.{md,mdx}")
+).find((post) => post.frontmatter.slug === slug);
+
+if (!post) {
+  return Astro.redirect("/blog");
+}
+
+const content = post.compiledContent();
+---
+
+<BlogLayout title={`char32 | Blog | ${post.frontmatter.title}`} description={`${createExcerpt(post.frontmatter.excerpt)}`} img={post.frontmatter.image} isPost={true}>
+    <section class="main-content mt-3">
+		<div class="container-xl">
+
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+                    <li class="breadcrumb-item" style="color: #9faabb;">Posts</li>
+                    <li class="breadcrumb-item active" aria-current="page">{post.frontmatter.title}</li>
+                </ol>
+            </nav>
+
+			<div class="row gy-4">
+
+				<div class="col-lg-8">
+                    <div class="post post-single">
+						<div class="post-header">
+							<h1 class="title mt-0 mb-3" style="color: #9faabb;">{post.frontmatter.title}</h1>
+							<ul class="meta list-inline mb-0">
+								<li class="list-inline-item"><a href="#"><img src="https://storage.hylia.dev/images/47033415ef4841d627d49d05058324e8.jpg" class="author" alt="author" style="border-radius: 50%; width: 35px;"/>Hylia</a></li>
+								<li class="list-inline-item">{fDate(new Date(post.frontmatter.pubDate))}</li>
+							</ul>
+						</div>
+						<div class="featured-image">
+							<img src={post.frontmatter.image} alt="Post Image" title={post.frontmatter.title} />
+						</div>
+						<div class="post-content clearfix" set:html={content} id="post-content" style="color: #fff;">
+                            
+						</div>
+
+                    </div>
+
+					<div class="spacer" data-height="50"></div>
+
+                </div>
+
+				<div class="col-lg-4">
+
+					<Sidebar />
+
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+
+	<script is:inline>
+	
+
+	const TOC = document.getElementById("table-of-contents");
+	const postContent = document.getElementById("post-content");
+
+    // Get the H2 elements in the post content
+	const H2 = postContent.querySelectorAll("h2");
+
+    if (H2.length === 0) {
+      TOC.classList.add("d-none");
+    } else {
+		TOC.classList.remove("d-none");
+		const toc_wrapper = document.getElementById("toc-wrapper");
+      for (let i = 0; i < H2.length; i++) {
+        const H2ID = H2[i].id;
+        const H2TITLE = H2[i].textContent;
+        
+
+        toc_wrapper.innerHTML += `<li><a style="text-decoration: none;" href="#${H2ID}">${H2TITLE}</a></li>`;
+      }
+    }
+		
+	</script>
+	<style is:global>
+		kbd {
+		  background-color: #333430;
+		  color: #fff;
+		  padding: 2px 5px;
+		  border-radius: 3px;
+		}
+		div[data-rehype-pretty-code-fragment] {
+		  background-color: #111;
+		}
+		pre > code {
+		  display: grid;
+		  background-color: rgba(200, 200, 255, 0.09);
+		  border-left: 3px solid #60a5fa;
+		  padding: 10px;
+		  border-radius: 3px;
+		}
+		.highlighted {
+		  background-color: rgba(200, 200, 255, 0.1);
+		  border-left-color: #60a5fa;
+		  border-left-width: 3px;
+		  border-left-style: solid;
+		}
+
+		h1 {
+		  color: #fff;
+		  /* Center the text */
+		  text-align: center;
+		  font-size: 30px;
+		}
+
+		h2 {
+		  color: #fff;
+		  font-size: 25px;
+		}
+
+		h3 {
+		  color: #fff;
+		  font-size: 20px;
+		}
+
+		h4 {
+		  color: #fff;
+		  font-size: 15px;
+		}
+	  </style> 
+</BlogLayout>

@@ -1,0 +1,40 @@
+---
+import Socials from "../Socials.astro";
+---
+
+<footer>
+    <div class="container-xl">
+        <div class="footer-inner">
+            <div class="row d-flex align-items-center gy-4">
+                <div class="col-md-4">
+                    <span class="copyright"></span>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <ul class="social-icons list-unstyled list-inline mb-0">
+                        <Socials classes="list-inline-item" />
+                    </ul>
+                </div>
+                
+                <div class="col-md-4">
+                    <a href="#" id="return-to-top" class="float-md-end"><i class="bi bi-arrow-up"></i>Back to Top</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script is:inline>
+    const copyRightYear = new Date().getFullYear();
+    document.querySelector(".copyright").textContent = `Copyright © ${copyRightYear} hylia.dev. All Rights Reserved.`;
+
+    const returnToTop = document.getElementById("return-to-top");
+
+    returnToTop.addEventListener("click", (e) => {
+        e.preventDefault();
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+        });
+    })
+</script>

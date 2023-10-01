@@ -1,0 +1,95 @@
+---
+import BlogLayout from "../../layouts/BlogLayout.astro";
+import Sidebar from "../../components/Blog/Sidebar.astro";
+import { fDate } from "developer-toolkit-utils";
+import createExcerpt from "../../utils/createExcerpt";
+
+import CreateShareLinks from "../../utils/CreateShareLinks";
+
+const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
+  (a, b) =>
+    new Date(b.frontmatter.pubDate).valueOf() -
+    new Date(a.frontmatter.pubDate).valueOf()
+);
+---
+
+<BlogLayout title="char32 | Blog" description="Read char32's blog posts!">
+  <section class="main-content mt-5">
+    <div class="container-xl">
+      <div class="row gy-4">
+        <div class="col-lg-8">
+          <div class="row gy-4">
+            {
+              posts.map((post) => (
+                <div class="col-sm-6">
+                  <div class="post post-grid rounded bordered">
+                    <div class="thumb top-rounded">
+                      <a href={post.frontmatter.image}>
+                        <div class="inner">
+                          <img
+                            src={post.frontmatter.image}
+                            alt={post.frontmatter.title}
+                            title={post.frontmatter.title}
+                          />
+                        </div>
+                      </a>
+                    </div>
+                    <div class="details">
+                      <ul class="meta list-inline mb-0">
+                        <li class="list-inline-item">
+                          <a href="#">
+                            <img
+                              src="https://avatars.githubusercontent.com/u/93791569"
+                              class="author"
+                              width="35"
+                              height="35"
+                              style="border-radius: 50%;"
+                              alt="author"
+                            />
+                            Hylia
+                          </a>
+                        </li>
+                        <li class="list-inline-item">
+                          {fDate(new Date(post.frontmatter.pubDate))}
+                        </li>
+                      </ul>
+                      <h5 class="post-title mb-3 mt-3">
+                        <a href={`/blog/post/${post.frontmatter.slug}`} style="color: #fff;">
+                          {post.frontmatter.title.slice(0, 20) + (post.frontmatter.title.length > 20 ? "..." : "")}
+                        </a>
+                      </h5>
+                      <p class="excerpt mb-0">
+                        {createExcerpt(post.frontmatter.excerpt)}
+                      </p>
+                    </div>
+                    <div class="post-bottom clearfix d-flex align-items-center">
+                      <div class="social-share me-auto">
+                        <button class="toggle-button bi bi-share-fill" />
+                        <ul
+                          class="icons list-unstyled list-inline mb-0"
+                          set:html={CreateShareLinks(
+                            post.frontmatter.title,
+                            `https://hylia.dev/blog/post/${post.frontmatter.slug}`
+                          )}
+                        ></ul>
+                      </div>
+                      <div class="more-button float-end">
+                        <a href={`/blog/post/${post.frontmatter.slug}`}>
+                          <span class="bi bi-three-dots" />
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <Sidebar />
+        </div>
+      </div>
+    </div>
+  </section>
+</BlogLayout>

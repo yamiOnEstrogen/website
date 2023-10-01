@@ -1,0 +1,44 @@
+---
+interface Props {
+  classes?: string;
+}
+
+const { classes } = Astro.props;
+
+const socials = [
+  {
+    title: "Twitter",
+    href: "https://x.com/char32vt/",
+    icon: "bi bi-twitter",
+  },
+  {
+    title: "Github",
+    href: "https://github.com/0xhylia",
+    icon: "bi bi-github",
+  },
+  {
+    title: "Twitch",
+    href: "https://twitch.com/0xhylia",
+    icon: "bi bi-twitch",
+  },
+  {
+    title: "Steam",
+    href: "https://steamcommunity.com/id/hyliavt/",
+    icon: "bi bi-steam",
+  },
+];
+---
+
+{
+  socials.map((social) => (
+    <li class={classes}>
+      <a
+        href={`${social.href}?ref=hylia.dev`}
+        target="_blank"
+        style="padding: 0 5px; color: #fff;"
+      >
+        <i class={`icon ${social.icon}`} />
+      </a>
+    </li>
+  ))
+}
