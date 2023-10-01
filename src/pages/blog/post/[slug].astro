@@ -60,11 +60,13 @@ const content = post.compiledContent();
                 {post.frontmatter.title}
               </h1>
               <ul class="meta list-inline mb-0">
-				<li class="list-inline-item">
-					<i class="bi bi-stopwatch" id="time_reading"></i>
-				  </li>
                 <li class="list-inline-item">
-                  <i class="bi bi-calendar"> {fDate(new Date(post.frontmatter.pubDate))}</i>
+                  <i class="bi bi-stopwatch" id="time_reading"></i>
+                </li>
+                <li class="list-inline-item">
+                  <i class="bi bi-calendar">
+                    {fDate(new Date(post.frontmatter.pubDate))}</i
+                  >
                 </li>
               </ul>
             </div>
@@ -90,7 +92,7 @@ const content = post.compiledContent();
           <Sidebar />
         </div>
 
-		<ToastController />
+        
       </div>
     </div>
   </section>
@@ -101,7 +103,6 @@ const content = post.compiledContent();
 
     // Get the H2 elements in the post content
     const H2 = postContent.querySelectorAll("h2");
-
 
     if (H2.length === 0) {
       TOC.classList.add("d-none");
@@ -116,15 +117,20 @@ const content = post.compiledContent();
       }
     }
 
-    function readingTime() {
-      const text = document.getElementById("post-content").innerText;
-      const wpm = 225;
+    function calculateReadingTime() {
+      const textElement = document.getElementById("post-content");
+      const outputElement = document.getElementById("time_reading");
+      if (!textElement || !outputElement) return;
+
+      const text = textElement.innerText;
+      const wordsPerMinute = 225;
       const words = text.trim().split(/\s+/).length;
-      const time = Math.ceil(words / wpm);
-	  document.getElementById("time_reading").innerHTML = ` ${time} min read`;
+      const minutes = Math.ceil(words / wordsPerMinute);
+
+      outputElement.textContent = ` ${minutes} min read`;
     }
 
-	readingTime();
+    calculateReadingTime();
   </script>
   <style is:global>
     kbd {
@@ -142,6 +148,7 @@ const content = post.compiledContent();
       border-left: 3px solid #60a5fa;
       padding: 10px;
       border-radius: 3px;
+      counter-reset: line;
     }
     .highlighted {
       background-color: rgba(200, 200, 255, 0.1);
@@ -149,6 +156,27 @@ const content = post.compiledContent();
       border-left-width: 3px;
       border-left-style: solid;
     }
+
+    code > [data-line]::before {
+  counter-increment: line;
+  content: counter(line);
+ 
+  /* Other styling */
+  display: inline-block;
+  width: 1rem;
+  margin-right: 2rem;
+  text-align: right;
+  color: gray;
+}
+ 
+code[data-line-numbers-max-digits='2'] > [data-line]::before {
+  width: 2rem;
+}
+ 
+code[data-line-numbers-max-digits='3'] > [data-line]::before {
+  width: 3rem;
+}
+    
 
     h1 {
       color: #fff;

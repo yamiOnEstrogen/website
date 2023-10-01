@@ -5,7 +5,7 @@ import remarkToc from 'remark-toc';
 import rehypePrettyCode from "rehype-pretty-code";
 
 const prettyCodeOptions = {
-    theme: "dracula",
+    theme: "github-dark",
     onVisitLine(node) {
         if (node.children.length === 0) {
             node.children = [
