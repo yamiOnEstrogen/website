@@ -32,10 +32,6 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
     </div>
   </div>
  */
-
-const bios = await fetch("https://storage.hylia.dev/bios.json").then((res) => res.json());
-
-const bio = bios[Math.floor(Math.random() * bios.length)];
 ---
 
 <div class="sidebar">
@@ -50,8 +46,8 @@ const bio = bios[Math.floor(Math.random() * bios.length)];
         class="mb-4"
         style="border-radius: 50%; width: 68px;"
       />
-      <p class="mb-4">
-        {bio}
+      <p class="mb-4" id="bio__user">
+
       </p>
       <ul class="social-icons list-unstyled list-inline mb-0">
         <Socials classes="list-inline-item" />
@@ -100,6 +96,14 @@ const bio = bios[Math.floor(Math.random() * bios.length)];
       }
     </div>
   </div>
-
-
 </div>
+
+<script is:inline type="text/javascript">
+  (async () => {
+    const bios = await fetch("https://storage.hylia.dev/bios.json").then((res) => res.json());
+
+    const bio = bios[Math.floor(Math.random() * bios.length)];
+
+    document.getElementById("bio__user").innerHTML = bio;
+  })();
+</script>
