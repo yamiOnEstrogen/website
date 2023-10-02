@@ -132,7 +132,8 @@ const content = post.compiledContent();
       if (!textElement || !outputElement) return;
 
       const text = textElement.innerText;
-      const wordsPerMinute = 225;
+      /** The average number of words per minute that a human can read. */
+      const wordsPerMinute = 238;
       const words = text.trim().split(/\s+/).length;
       const minutes = Math.ceil(words / wordsPerMinute);
 
