@@ -1,0 +1,132 @@
+---
+import BlogLayout from "../../../layouts/BlogLayout.astro";
+import Sidebar from "../../../components/Blog/Sidebar.astro";
+import CreateShareLinks from "../../../utils/CreateShareLinks";
+import createExcerpt from "../../../utils/createExcerpt";
+import { fDate } from "developer-toolkit-utils";
+
+
+
+
+export async function getStaticPaths() {
+  const allPosts = await Astro.glob("../posts/*.md");
+
+  const uniqueTags = [
+    ...new Set(allPosts.map((post) => post.frontmatter.categories).flat()),
+  ];
+
+  return uniqueTags.map((category) => {
+    const filteredPosts = allPosts.filter((post) =>
+      post.frontmatter.categories
+        .map((cat: any) => cat) // Convert each category to lowercase
+        .includes(category) // Check inclusion in lowercase
+    );
+    return {
+      params: { category },
+      props: { posts: filteredPosts },
+    };
+  });
+}
+
+const { posts } = Astro.props;
+const { category } = Astro.params;
+
+if (!category) {
+  return Astro.redirect("/blog");
+}
+
+if (posts.length === 0) {
+  return Astro.redirect("/blog");
+}
+
+
+
+---
+
+<BlogLayout
+  title={`char32 | Blog`}
+>
+  <section class="main-content mt-3">
+    <div class="container-xl">
+
+      <section class="page-header" style="background-color: #333333; color: #ffffff;">
+        <div class="container-xl">
+            <div class="text-center">
+                <h1 class="mt-0 mb-2" style="color: #ffffff;">{category}</h1>
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb justify-content-center mb-0">
+                        <li class="breadcrumb-item"><a href="/">Home</a></li>
+                        <li class="breadcrumb-item"><a href="/blog">Blog</a></li>
+                        <li class="breadcrumb-item" style="color: #9faabb;">Category</li>
+                        <li class="breadcrumb-item active" aria-current="page">{category}</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <div class="row gy-4">
+      <div class="col-lg-8">
+        <div class="row gy-4">
+          {
+            posts.map((post: any) => (
+              <div class="col-sm-6">
+                <div class="post post-grid rounded bordered">
+                  <div class="thumb top-rounded">
+                    <a href={post.frontmatter.image}>
+                      <div class="inner">
+                        <img
+                          src={`https://storage.hylia.dev/${post.frontmatter.image}`}
+                          alt={post.frontmatter.title}
+                          title={post.frontmatter.title}
+                        />
+                      </div>
+                    </a>
+                  </div>
+                  <div class="details">
+                    <ul class="meta list-inline mb-0">
+                      <li class="list-inline-item">
+                        <i class="bi bi-calendar" style="padding-right: 5px;"></i> {fDate(new Date(post.frontmatter.pubDate))}
+                      </li>
+                    </ul>
+                    <h5 class="post-title mb-3 mt-3">
+                      <a href={`/blog/post/${post.frontmatter.slug}`} style="color: #fff;">
+                        {post.frontmatter.title.slice(0, 20) + (post.frontmatter.title.length > 20 ? "..." : "")}
+                      </a>
+                    </h5>
+                    <p class="excerpt mb-0">
+                      {createExcerpt(post.frontmatter.excerpt)}
+                    </p>
+                  </div>
+                  <div class="post-bottom clearfix d-flex align-items-center">
+                    <div class="social-share me-auto">
+                      <button class="toggle-button bi bi-share-fill" />
+                      <ul
+                        class="icons list-unstyled list-inline mb-0"
+                        set:html={CreateShareLinks(
+                          post.frontmatter.title,
+                          `https://hylia.dev/blog/post/${post.frontmatter.slug}`
+                        )}
+                      ></ul>
+                    </div>
+                    <div class="more-button float-end">
+                      <a href={`/blog/post/${post.frontmatter.slug}`}>
+                        <span class="bi bi-three-dots" />
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="col-lg-4">
+        <Sidebar />
+      </div>
+
+      
+    </div>
+  </section>
+</BlogLayout>

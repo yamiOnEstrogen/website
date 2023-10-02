@@ -1,0 +1,13 @@
+---
+
+
+interface Props {
+    tags: string[];
+}
+
+const { tags } = Astro.props;
+---
+
+{ tags.map((tag) => (
+    <a href={`/blog/category/${tag}`} class="tag" style="color: #fff; text-decoration: none;">#{tag}</a>
+)) }

@@ -3,6 +3,7 @@ import BlogLayout from "../../../layouts/BlogLayout.astro";
 import Socials from "../../../components/Socials.astro";
 import Sidebar from "../../../components/Blog/Sidebar.astro";
 import createExcerpt from "../../../utils/createExcerpt";
+import Tags from "../../../components/Blog/Tags.astro";
 
 import { fDate } from "developer-toolkit-utils";
 import ToastController from "../../../components/ToastController.astro";
@@ -65,8 +66,8 @@ const content = post.compiledContent();
                 </li>
                 <li class="list-inline-item">
                   <i class="bi bi-calendar">
-                    {fDate(new Date(post.frontmatter.pubDate))}</i
-                  >
+                    </i
+                  > {fDate(new Date(post.frontmatter.pubDate))}
                 </li>
               </ul>
             </div>
@@ -86,6 +87,14 @@ const content = post.compiledContent();
           </div>
 
           <div class="spacer" data-height="50"></div>
+
+          <div class="post-bottom">
+            <div class="row d-flex align-items-center">
+              <div class="col-md-6 col-12 text-center text-md-start tags_row">
+                <Tags tags={post.frontmatter.categories} />
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="col-lg-4">
@@ -176,6 +185,13 @@ code[data-line-numbers-max-digits='2'] > [data-line]::before {
 code[data-line-numbers-max-digits='3'] > [data-line]::before {
   width: 3rem;
 }
+
+  code {
+    color: white;
+    background-color: #111;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
     
 
     h1 {
@@ -198,6 +214,15 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
     h4 {
       color: #fff;
       font-size: 15px;
+    }
+
+    .tags_row {
+      /* Make a row of tags, make them left to right, it does not matter the amount. Do not wrap them */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+
     }
   </style>
 </BlogLayout>
