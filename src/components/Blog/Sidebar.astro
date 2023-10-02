@@ -32,6 +32,10 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
     </div>
   </div>
  */
+
+const bios = await fetch("https://storage.hylia.dev/bios.json").then((res) => res.json());
+
+const bio = bios[Math.floor(Math.random() * bios.length)];
 ---
 
 <div class="sidebar">
@@ -47,9 +51,7 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
         style="border-radius: 50%; width: 68px;"
       />
       <p class="mb-4">
-        I'm a developer and a vtuber based in the United States, I have been
-        building and developing software since I was 12 years old. I have gotten
-        into the world of vtubing since 2022.
+        {bio}
       </p>
       <ul class="social-icons list-unstyled list-inline mb-0">
         <Socials classes="list-inline-item" />
