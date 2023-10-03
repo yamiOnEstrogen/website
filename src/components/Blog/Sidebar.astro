@@ -66,34 +66,15 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
     </div>
     <div class="widget-content" id="toc-wrapper"></div>
   </div>
+
   <div class="widget rounded">
     <div class="widget-header text-center">
-      <h3 class="widget-title" style="color: #fff;">Random Posts</h3>
-      <img
-        src="https://storage.hylia.dev/blog/images/wave.svg"
-        class="wave"
-        alt="wave"
-      />
+      <h3 class="widget-title" style="color: #fff;">Join the Discord</h3>
     </div>
     <div class="widget-content">
-      {
-        randomPost.map((post, index) => (
-          <div class="post post-list-sm circle">
-            <div class="details clearfix">
-              <h6 class="post-title my-0">
-                <a href={`/blog/post/${post.frontmatter.slug}`} style="color: #fff;">
-                  {post.frontmatter.title.slice(0, 20) + (post.frontmatter.title.length > 20 ? "..." : "")}
-                </a>
-              </h6>
-              <ul class="meta list-inline mt-1 mb-0">
-                <li class="list-inline-item">
-                  <i class="bi bi-calendar" style="padding-right: 5px;"></i> {fDate(new Date(post.frontmatter.pubDate))}
-                </li>
-              </ul>
-            </div>
-          </div>
-        ))
-      }
+      <a href="https://chat.hylia.dev" target="_blank" rel="noopener noreferrer nofollow">
+        <img src="https://github.com/0xhylia/Community-Server-Discord-Bot/blob/master/.github/Images/logo.png?raw=true" class="img-fluid adImage" alt="Discord Server" />
+      </a>
     </div>
   </div>
 </div>
@@ -107,3 +88,11 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
     document.getElementById("bio__user").innerHTML = bio;
   })();
 </script>
+
+<style>
+  .adImage {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+  }
+</style>
