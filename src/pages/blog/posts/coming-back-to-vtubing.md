@@ -8,6 +8,7 @@ categories:
   - Online
   - Streaming
   - Vtubing
+  - Vtubers
 ---
 
 # **Revisiting VTubing: Embracing a Passion Rekindled**
