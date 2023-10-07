@@ -8,8 +8,8 @@ import Tags from "../../../components/Blog/Tags.astro";
 import { fDate } from "developer-toolkit-utils";
 import ToastController from "../../../components/ToastController.astro";
 
-export const getStaticPaths = async () => {
-  const posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(
+export var getStaticPaths = async () => {
+  var posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(
     (a, b) =>
       new Date(b.frontmatter.pubDate).valueOf() -
       new Date(a.frontmatter.pubDate).valueOf()
@@ -22,9 +22,9 @@ export const getStaticPaths = async () => {
   });
 };
 
-const { slug } = Astro.params;
+var { slug } = Astro.params;
 
-const post = (await Astro.glob("../posts/*.{md,mdx}")).find(
+var post = (await Astro.glob("../posts/*.{md,mdx}")).find(
   (post) => post.frontmatter.slug === slug
 );
 
@@ -32,7 +32,7 @@ if (!post) {
   return Astro.redirect("/blog");
 }
 
-const content = post.compiledContent();
+var content = post.compiledContent();
 ---
 
 <BlogLayout
@@ -57,7 +57,10 @@ const content = post.compiledContent();
         <div class="col-lg-8">
           <div class="post post-single">
             <div class="post-header">
-              <h1 class="title mt-0 mb-3" style="color: #9faabb; font-size: 25px;">
+              <h1
+                class="title mt-0 mb-3"
+                style="color: #9faabb; font-size: 25px;"
+              >
                 {post.frontmatter.title}
               </h1>
               <ul class="meta list-inline mb-0">
@@ -65,9 +68,8 @@ const content = post.compiledContent();
                   <i class="bi bi-stopwatch" id="time_reading"></i>
                 </li>
                 <li class="list-inline-item">
-                  <i class="bi bi-calendar">
-                    </i
-                  > {fDate(new Date(post.frontmatter.pubDate))}
+                  <i class="bi bi-calendar"> </i>
+                  {fDate(new Date(post.frontmatter.pubDate))}
                 </li>
               </ul>
             </div>
@@ -100,46 +102,99 @@ const content = post.compiledContent();
         <div class="col-lg-4">
           <Sidebar />
         </div>
-
-        
       </div>
     </div>
   </section>
 
   <script is:inline>
-    const TOC = document.getElementById("table-of-contents");
-    const postContent = document.getElementById("post-content");
+    var TOC = document.getElementById("table-of-contents");
+    var postContent = document.getElementById("post-content");
 
     // Get the H2 elements in the post content
-    const H2 = postContent.querySelectorAll("h2");
+    var H2 = postContent.querySelectorAll("h2");
 
     if (H2.length === 0) {
       TOC.classList.add("d-none");
     } else {
       TOC.classList.remove("d-none");
-      const toc_wrapper = document.getElementById("toc-wrapper");
+      var toc_wrapper = document.getElementById("toc-wrapper");
       for (let i = 0; i < H2.length; i++) {
-        const H2ID = H2[i].id;
-        const H2TITLE = H2[i].textContent;
+        var H2ID = H2[i].id;
+        var H2TITLE = H2[i].textContent;
 
         toc_wrapper.innerHTML += `<li><a style="text-decoration: none;" href="#${H2ID}">${H2TITLE}</a></li>`;
       }
     }
 
     function calculateReadingTime() {
-      const textElement = document.getElementById("post-content");
-      const outputElement = document.getElementById("time_reading");
+      var textElement = document.getElementById("post-content");
+      var outputElement = document.getElementById("time_reading");
       if (!textElement || !outputElement) return;
 
-      const text = textElement.innerText;
+      var text = textElement.innerText;
       /** The average number of words per minute that a human can read. */
-      const wordsPerMinute = 238;
-      const words = text.trim().split(/\s+/).length;
-      const minutes = Math.ceil(words / wordsPerMinute);
+      var wordsPerMinute = 238;
+      var words = text.trim().split(/\s+/).length;
+      var minutes = Math.ceil(words / wordsPerMinute);
 
       outputElement.textContent = ` ${minutes} min read`;
     }
 
+    var timers = document.getElementsByClassName("timer");
+
+    function updateDate(timerDateElement, timerDate) {
+      var currentDate = new Date();
+      var timeDifference = timerDate - currentDate;
+
+      if (timeDifference <= 0) {
+        timerDateElement.textContent = "Today";
+      } else if (timeDifference <= 86400000) {
+        var days = Math.floor(timeDifference / 86400000);
+        timerDateElement.textContent = `${days}d ago`;
+      } else {
+        var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(
+          (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        );
+        var minutes = Math.floor(
+          (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+        );
+        var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+        timerDateElement.textContent = `${days} d, ${hours} h, ${minutes} m, ${seconds} s`;
+      }
+    }
+
+    function updateTimer(timerElement) {
+      var timerValue = timerElement.textContent;
+      var timerDate = new Date(timerValue * 1000); // Convert timer value to milliseconds
+      updateDate(timerElement, timerDate);
+      setInterval(() => {
+        updateDate(timerElement, timerDate);
+      }, 1000);
+    }
+
+    for (let i = 0; i < timers.length; i++) {
+      var timerElement = timers[i];
+      updateTimer(timerElement);
+    }
+
+
+    function InheritPost() {
+      var inf = document.getElementsByClassName("inherit-post");
+
+      var TEMPLATE = `<a href="[link]"> <span class="badge rounded-pill bg-primary"><i class="bi bi-book-fill" width="16px" alt="Book" style="padding-right: 5px;"></i> Read: [title]</span></a>`;
+
+      for (let i = 0; i < inf.length; i++) {
+        var element = inf[i];
+        // Get custom attributes
+        var link = element.getAttribute("data-link");
+        var title = element.getAttribute("data-title");
+        TEMPLATE = TEMPLATE.replace("[link]", link).replace("[title]", title);
+        element.innerHTML = TEMPLATE;
+      }
+    }
+
+    InheritPost();
     calculateReadingTime();
   </script>
   <style is:global>
@@ -168,32 +223,31 @@ const content = post.compiledContent();
     }
 
     code > [data-line]::before {
-  counter-increment: line;
-  content: counter(line);
- 
-  /* Other styling */
-  display: inline-block;
-  width: 1rem;
-  margin-right: 2rem;
-  text-align: right;
-  color: gray;
-}
- 
-code[data-line-numbers-max-digits='2'] > [data-line]::before {
-  width: 2rem;
-}
- 
-code[data-line-numbers-max-digits='3'] > [data-line]::before {
-  width: 3rem;
-}
+      counter-increment: line;
+      content: counter(line);
 
-  code {
-    color: white;
-    background-color: #111;
-    padding: 2px 5px;
-    border-radius: 3px;
-  }
-    
+      /* Other styling */
+      display: inline-block;
+      width: 1rem;
+      margin-right: 2rem;
+      text-align: right;
+      color: gray;
+    }
+
+    code[data-line-numbers-max-digits="2"] > [data-line]::before {
+      width: 2rem;
+    }
+
+    code[data-line-numbers-max-digits="3"] > [data-line]::before {
+      width: 3rem;
+    }
+
+    code {
+      color: white;
+      background-color: #111;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
 
     h1 {
       color: #fff;
@@ -222,8 +276,6 @@ code[data-line-numbers-max-digits='3'] > [data-line]::before {
       display: flex;
       flex-direction: row;
       justify-content: center;
-
-
     }
   </style>
 </BlogLayout>
