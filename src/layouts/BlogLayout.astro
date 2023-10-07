@@ -104,35 +104,6 @@ const { title, description, img, isPost } = Astro.props;
     ></script>
   </head>
   <body>
-    <!-- <div id="preloader">
-      <div class="book">
-        <div class="inner">
-          <div class="left"></div>
-          <div class="middle"></div>
-          <div class="right"></div>
-        </div>
-        <ul>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-          <li></li>
-        </ul>
-      </div>
-    </div> -->
     <div class="site-wrapper">
       <div class="main-overlay"></div>
       <Header isPost={isPost} />
@@ -180,9 +151,12 @@ const { title, description, img, isPost } = Astro.props;
       } catch (error) {
         window.location.reload();
       }
-      const toastLiveExample = document.getElementById("liveToast");
-      const toastBootstrap = new bootstrap.Toast(toastLiveExample);
-      toastBootstrap.show();
+      
+      var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+
     </script>
   </body>
 </html>

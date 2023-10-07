@@ -1,30 +1,48 @@
 ---
 interface Props {
-  classes?: string;
+  classes?: string; 
+  allowColors?: boolean;
 }
 
-const { classes } = Astro.props;
+interface Social {
+  title: string;
+  href: string;
+  icon: string;
+  color: string;
+}
 
-const socials = [
+const { classes, allowColors } = Astro.props;
+
+const socials: Social[] = [
   {
     title: "Twitter",
     href: "https://x.com/char32vt/",
     icon: "bi bi-twitter",
+    color: "#1da1f2",
   },
   {
     title: "Github",
     href: "https://github.com/0xhylia",
     icon: "bi bi-github",
+    color: "#181717"
   },
   {
     title: "Twitch",
     href: "https://twitch.com/0xhylia",
     icon: "bi bi-twitch",
+    color: "#9146ff",
   },
   {
     title: "Steam",
     href: "https://steamcommunity.com/id/hyliavt/",
     icon: "bi bi-steam",
+    color: "#000000",
+  },
+  {
+    title: "Discord",
+    href: "https://chat.hylia.dev",
+    icon: "bi bi-discord",
+    color: "#5865f2",
   },
 ];
 ---
@@ -35,9 +53,9 @@ const socials = [
       <a
         href={`${social.href}?ref=hylia.dev`}
         target="_blank"
-        style="padding: 0 5px; color: #fff;"
+        style={`padding: 0 5px;`}
       >
-        <i class={`icon ${social.icon}`} />
+        <i class={`icon ${social.icon}`} style={`${allowColors ? `color: ${social.color};` : 'color: #fff;'}`} />
       </a>
     </li>
   ))

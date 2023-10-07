@@ -264,35 +264,6 @@ const { title, description, img } = Astro.props;
           document.body.removeChild(document.getElementById("snackbar"));
         }, 3000);
       }, 2000);
-
-      function UserBrowser() {
-        const ua = navigator.userAgent;
-
-        // Get the browser name from the user agent string.
-        const browserName =
-          /(Chrome|Firefox|Edge|Safari|Opera|Trident|Brave|MSIE)/.exec(ua)[0];
-
-        return browserName;
-      }
-
-      // Check if YTPlayer is running
-      $(function () {
-        setTimeout(() => {
-          const p = $.mbYTPlayer;
-
-          if (p == null || p == undefined) {
-            window.location.reload();
-          } else {
-            const video = document.getElementById("homeVideo");
-
-            // Click the element
-            video.click();
-            console.debug(
-              `Because Browser is ${UserBrowser()}, we needed to click the video element, so it can play.`
-            );
-          }
-        }, 4000);
-      });
     </script>
   </body>
 </html>
