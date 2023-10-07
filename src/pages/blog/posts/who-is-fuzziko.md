@@ -1,6 +1,6 @@
 ---
 title: "Who is Fuzziko?"
-excerpt: "I will be switching back over to Windows so I can stream without anything breaking."
+excerpt: "Fuzzikko is an AI Vtuber with an endearing bunny girl persona, brought to life by the power of:"
 slug: "who-is-fuzziko"
 image: blog/images/who-is-fuzziko.jpg
 pubDate: 2023-10-07 14:00
