@@ -7,6 +7,9 @@ pubDate: 2023-10-07 14:00
 categories:
   - Linux
   - Streaming
+  - Vtubers
+  - AI
+  - ML
 ---
 
 ## Who is Fuzziko?
