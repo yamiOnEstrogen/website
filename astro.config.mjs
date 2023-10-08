@@ -69,6 +69,4 @@ export default defineConfig({
         JavaScript: true,
         SVG: false,
     }), preact()],
-
-    site: "http://192.168.0.3:4321"
 });
