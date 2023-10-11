@@ -1,3 +1,7 @@
+// Bro wtf is this keyboard.
+// But fr this is a cool sound.
+// I just want to be a dommy mommy's good pet.
+
 export default function CreateShareLinks(title: string, url: string) {
     return `<li class="list-inline-item">
           <a
