@@ -33,12 +33,26 @@ if (!post) {
 }
 
 var content = post.compiledContent();
+
+let $SETTINGS = '';
+
+if (post.frontmatter.override_settings) {
+  const overrideSettings = post.frontmatter.override_settings;
+
+  for (const key in overrideSettings) {
+    if (overrideSettings.hasOwnProperty(key)) {
+      $SETTINGS += `${key}: ${overrideSettings[key]}; `;
+    }
+  }
+}
+
+console.log($SETTINGS);
 ---
 
-<VentLayout title="char32 | Venting">
+<VentLayout title="char32 • Venting">
     <h1 class="text-center" style="font-size: 2rem;">Venting | {post.frontmatter.title}</h1>
     <br />
-    <div class="album py-5 bg-body-tertiary" style="font-size: 1.2rem; text-align: center;">
+    <div class="album py-5 bg-body-tertiary" style={`${$SETTINGS ? `${$SETTINGS} text-align: center; border-radius: 10px;` : 'font-size: 1.2rem; text-align: center; border-radius: 10px;'}`}>
         <div set:html={content}></div>
     </div>
 </VentLayout>
