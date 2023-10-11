@@ -78,6 +78,7 @@ const { title, description, img } = Astro.props;
       href="https://storage.hylia.dev/css/jquery.mb.YTPlayer.min.css"
     />
     <link rel="stylesheet" href="https://storage.hylia.dev/css/main.css" />
+    <link rel="stylesheet" href="https://storage.hylia.dev/css/bar.css" />
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
@@ -100,6 +101,7 @@ const { title, description, img } = Astro.props;
     <script is:inline async src="https://storage.hylia.dev/js/lity.min.js"
     ></script>
     <script is:inline async src="https://storage.hylia.dev/js/main.js"></script>
+    <script is:inline async src="https://storage.hylia.dev/js/bar.js" type="module"></script>
     <script
       is:inline
       async
@@ -113,80 +115,7 @@ const { title, description, img } = Astro.props;
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"></script>
     <style is:inline is:global>
-      #snackbar {
-        visibility: hidden; /* Hidden by default. Visible on click */
-        min-width: 250px; /* Set a default minimum width */
-        background-color: #333; /* Black background color */
-        color: #fff; /* White text color */
-        text-align: center; /* Centered text */
-        border-radius: 50px; /* Rounded borders */
-        padding: 16px; /* Padding */
-        position: fixed; /* Sit on top of the screen */
-        z-index: 1; /* Add a z-index if needed */
-        left: 50%; /* Center the snackbar */
-        bottom: 30px; /* 30px from the bottom */
-        transform: translateX(
-          -50%
-        ); /* Move the snackbar back by half its width */
-      }
 
-      /* Show the snackbar when clicking on a button (class added with JavaScript) */
-      #snackbar.show {
-        visibility: visible; /* Show the snackbar */
-        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-    However, delay the fade out process for 2.5 seconds */
-        -webkit-animation:
-          fadein 0.5s,
-          fadeout 0.5s 2.5s;
-        animation:
-          fadein 0.5s,
-          fadeout 0.5s 2.5s;
-      }
-
-      /* Animations to fade the snackbar in and out */
-      @-webkit-keyframes fadein {
-        from {
-          bottom: 0;
-          opacity: 0;
-        }
-        to {
-          bottom: 30px;
-          opacity: 1;
-        }
-      }
-
-      @keyframes fadein {
-        from {
-          bottom: 0;
-          opacity: 0;
-        }
-        to {
-          bottom: 30px;
-          opacity: 1;
-        }
-      }
-
-      @-webkit-keyframes fadeout {
-        from {
-          bottom: 30px;
-          opacity: 1;
-        }
-        to {
-          bottom: 0;
-          opacity: 0;
-        }
-      }
-
-      @keyframes fadeout {
-        from {
-          bottom: 30px;
-          opacity: 1;
-        }
-        to {
-          bottom: 0;
-          opacity: 0;
-        }
-      }
       .tooltip-main {
         color: #fff;
         text-decoration: none;
@@ -252,18 +181,7 @@ const { title, description, img } = Astro.props;
         });
       }, 2000);
 
-      setTimeout(() => {
-        document.getElementById(
-          "snackbar"
-        ).innerHTML = `<i class="bi bi-heart-fill" style="color: red; font-size: 20px;"></i> This website is <a href="https://git.hylia.dev/hylia.dev" target="_blank">open source</a>.`;
-        // Remove the class hid, and add the class show
-        document.getElementById("snackbar").classList.remove("d-none");
-        document.getElementById("snackbar").classList.add("show");
-
-        setTimeout(function () {
-          document.body.removeChild(document.getElementById("snackbar"));
-        }, 3000);
-      }, 2000);
+      window.CreateSnackbar(null, 0, 5000);
     </script>
   </body>
 </html>

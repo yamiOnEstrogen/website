@@ -15,6 +15,8 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
 ---
 
 <BlogLayout title="char32 • Blog" description="Read char32's blog posts!">
+  <div id="snackbar" class="snackbar d-none"></div>
+
   <section class="main-content mt-5">
     <div class="container-xl">
       <div class="row gy-4">

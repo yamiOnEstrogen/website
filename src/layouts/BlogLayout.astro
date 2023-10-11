@@ -88,6 +88,8 @@ const { title, description, img, isPost } = Astro.props;
       is:inline
       src="https://storage.hylia.dev/blog/js/bootstrap.min.js"
     ></script>
+    <link rel="stylesheet" href="https://storage.hylia.dev/css/bar.css" />
+    <script is:inline src="https://storage.hylia.dev/js/bar.js" type="module"></script>
     <script
       is:inline
       async
@@ -156,7 +158,6 @@ const { title, description, img, isPost } = Astro.props;
 var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
-
     </script>
   </body>
 </html>
