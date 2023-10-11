@@ -1,0 +1,54 @@
+---
+import VentLayout from "../../layouts/VentLayout.astro";
+import { fDate, fTime } from "developer-toolkit-utils";
+
+async function getSortedPosts() {
+
+    try {
+        const posts = await Astro.glob("./posts/*.{md,mdx}");
+    return posts.sort((a, b) =>
+        new Date(b.frontmatter.date).valueOf() - new Date(a.frontmatter.date).valueOf()
+    );
+    } catch (error) {
+        console.log(error);
+        return [];
+    }
+}
+
+const posts = await getSortedPosts();
+
+
+---
+
+<VentLayout title="char32 | Venting" description="This is a place for me to vent about current things.">
+    <h1 class="text-center">Venting</h1>
+  <div class="album py-5">
+    <div class="container">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        {posts.length == 0 ? <p class="text-center mt-5" style="font-size: 2rem; font-weight: bold; text-align: center;">No posts found.</p> : posts.map((post) => (
+         <div class="col">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <p class="card-text">{post.frontmatter.title}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a
+                      type="button"
+                      href={`/vent/@/${post.frontmatter.slug}`}
+                      class="btn btn-sm btn-outline-secondary"
+                    >
+                      View
+                    </a>
+                  </div>
+                  <small class="text-body-secondary">
+                    {fDate(new Date(post.frontmatter.date))} at {fTime(new Date(post.frontmatter.date))}
+                  </small>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</VentLayout>

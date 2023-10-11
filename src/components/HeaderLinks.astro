@@ -3,6 +3,7 @@
 interface Link {
     text: string;
     href: string;
+    active?: boolean;
 }
 
 
@@ -10,15 +11,16 @@ interface Props {
     liClass?: string;
     aClass?: string;
     links: Link[];
+    aStyles?: string;
 }
 
-const { liClass, aClass, links } = Astro.props;
+const { liClass, aClass, links, aStyles } = Astro.props;
 ---
 
 {
     links.map((link) => (
         <li class={`${liClass}`}>
-            <a class={`${aClass}`} href={link.href}>{link.text}</a>
+            <a class={`${aClass} ${link.active ? "active" : ""}`} style={aStyles} href={link.href}>{link.text}</a>
         </li>
     ))
 }

@@ -1,0 +1,110 @@
+---
+import Header from "../components/Vent/Header.astro";
+interface Props {
+  title: string;
+  description?:
+    | string
+    | "Hello, I'm Stella, a developer specializing in creating Discord bots and open-source solutions at Hyperstar. Additionally, I identify as a TransFemale, using She/Her pronouns.";
+  img?: string;
+  isPost?: boolean;
+}
+
+const { title, description, img, isPost } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="https://avatars.githubusercontent.com/u/93791569"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="char32" />
+    <meta property="og:title" content="char32" />
+    <meta property="og:description" content={description} />
+    <meta
+      property="og:image"
+      content={img || "https://storage.hylia.dev/images/default_banner.jpg"}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="twitter:site" content="char32" />
+    <meta name="twitter:creator" content="char32vt" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <meta
+      name="keywords"
+      content="hylia, Hylia, Developer, char32, char32, transgender, x, twitter, anime, blog, Virtual YouTuber, Streaming, Virtual persona, 2D avatar, Live chat interaction, Virtual world, Kawaii, Virtual reality, Twitch, Hololive, Software development, Coding, Programming languages, GitHub, Code repositories, Open-source projects, Web development, App development, API integration, Debugging, Gaming, Esports, Twitch streamer, Let's Plays, Gaming hardware, Console gaming, PC gaming, Game reviews, Online multiplayer, Gaming community"
+    />
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E85TLW0B9F"
+    ></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9106548277815950"
+      crossorigin="anonymous"
+    ></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-E85TLW0B9F");
+    </script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://storage.hylia.dev/css/icons.css" />
+    <script
+      is:inline
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+    />
+    <script is:inline async src="https://storage.hylia.dev/blog/js/main.js"
+    ></script>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <style is:global>
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      ::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d6dee1;
+  border-radius: 20px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a8bbbf;
+}
+    </style>
+  </body>
+</html>

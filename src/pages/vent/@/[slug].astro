@@ -1,0 +1,44 @@
+---
+import VentLayout from "../../../layouts/VentLayout.astro";
+import { fDate, fTime } from "developer-toolkit-utils";
+
+export var getStaticPaths = async () => {
+  try {
+    var posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(
+    (a, b) =>
+      new Date(b.frontmatter.date).valueOf() -
+      new Date(a.frontmatter.date).valueOf()
+  );
+  return posts.map((post) => {
+    return {
+      params: { slug: post.frontmatter.slug },
+      props: { slug: post.frontmatter.slug },
+    };
+  });
+  } catch (e) {
+    console.log(e);
+    return [];
+  }
+};
+
+var { slug } = Astro.params;
+
+
+var post = (await Astro.glob("../posts/*.{md,mdx}")).find(
+  (post) => post.frontmatter.slug === slug
+);
+
+if (!post) {
+  return Astro.redirect("/vent");
+}
+
+var content = post.compiledContent();
+---
+
+<VentLayout title="char32 | Venting">
+    <h1 class="text-center" style="font-size: 2rem;">Venting | {post.frontmatter.title}</h1>
+    <br />
+    <div class="album py-5 bg-body-tertiary" style="font-size: 1.2rem; text-align: center;">
+        <div set:html={content}></div>
+    </div>
+</VentLayout>
