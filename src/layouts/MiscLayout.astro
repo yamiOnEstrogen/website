@@ -51,6 +51,7 @@ const { title, description, img } = Astro.props;
 
   gtag('config', 'G-E85TLW0B9F');
 </script>
+<link rel="stylesheet" href="https://storage.hylia.dev/fonts/CascadiaCode.ttf" />
 <script is:inline async src="https://storage.hylia.dev/js/bar.js" type="module"></script>
 <link rel="stylesheet" href="https://storage.hylia.dev/css/bar.css" />
 
@@ -68,5 +69,17 @@ const { title, description, img } = Astro.props;
         });
       }, 2000);
     </script>
+
+    <style>
+      body {
+        font-family: "Cascadia Code";
+      }
+    </style>
+
+<noscript>
+  <div class="nojs">
+      <p>This website requires JavaScript. Please enable JavaScript in your browser.</p>
+  </div>
+</noscript>
   </body>
 </html>

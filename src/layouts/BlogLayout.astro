@@ -97,6 +97,7 @@ const { title, description, img, isPost } = Astro.props;
     ></script>
     <script is:inline src="https://storage.hylia.dev/blog/js/jquery.min.js"
     ></script>
+    <link rel="stylesheet" href="https://storage.hylia.dev/fonts/CascadiaCode.ttf" />
     <script
       is:inline
       async
@@ -141,6 +142,7 @@ const { title, description, img, isPost } = Astro.props;
       body {
         background-color: var(--background-color);
         color: var(--text-color);
+        font-family: "Cascadia Code";
       }
     </style>
 
@@ -159,5 +161,11 @@ var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
   return new bootstrap.Tooltip(tooltipTriggerEl)
 })
     </script>
+
+    <noscript>
+        <div class="nojs">
+            <p>This website requires JavaScript. Please enable JavaScript in your browser.</p>
+        </div>
+    </noscript>
   </body>
 </html>

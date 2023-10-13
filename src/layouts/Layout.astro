@@ -90,6 +90,8 @@ const { title, description, img } = Astro.props;
       is:inline
       async
       src="https://storage.hylia.dev/js/bootstrap.bundle.min.js"></script>
+
+      <link rel="stylesheet" href="https://storage.hylia.dev/fonts/CascadiaCode.ttf" />
     <script
       is:inline
       async
@@ -115,6 +117,10 @@ const { title, description, img } = Astro.props;
       integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
       crossorigin="anonymous"></script>
     <style is:inline is:global>
+
+      body {
+        font-family: "Cascadia Code";
+      }
 
       .tooltip-main {
         color: #fff;
@@ -183,5 +189,11 @@ const { title, description, img } = Astro.props;
 
       window.CreateSnackbar(null, 0, 5000);
     </script>
+
+<noscript>
+  <div class="nojs">
+      <p>This website requires JavaScript. Please enable JavaScript in your browser.</p>
+  </div>
+</noscript>
   </body>
 </html>

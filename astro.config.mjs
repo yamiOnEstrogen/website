@@ -32,6 +32,8 @@ export default defineConfig({
         port: 4321
     },
 
+    output: "server",
+
     markdown: {
         remarkPlugins: [remarkToc],
         extendDefaultPlugins: true,
