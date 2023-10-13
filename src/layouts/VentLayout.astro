@@ -110,7 +110,33 @@ const { title, description, img, isPost } = Astro.props;
   background-color: #a8bbbf;
 }
 
-body {
+:root {
+        color-scheme: light dark;
+        --background-color: #ffffff; /* Default light mode background color */
+        --text-color: #333333; /* Default light mode text color */
+      }
+
+      .blog_title {
+        color: var(--text-color);
+      }
+
+      /* Dark Mode */
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #333333; /* Dark mode background color */
+          --text-color: #ffffff; /* Dark mode text color */
+        }
+
+        /* Style specific elements with dark backgrounds or text in dark mode */
+        .dark-background {
+          background-color: #222222; /* Dark background color in dark mode */
+          color: #ffffff; /* White text color in dark mode */
+        }
+      }
+
+      body {
+        background-color: var(--background-color);
+        color: var(--text-color);
         font-family: "Cascadia Code";
       }
     </style>
