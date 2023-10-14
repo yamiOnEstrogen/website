@@ -26,7 +26,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
                 <div class="col-sm-6">
                   <div class="post post-grid rounded bordered">
                     <div class="thumb top-rounded">
-                      <a href={post.frontmatter.image}>
+                      <a href={`https://storage.hylia.dev/${post.frontmatter.image}`}>
                         <div class="inner">
                           <img
                             src={`https://storage.hylia.dev/${post.frontmatter.image}`}
