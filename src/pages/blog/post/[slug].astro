@@ -6,7 +6,6 @@ import createExcerpt from "../../../utils/createExcerpt";
 import Tags from "../../../components/Blog/Tags.astro";
 
 import { fDate } from "developer-toolkit-utils";
-import ToastController from "../../../components/ToastController.astro";
 
 export var getStaticPaths = async () => {
   var posts = (await Astro.glob("../posts/*.{md,mdx}")).sort(

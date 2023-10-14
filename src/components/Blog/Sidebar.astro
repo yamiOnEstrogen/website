@@ -13,12 +13,6 @@ function RandomPost() {
 
 const randomPost = RandomPost();
 
-const ads = await fetch("https://storage.hylia.dev/ads.json").then((res) =>
-  res.json()
-);
-
-const ad = ads[Math.floor(Math.random() * ads.length)];
-
 /**
  * If if fix ads from overflowing into the footer, this is the code.
  *   <div class="widget rounded">
@@ -81,7 +75,7 @@ const ad = ads[Math.floor(Math.random() * ads.length)];
 
 <script is:inline type="text/javascript">
   (async () => {
-    const bios = await fetch("https://storage.hylia.dev/bios.json").then((res) => res.json());
+    const bios = await fetch("https://storage.hylia.dev/json/bios").then((res) => res.json());
 
     const bio = bios[Math.floor(Math.random() * bios.length)];
 
