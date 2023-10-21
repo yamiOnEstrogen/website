@@ -2,6 +2,8 @@
 interface Props {
   classes?: string; 
   allowColors?: boolean;
+  Astyles?: string;
+  LIstyles?: string;
 }
 
 interface Social {
@@ -11,12 +13,12 @@ interface Social {
   color: string;
 }
 
-const { classes, allowColors } = Astro.props;
+const { classes, allowColors, Astyles, LIstyles } = Astro.props;
 
 const socials: Social[] = [
   {
     title: "Twitter",
-    href: "https://x.com/char32vt/",
+    href: "https://x.com/withervt/",
     icon: "bi bi-twitter",
     color: "#1da1f2",
   },
@@ -49,11 +51,11 @@ const socials: Social[] = [
 
 {
   socials.map((social) => (
-    <li class={classes}>
+    <li class={classes} style={LIstyles}>
       <a
         href={`${social.href}?ref=hylia.dev`}
         target="_blank"
-        style={`padding: 0 5px;`}
+        style={`${Astyles}`}
       >
         <i class={`icon ${social.icon}`} style={`${allowColors ? `color: ${social.color};` : 'color: #fff;'}`} />
       </a>

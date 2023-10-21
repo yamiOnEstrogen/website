@@ -1,299 +1,111 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import ServiceCard from "../components/ServiceCard.astro";
-import ClientCards from "../components/ClientCards.astro";
-import Skills from "../components/Skills.astro";
-import PortfolioCards from "../components/PortfolioCards.astro";
 import Socials from "../components/Socials.astro";
+import Projects from "../components/Sections/Projects.astro";
+import Testimonials from "../components/Sections/Testimonials.astro";
+import Skills from "../components/Sections/Skills.astro";
 ---
 
 <Layout
-  title="char32 • Home"
+  title="withervt • Home"
   description="Hello, I’m Stella, a developer specializing in creating Discord bots and open-source solutions at Hyperstar. Additionally, I identify as a TransFemale, using She/Her pronouns."
 >
   <div id="snackbar" class="snackbar d-none"></div>
-  <section
-    class="home-area element-cover-bg video-variant"
-    id="home"
-    style="background-image:url(https://storage.hylia.dev/images/bg.gif)"
-  >
-    <div class="container h-100">
-      <div class="row h-100 align-items-center justify-content-center">
-        <div class="col-12 col-lg-8 home-content text-center">
-          <h1 class="home-name cd-headline clip" id="main_name">char32</h1>
-          <h4 class="cd-headline clip home-headline">
-            I’m a <span class="cd-words-wrapper single-headline"
-              ><b class="is-visible">Developer</b><b>Furry</b><b>Freelancer</b
-              ><b>Gamer</b></span>
-          </h4>
+  <div class="container-fluid">
+    <div class="top-bar text-center position-relative">
+      <div class="top-bar-inner">
+        <a
+          class="menu-toggler"
+          data-bs-toggle="offcanvas"
+          href="#offcanvasNavbar"
+          role="button"
+          aria-controls="offcanvasNavbar"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="30"
+            height="30"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            ></path>
+          </svg>
+        </a>
+
+        <div class="mode-toggle text-center">
+          <input class="toggle" id="darkmode" type="checkbox" />
+          <label class="toggle-btn mx-auto mb-0" for="darkmode">
+            <span class="day-icon toggle-icon">
+              <i class="bi bi-sun-fill"></i></span
+            >
+            <span class="night-icon toggle-icon"
+              ><i class="bi bi-moon-fill"></i></span
+            >
+          </label>
         </div>
-      </div>
-    </div>
-    <div class="fixed-wrapper">
-      <!-- Social media icons-->
-      <div class="fixed-block block-right">
-        <ul class="list-unstyled social-icons">
-          <Socials allowColors={false} />
+
+        <a class="btn btn-primary top-bar-cta" href="mailto:dev@hylia.dev"
+          >Hire Me</a
+        >
+
+        <ul class="social-list list-inline mx-auto d-none d-lg-block">
+          <Socials
+            classes="list-inline-item me-0 me-md-1 me-lg-2"
+            allowColors={true}
+          />
         </ul>
       </div>
     </div>
-  </section>
-  <div class="lightbox-wrapper" id="about" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close="">
-          <span class="btn-line"></span>
+
+    <section class="page-intro-section section has-profile-image mx-auto">
+      <div class="profile-holder text-center">
+        <img
+          class="profile-pic rounded-circle"
+          src="https://storage.hylia.dev/images/47033415ef4841d627d49d05058324e8.jpg"
+          alt="image"
+        />
+      </div>
+      <div class="intro-holder">
+        <h2 class="intro-name text-center mb-3">Stella • WitherVt</h2>
+        <div class="profile-intro text-md-center limit-max-width mx-auto">
+          <p>
+            I'm a passionate developer and a dedicated VTuber hailing from the
+            United States. My journey in the world of software development
+            commenced at the tender age of 12, and I've been crafting innovative
+            solutions ever since.
+          </p>
         </div>
       </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <p class="section-description">Get to know me</p>
-                  <h2 class="section-title">About Me</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Info section-->
-            <div class="info-section single-section">
-              <div class="row align-items-center">
-                <!-- Picture part-->
-                <div class="col-12 col-lg-5 info-img">
-                  <img
-                    class="img-fluid img-thumbnail"
-                    src="https://storage.hylia.dev/images/47033415ef4841d627d49d05058324e8.jpg"
-                    alt="About Picture"
-                    style="border-radius: 50%;"
-                  />
-                </div>
-                <!-- Content part-->
-                <div class="col-12 col-lg-7 info-content">
-                  <div class="content-block">
-                    <h2 class="content-subtitle">Who am i?</h2>
-                    <h6 class="content-title">
-                      I'm Stella, I'm a developer based in the
-                      United States.
-                    </h6>
-                    <div class="content-description">
-                      <p>
-                        I'm a developer based in the United States,
-                        I have been building and developing software since I was
-                        12 years old.
-                      </p>
-                    </div>
-                    <address class="content-info">
-                      <div class="row">
-                        <div class="col-12 col-md-6 single-info">
-                          <span>Name:</span>
-                          <p>Stella</p>
-                        </div>
-                        <div class="col-12 col-md-6 single-info">
-                          <span>Email:</span>
-                          <p>
-                            <a href="mailto:dev@hylia.dev">dev@hylia.dev</a>
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-12 col-md-6 single-info">
-                          <span>Gender:</span>
-                          <p>
-                            She/Her <img
-                              src="https://storage.hylia.dev/images/trans.png"
-                              alt="TransGender | She/Her"
-                              title="Transgender | She/Her"
-                              style="width: 20px;"
-                            />
-                          </p>
-                        </div>
-                        <div class="col-12 col-md-6 single-info">
-                          <span>From:</span>
-                          <p>Waycross, Georgia</p>
-                        </div>
-                      </div>
-                    </address>
-                    <div class="d-block d-sm-flex align-items-center">
-                      <a
-                        class="btn content-download button-main button-scheme"
-                        href="https://github.com/withervt"
-                        role="button">Github</a
-                      >
-                      <ul class="list-unstyled list-inline content-follow">
-                        <Socials classes="list-inline-item" allowColors={false} />
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Services section-->
-            <div class="services-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <p class="section-description">
-                      Services i offer to my clients
-                    </p>
-                    <h2 class="section-title">My Services</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <ServiceCard
-                  title="Web Development"
-                  description="Discover my web expertise! I build and optimize websites for your success."
-                  icon="bi bi-globe2"
-                />
-                <ServiceCard
-                  title="Discord Bot Development"
-                  description="I will create a bot for your server to make your life easier."
-                  icon="bi bi-discord"
-                />
-                <ServiceCard
-                  title="Technical Support"
-                  description="I will help you with any technical issues you may have."
-                  icon="bi bi-headset"
-                />
-                <ServiceCard
-                  title="Twitch Bot Development"
-                  description="I will create a bot for your channel to make your life easier. Moderation and more."
-                  icon="bi bi-twitch"
-                />
-              </div>
-            </div>
-            <!-- Testimonials section-->
-            <div class="testimonials-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <p class="section-description">
-                      What my clients think about me
-                    </p>
-                    <h2 class="section-title">Testimonials</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="my-slider">
-                <ClientCards
-                  name="Jessica"
-                  role="Github Contributor"
-                  image="77359021"
-                  review="I have worked with stella on a few projects, and she is a great developer. She is very helpful and is always willing to help. I would highly recommend her to anyone who is looking for a developer."
-                />
-              </div>
-            </div>
-          </div>
-        </div>
+  
+      <div class="section-cta text-center mt-4">
+        <a class="btn btn-secondary theme-btn-cta" href="/resume"
+          >View Resume<svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="currentColor"
+            class="bi bi-arrow-right-short"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
+            ></path>
+          </svg></a
+        >
       </div>
-    </div>
+    </section>
+  
+    <Projects />
+    <Testimonials />
+    <Skills />
   </div>
-  <!-- Resume lightbox-->
-  <div class="lightbox-wrapper" id="resume" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close="">
-          <span class="btn-line"></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <p class="section-description">Check out my Resume</p>
-                  <h2 class="section-title">Resume</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Skills section-->
-            <div class="skills-section single-section">
-              <div class="row">
-                <div class="col-12">
-                  <div class="section-heading">
-                    <p class="section-description">
-                      My level of knowledge in some tools
-                    </p>
-                    <h2 class="section-title">My Skills</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-12 col-md-6">
-                  <Skills name="HTML/CSS" precentage="95" />
-                  <Skills name="JavaScript" precentage="90" />
-                  <Skills name="Python" precentage="90" />
-				  <Skills name="C++" precentage="89" />
-                </div>
-                <div class="col-12 col-md-6">
-                  <Skills name="Astro" precentage="90" />
-                  <Skills name="Express" precentage="95" />
-                  <Skills name="TypeScript" precentage="80" />
-                  <Skills name="C" precentage="90" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="lightbox-wrapper" id="portfolio" data-simplebar>
-    <div class="container">
-      <div class="lightbox-close">
-        <div class="close-btn" data-modal-close="">
-          <span class="btn-line"></span>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12">
-          <div class="lightbox-content">
-            <div class="row">
-              <div class="col-12">
-                <div class="section-heading page-heading">
-                  <p class="section-description">
-                    Showcasing some of my best work
-                  </p>
-                  <h2 class="section-title">Portfolio</h2>
-                  <div class="animated-bar"></div>
-                </div>
-              </div>
-            </div>
-            <!-- Portfolio section-->
-            <div class="portfolio-section single-section">
-              <div class="row">
-                <!-- Filter nav-->
-                <div class="col-12">
-                  <ul
-                    class="list-inline filter-control"
-                    role="group"
-                    aria-label="Filter Control"
-                  >
-                    <li class="list-inline-item tab-active" data-filter="*">
-                      All
-                    </li>
-                    <li class="list-inline-item" data-filter=".misc">Misc</li>
-					<li class="list-inline-item" data-filter=".web">Web</li>
-					<li class="list-inline-item" data-filter=".bot">Bots</li>
-					<li class="list-inline-item" data-filter=".game">Games</li>
-                  </ul>
-                </div>
-              </div>
-              <!-- Thumbnail list-->
-              <div class="portfolio-grid row">
-				<PortfolioCards name="UwU++" image="https://github.com/unsignedint64/uwu-lang/blob/main/.github/images/9bbe5701-fe89-4fdb-ab48-eaf52b0265f2.png?raw=true" url="https://github.com/unsignedint64/uwu-lang" type="misc" />
-				<PortfolioCards name="Goddess Anime" image="https://repository-images.githubusercontent.com/644882912/10a75031-1970-4239-9382-3eed3234671b" url="https://github.com/LabsStar/goddess-anime" type="bot web" />
-				<PortfolioCards name="File Organizer" image="https://repository-images.githubusercontent.com/637266892/9eabef2b-afc5-45c2-bbd6-be33c46c4c66" url="https://git.hylia.dev/file-organizer" type="misc" />
-				<PortfolioCards name="Developer Toolkit" image="https://opengraph.githubassets.com/080c6ce5b35732fe7a34e5f86ba8faf67ab0d8fee78b206ace037c85f8126beb/LabsStar/developer-toolkit" url="https://github.com/withervt/developer-toolkit" type="misc" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
+</div>
+</div>
+</div>
+</div>
 </Layout>

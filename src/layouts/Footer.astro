@@ -1,0 +1,12 @@
+---
+---
+
+<footer class="footer text-center py-5">
+    <small class="copyright">Copyright &copy; Hylia</small>
+</footer>
+
+<script is:inline>
+    const cp = document.querySelector(".copyright");
+
+    cp.textContent = `Copyright © ${new Date().getFullYear()} hylia.dev. All Rights Reserved.`;
+</script>

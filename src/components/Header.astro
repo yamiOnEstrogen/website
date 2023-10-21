@@ -2,14 +2,68 @@
 import HeaderLinks from "./HeaderLinks.astro";
 ---
 
-<nav class="navbar-expand-md navbar fixed-top" id="navbar"><a class="navbar-brand" data-scroll="" href="#home-area">
-    <!-- Navbar Logo-->
-    <img class="img-fluid" src="https://cdn.discordapp.com/attachments/981632133191843852/1030952155181498459/trans.png" alt="Logo"></a>
-  <span class="navbar-menu ml-auto" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" role="button"><span class="btn-line"></span></span>
-  <div class="collapse navbar-collapse order-1 order-lg-0" id="navbarSupportedContent">
-    <!-- Navbar menu-->
-    <ul class="navbar-nav ml-auto">
-      <HeaderLinks liClass="nav-item" aClass="nav-link" links={[{ text: "Home", href: "/" }, { text: "About", href: "#about" }, { text: "Portfolio", href: "#portfolio" }, { text: "Blog", href: "/blog" }, { text: "Documentation", href: "https://docs.hylia.dev" }]} />
-    </ul>
-  </div>
-</nav>
+<div class="side-panel position-relative">
+  <nav class="navbar">
+    <div
+      aria-labelledby="offcanvasNavbarLabel"
+      class="offcanvas offcanvas-start show d-flex"
+      id="offcanvasNavbar"
+      data-bs-scroll="true"
+      data-bs-backdrop="false"
+      tabindex="-1"
+    >
+      <div class="offcanvas-body d-flex align-items-center">
+        <ul class="main-nav navbar-nav text-center">
+          <li class="nav-item">
+            <a class="nav-link d-flex flex-column" href="/"
+              ><span class="icon-holder"
+                ><i class="bi bi-person-circle"></i></span
+              ><span class="nav-text">About</span></a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link d-flex flex-column" href="/projects"
+              ><span class="icon-holder"
+                ><i class="bi bi-braces-asterisk"></i></span
+              ><span class="nav-text">Projects</span></a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link d-flex flex-column" href="/resume"
+              ><span class="icon-holder"
+                ><i class="bi bi-file-earmark"></i></span
+              ><span class="nav-text">Resume</span></a
+            >
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link d-flex flex-column" href="/blog"
+              ><span class="icon-holder"><i class="bi bi-pen-fill"></i></span
+              ><span class="nav-text">Blog</span></a
+            >
+          </li>
+          <li class="nav-item nav-item-close">
+            <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"><i class="bi bi-x"></i></button>
+        </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script is:inline>
+const navLinks = document.querySelectorAll(".nav-link");
+
+function ReplaceTrailingSlash(str) {
+  return str.replace(/\/$/, "");
+}
+
+for (let i = 0; i < navLinks.length; i++) {
+  // Check if the href is the same as the current url (Remove the trailing slash)
+  if (ReplaceTrailingSlash(navLinks[i].href) === ReplaceTrailingSlash(window.location.href)) {
+    navLinks[i].classList.add("active");
+    }
+  }
+</script>

@@ -1,17 +1,19 @@
 ---
 import Header from "../components/Header.astro";
+import Footer from "./Footer.astro";
+
 interface Props {
   title: string;
   description?:
     | string
-    | "Hello, I'm Stella, a developer specializing in creating Discord bots and open-source solutions at Hyperstar. Additionally, I identify as a TransFemale, using She/Her pronouns.";
+    | "Hello, I'm Stella, a developer specializing in creating Discord bots and open-source tools. Additionally, I identify as a TransFemale, using She/Her pronouns.";
   img?: string;
 }
 
 const { title, description, img } = Astro.props;
 ---
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -24,100 +26,63 @@ const { title, description, img } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
     <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="char32" />
-    <meta property="og:title" content="char32" />
+    <meta property="og:site_name" content="withervt" />
+    <meta property="og:title" content="withervt" />
     <meta property="og:description" content={description} />
     <meta
       property="og:image"
       content={img || "https://storage.hylia.dev/images/default_banner.jpg"}
     />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="char32" />
-    <meta name="twitter:creator" content="char32vt" />
+    <meta name="twitter:site" content="withervt" />
+    <meta name="twitter:creator" content="withervt" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta content="#43B581" data-react-helmet="true" name="theme-color" />
     <meta
       name="keywords"
-      content="hylia, Hylia, Developer, char32, char32, transgender, x, twitter, anime, blog, Virtual YouTuber, Streaming, Virtual persona, 2D avatar, Live chat interaction, Virtual world, Kawaii, Virtual reality, Twitch, Hololive, Software development, Coding, Programming languages, GitHub, Code repositories, Open-source projects, Web development, App development, API integration, Debugging, Gaming, Esports, Twitch streamer, Let's Plays, Gaming hardware, Console gaming, PC gaming, Game reviews, Online multiplayer, Gaming community"
+      content="hylia, Hylia, Developer, withervt, withervt, transgender, x, twitter, anime, blog, Virtual YouTuber, Streaming, Virtual persona, 2D avatar, Live chat interaction, Virtual world, Kawaii, Virtual reality, Twitch, Hololive, Software development, Coding, Programming languages, GitHub, Code repositories, Open-source projects, Web development, App development, API integration, Debugging, Gaming, Esports, Twitch streamer, Let's Plays, Gaming hardware, Console gaming, PC gaming, Game reviews, Online multiplayer, Gaming community"
     />
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E85TLW0B9F"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9106548277815950"
-     crossorigin="anonymous"></script>
-<script is:inline>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E85TLW0B9F"
+    ></script>
+    <script
+      async
+      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9106548277815950"
+      crossorigin="anonymous"
+    ></script>
+    <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
 
-  gtag('config', 'G-E85TLW0B9F');
-</script>
+    gtag("config", "G-E85TLW0B9F");
+    </script>
 
     <script is:inline src="https://code.jquery.com/jquery-3.4.1.min.js"
     ></script>
-    <link
-      href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://storage.hylia.dev/css/icons.css" />
-    <link rel="stylesheet" href="https://storage.hylia.dev/css/pink.css" />
-    <link
-      rel="stylesheet"
-      href="https://storage.hylia.dev/css/bootstrap-custom.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://storage.hylia.dev/css/tiny-slider.css"
-    />
-    <link rel="stylesheet" href="https://storage.hylia.dev/css/lity.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://storage.hylia.dev/css/simplebar.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://storage.hylia.dev/css/jquery.mb.YTPlayer.min.css"
-    />
-    <link rel="stylesheet" href="https://storage.hylia.dev/css/main.css" />
     <link rel="stylesheet" href="https://storage.hylia.dev/css/bar.css" />
+    <link rel="stylesheet" href="http://192.168.0.3:3000/v2/css/main.css" />
+    <script is:inline defer src="http://192.168.0.3:3000/v2/fontawesome/js/all.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/plugins/popper.min.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/plugins/tiny-slider/tiny-slider.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/js/tinyslider-custom.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/plugins/js-cookie.min.js"></script>
+    <script is:inline defer src="http://192.168.0.3:3000/v2/js/mode-toggle.js"></script>
+    <link rel="stylesheet" href="http://192.168.0.3:3000/v2/plugins/tiny-slider/tiny-slider.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+          
     <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
     />
     <script is:inline async src="https://storage.hylia.dev/js/c.js"></script>
-    <script is:inline async src="https://storage.hylia.dev/js/animatedModal.js"
-    ></script>
-    <script
-      is:inline
-      async
-      src="https://storage.hylia.dev/js/bootstrap.bundle.min.js"></script>
-
-      <link rel="stylesheet" href="https://storage.hylia.dev/fonts/CascadiaCode.ttf" />
-    <script
-      is:inline
-      async
-      src="https://storage.hylia.dev/js/imagesloaded.pkgd.min.js"></script>
-    <script
-      is:inline
-      async
-      src="https://storage.hylia.dev/js/jquery.mb.YTPlayer.min.js"></script>
-    <script is:inline async src="https://storage.hylia.dev/js/lity.min.js"
-    ></script>
-    <script is:inline async src="https://storage.hylia.dev/js/main.js"></script>
-    <script is:inline async src="https://storage.hylia.dev/js/bar.js" type="module"></script>
-    <script
-      is:inline
-      async
-      src="https://storage.hylia.dev/js/isotope.pkgd.min.js"></script>
-    <script is:inline async src="https://storage.hylia.dev/js/simplebar.min.js"
-    ></script>
-    <script is:inline async src="https://storage.hylia.dev/js/tiny-slider.js"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
-      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-      crossorigin="anonymous"></script>
     <style is:inline is:global>
-
       body {
         font-family: "Cascadia Code";
       }
@@ -167,33 +132,42 @@ const { title, description, img } = Astro.props;
       }
     </style>
   </head>
-  <body class="theme-dark">
-    <div class="preloader">
-      <div class="preloader-block">
-        <div class="preloader-icon">
-          <span class="loading-dot loading-dot-1"></span><span
-            class="loading-dot loading-dot-2"></span><span
-            class="loading-dot loading-dot-3"></span>
-        </div>
-      </div>
-    </div>
-    <div id="overlay-effect"></div>
+  <body>
     <Header />
-    <slot />
+    <div class="container-fluid">
+      <slot />
+    </div>
+    <Footer />
     <script is:inline>
-      setTimeout(() => {
-        $(function () {
-          $('[data-toggle="tooltip"]').tooltip();
-        });
-      }, 2000);
-
-      window.CreateSnackbar(null, 0, 5000);
+    setTimeout(() => {
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      });
+    }, 2000);
     </script>
 
-<noscript>
-  <div class="nojs">
-      <p>This website requires JavaScript. Please enable JavaScript in your browser.</p>
-  </div>
-</noscript>
+<script is:inline>
+  function openLink(url) {
+      window.open(url, '_blank');
+  }
+
+  const dataOnclick = document.querySelectorAll('[data-onclick]');
+
+  for (let i = 0; i < dataOnclick.length; i++) {
+      dataOnclick[i].addEventListener('click', (e) => {
+          e.preventDefault();
+          openLink(dataOnclick[i].getAttribute('data-onclick'));
+      })
+  }
+</script>
+
+    <noscript>
+      <div class="nojs">
+        <p>
+          This website requires JavaScript. Please enable JavaScript in your
+          browser.
+        </p>
+      </div>
+    </noscript>
   </body>
 </html>
