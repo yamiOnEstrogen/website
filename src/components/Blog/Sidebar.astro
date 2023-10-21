@@ -21,7 +21,7 @@ const randomPost = RandomPost();
     </div>
     <div class="widget-content">
       <a href={ad.link} target="_blank" rel="noopener noreferrer nofollow">
-        <img src={ad.media} class="img-fluid" alt={ad.name} />
+        <img src={ad.media} class="img-fluid" alt={ad.name} loading="lazy" />
       </a>
     </div>
   </div>
@@ -39,6 +39,7 @@ const randomPost = RandomPost();
         alt="logo"
         class="mb-4"
         style="border-radius: 50%; width: 68px;"
+        loading="lazy"
       />
       <p class="mb-4" id="bio__user">
 
@@ -56,6 +57,7 @@ const randomPost = RandomPost();
         src="https://storage.hylia.dev/blog/images/wave.svg"
         class="wave"
         alt="wave"
+        loading="lazy"
       />
     </div>
     <div class="widget-content" id="toc-wrapper"></div>
@@ -67,7 +69,7 @@ const randomPost = RandomPost();
     </div>
     <div class="widget-content">
       <a href="https://chat.hylia.dev" target="_blank" rel="noopener noreferrer nofollow">
-        <img src="https://github.com/withervt/Community-Server-Discord-Bot/blob/master/.github/Images/logo.png?raw=true" class="img-fluid adImage" alt="Discord Server" />
+        <img loading="lazy" src="https://github.com/withervt/Community-Server-Discord-Bot/blob/master/.github/Images/logo.png?raw=true" class="img-fluid adImage" alt="Discord Server" />
       </a>
     </div>
   </div> -->

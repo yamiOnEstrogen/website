@@ -37,7 +37,7 @@
         threeRandomProjects.forEach((project) => {
             document.getElementById("featured-projects").innerHTML += `<div class="col-12 col-md-6 col-lg-4">
                 <div class="card">
-                    <img src="${project.image}" class="card-img-top" alt="Project" style="height: 86px; width: 86px; margin-left: auto; margin-right: auto;">
+                    <img loading="lazy" src="${project.image}" class="card-img-top" alt="Project" style="height: 86px; width: 86px; margin-left: auto; margin-right: auto;">
                     <div class="card-body px-0">
                         <h5 class="card-title"><a href="${project.url}">${project.name}</a></h5>
                         <p class="card-text mb-1" style="color: #d7dde9;">${TruncateProjectDescription(project.description)}</p>

@@ -65,6 +65,7 @@ import CTA from "../components/CTA.astro";
             class="profile-pic rounded-circle"
             src="https://storage.hylia.dev/images/47033415ef4841d627d49d05058324e8.jpg"
             alt="image"
+            loading="lazy"
           />
         </div>
         <div class="intro-holder">
@@ -124,7 +125,7 @@ const ProjectUrl = "https://storage.hylia.dev/json/projects";
         ).innerHTML += `<div class="project-item col-12 col-md-6 col-lg-12 mb-5">
                     <div class="project-item-inner row">
                         <div class="col-12 col-lg-5 col-xl-4">
-                            <img class="project-thumb rounded-2 mb-3 mb-lg-0 rounded mx-auto" src="${project.image
+                            <img loading="lazy" class="project-thumb rounded-2 mb-3 mb-lg-0 rounded mx-auto" src="${project.image
             }" alt="image" style="height: 250px; width: 250px;">
                         </div>
                         <div class="col-12 col-lg-7 col-xl-8">
@@ -138,7 +139,7 @@ const ProjectUrl = "https://storage.hylia.dev/json/projects";
                                 ${project.icons
                                   .map(
                                     (icon) =>
-                                      `<li class="list-inline-item"><img class="rounded" src="${icon}" alt=""></li>`
+                                      `<li class="list-inline-item"><img loading="lazy" class="rounded" src="${icon}" alt=""></li>`
                                   )
                                   .join("")}
                             </ul>

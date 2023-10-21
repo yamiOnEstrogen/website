@@ -32,6 +32,7 @@ const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
                             src={`https://storage.hylia.dev/${post.frontmatter.image}`}
                             alt={post.frontmatter.title}
                             title={post.frontmatter.title}
+                            loading="lazy"
                           />
                         </div>
                       </a>
