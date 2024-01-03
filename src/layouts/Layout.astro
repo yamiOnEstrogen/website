@@ -86,6 +86,15 @@ const { title, description, img } = Astro.props;
     <script is:inline src="/static/js/main.js"></script>
   </head>
   <body>
+    
+    <noscript>
+      <div class="nojs">
+        <p>
+          This website requires JavaScript. Please enable JavaScript in your
+          browser.
+        </p>
+      </div>
+    </noscript>
     <main class="main-homepage">
       <Header />
       <slot />
@@ -113,15 +122,6 @@ const { title, description, img } = Astro.props;
         });
       }
     </script>
-
-    <noscript>
-      <div class="nojs">
-        <p>
-          This website requires JavaScript. Please enable JavaScript in your
-          browser.
-        </p>
-      </div>
-    </noscript>
     <script is:inline>
       document.addEventListener("contextmenu", function (e) {
         e.preventDefault();
