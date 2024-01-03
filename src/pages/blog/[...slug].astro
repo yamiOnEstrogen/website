@@ -1,0 +1,244 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Socials from "../../components/Socials.astro";
+import createExcerpt from "../../utils/createExcerpt";
+import { getCollection } from "astro:content";
+import RecentPosts from "../../components/Blog/recentPosts.astro";
+
+import { fDate } from "developer-toolkit-utils";
+
+export var getStaticPaths = async () => {
+  var posts = await getCollection("blog");
+
+  return posts.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { slug: post.slug },
+    };
+  });
+};
+
+var { slug } = Astro.params;
+
+var post = (await getCollection("blog")).find(
+  (post) => post.slug === slug
+);
+
+if (!post) {
+  return Astro.redirect("/blog");
+}
+
+function fTime(date: Date) {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const ampm = hours >= 12 ? "pm" : "am";
+  const fHours = hours % 12;
+  const fMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  return `${fHours}:${fMinutes} ${ampm}`;
+}
+
+const { Content } = await post.render();
+
+---
+
+<Layout
+  title={`withervt • Blog | ${post.data.title}`}
+  description={`${createExcerpt(post.data.excerpt)}`}
+  img={`https://storage.hylia.dev/${post.data.image}`}
+>
+<div id="snackbar" class="snackbar d-none"></div>
+
+<section class="blog-details-area">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-8">
+              <div class="blog-details-content">
+                  <div class="img-box">
+                    <img src={`https://storage.hylia.dev/${post.data.image}`} alt={post.data.title} title={post.data.title} loading="lazy" style="border-radius: 10px;" />
+                  </div>
+                  <span class="meta">{fDate(new Date(post.data.pubDate))} at {fTime(new Date(post.data.pubDate))} • <span id="time_reading"></span></span>
+                  <br />
+                  <h1>{post.data.title}</h1>
+                  <hr />
+                  <div id="content">
+                    <Content />
+                    <hr />
+                    <br />
+                  </div>
+                  <div class="tags">
+                    {
+                      post.data.categories.map((category) => {
+                        return <a href="#" class="theme-btn">{category}</a>
+                      })
+                    }
+                  </div>
+
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="blog-sidebar">
+                  <div class="blog-sidebar-inner">
+                      <RecentPosts />
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<script is:inline defer>
+  var postContent = document.getElementById("content");
+
+
+  function calculateReadingTime() {
+    var textElement = document.getElementById("content");
+    var outputElement = document.getElementById("time_reading");
+    if (!textElement || !outputElement) return;
+
+    var text = textElement.innerText;
+    /** The average number of words per minute that a human can read. */
+    var wordsPerMinute = 238;
+    var words = text.trim().split(/\s+/).length;
+    var minutes = Math.ceil(words / wordsPerMinute);
+
+    outputElement.textContent = ` ${minutes} min read`;
+  }
+
+  var timers = document.getElementsByClassName("timer");
+
+  function updateDate(timerDateElement, timerDate) {
+    var currentDate = new Date();
+    var timeDifference = timerDate - currentDate;
+
+    if (timeDifference <= 0) {
+      timerDateElement.textContent = "Today";
+    } else if (timeDifference <= 86400000) {
+      var days = Math.floor(timeDifference / 86400000);
+      timerDateElement.textContent = `${days}d ago`;
+    } else {
+      var days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+      var hours = Math.floor(
+        (timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+      );
+      var minutes = Math.floor(
+        (timeDifference % (1000 * 60 * 60)) / (1000 * 60)
+      );
+      var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+      timerDateElement.textContent = `${days} d, ${hours} h, ${minutes} m, ${seconds} s`;
+    }
+  }
+
+  function updateTimer(timerElement) {
+    var timerValue = timerElement.textContent;
+    var timerDate = new Date(timerValue * 1000); // Convert timer value to milliseconds
+    updateDate(timerElement, timerDate);
+    setInterval(() => {
+      updateDate(timerElement, timerDate);
+    }, 1000);
+  }
+
+  for (let i = 0; i < timers.length; i++) {
+    var timerElement = timers[i];
+    updateTimer(timerElement);
+  }
+
+
+  function InheritPost() {
+    var inf = document.getElementsByClassName("inherit-post");
+
+    var TEMPLATE = `<a href="[link]"> <span class="badge rounded-pill bg-primary"><i class="bi bi-book-fill" width="16px" alt="Book" style="padding-right: 5px;"></i> Read: [title]</span></a>`;
+
+    for (let i = 0; i < inf.length; i++) {
+      var element = inf[i];
+      // Get custom attributes
+      var link = element.getAttribute("data-link");
+      var title = element.getAttribute("data-title");
+      TEMPLATE = TEMPLATE.replace("[link]", link).replace("[title]", title);
+      element.innerHTML = TEMPLATE;
+    }
+  }
+
+  InheritPost();
+  calculateReadingTime();
+</script>
+  <style is:global>
+    kbd {
+      background-color: #333430;
+      color: #fff;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+    div[data-rehype-pretty-code-fragment] {
+      background-color: #111;
+    }
+    pre > code {
+      display: grid;
+      background-color: rgba(200, 200, 255, 0.09);
+      border-left: 3px solid #60a5fa;
+      padding: 10px;
+      border-radius: 3px;
+      counter-reset: line;
+    }
+    .highlighted {
+      background-color: rgba(200, 200, 255, 0.1);
+      border-left-color: #60a5fa;
+      border-left-width: 3px;
+      border-left-style: solid;
+    }
+
+    code > [data-line]::before {
+      counter-increment: line;
+      content: counter(line);
+
+      /* Other styling */
+      display: inline-block;
+      width: 1rem;
+      margin-right: 2rem;
+      text-align: right;
+      color: gray;
+    }
+
+    code[data-line-numbers-max-digits="2"] > [data-line]::before {
+      width: 2rem;
+    }
+
+    code[data-line-numbers-max-digits="3"] > [data-line]::before {
+      width: 3rem;
+    }
+
+    code {
+      color: white;
+      background-color: #111;
+      padding: 2px 5px;
+      border-radius: 3px;
+    }
+
+    h1 {
+      color: #fff;
+      /* Center the text */
+      text-align: center;
+      font-size: 30px;
+    }
+
+    h2 {
+      color: #fff;
+      font-size: 25px;
+    }
+
+    h3 {
+      color: #fff;
+      font-size: 20px;
+    }
+
+    h4 {
+      color: #fff;
+      font-size: 15px;
+    }
+
+    .tags_row {
+      /* Make a row of tags, make them left to right, it does not matter the amount. Do not wrap them */
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+  </style>
+</Layout>

@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+const $posts = await getCollection("blog");
+
+const posts = $posts.sort((a, b) => {
+  return (
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+}).slice(0, 3);
+---
+
+
+<div class="blog-sidebar-widget recent-post-widget" data-aos="zoom-in">
+    <div class="blog-sidebar-widget-inner shadow-box">
+        <h3>Recent Posts</h3>
+
+        <ul>
+            {
+                posts.map((post) => <li><a href={`/blog/${post.slug}`}>{post.data.title}</a></li>)
+            }
+        </ul>
+
+    </div>
+</div>

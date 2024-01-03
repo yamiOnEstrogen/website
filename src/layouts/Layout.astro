@@ -1,6 +1,6 @@
 ---
 import Header from "../components/Header.astro";
-import Footer from "./Footer.astro";
+import Footer from "../components/Footer.astro";
 
 interface Props {
   title: string;
@@ -13,7 +13,7 @@ interface Props {
 const { title, description, img } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -48,118 +48,71 @@ const { title, description, img } = Astro.props;
     <script
       async
       src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9106548277815950"
-      crossorigin="anonymous"
-    ></script>
+      crossorigin="anonymous"></script>
     <script is:inline>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-    gtag("js", new Date());
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-    gtag("config", "G-E85TLW0B9F");
+      gtag("config", "G-E85TLW0B9F");
     </script>
 
-    <script is:inline src="https://code.jquery.com/jquery-3.4.1.min.js"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://storage.hylia.dev/css/icons.css" />
-    <link rel="stylesheet" href="https://storage.hylia.dev/css/bar.css" />
-    <link rel="stylesheet" href="https://storage.hylia.dev/v2/css/main.css" />
-    <script is:inline defer src="https://storage.hylia.dev/v2/fontawesome/js/all.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/plugins/popper.min.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/plugins/bootstrap/js/bootstrap.min.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/plugins/tiny-slider/tiny-slider.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/js/tinyslider-custom.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/plugins/js-cookie.min.js"></script>
-    <script is:inline defer src="https://storage.hylia.dev/v2/js/mode-toggle.js"></script>
-    <link rel="stylesheet" href="https://storage.hylia.dev/v2/plugins/tiny-slider/tiny-slider.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-          
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css"
+      href="https://cdn.jsdelivr.net/gh/iconoir-icons/iconoir@main/css/iconoir.css"
     />
-    <script is:inline async src="https://storage.hylia.dev/js/c.js"></script>
-    <style is:inline is:global>
-      body {
-        font-family: "Cascadia Code";
-      }
 
-      .tooltip-main {
-        color: #fff;
-        text-decoration: none;
-        position: relative;
-        cursor: default;
-      }
+    <link rel="stylesheet" href="/static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/css/aos.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
 
-      .tooltip-main::after {
-        content: "";
-        position: absolute;
-        bottom: -1px;
-        /* Position the pseudo-element just below the text */
-        left: 0;
-        width: 100%;
-        /* Make the pseudo-element cover the full width of the link */
-        height: 1px;
-        /* Set the height of the line */
-        background-image: linear-gradient(
-          to right,
-          rgba(255, 255, 255, 0),
-          #ffffff,
-          rgba(255, 255, 255, 0)
-        );
-        /* Use a linear gradient to create a fading effect */
-        opacity: 0;
-        /* Set initial opacity to 0 (fully transparent) */
-        animation: fadeLine 2s infinite;
-        /* Use the 'fadeLine' animation to make it fade over 2 seconds infinitely */
-        cursor: default;
-      }
+    <link rel="stylesheet" href="/static/css/style.css" />
 
-      @keyframes fadeLine {
-        0%,
-        100% {
-          opacity: 0;
-          /* At the beginning and end of the animation, the line is fully transparent */
-        }
-
-        50% {
-          opacity: 1;
-          /* At 50% of the animation, the line is fully opaque (white) */
-        }
-      }
-    </style>
+    <script is:inline src="/static/js/jquery-3.6.4.js"></script>
+    <script is:inline src="/static/js/bootstrap.bundle.min.js"></script>
+    <script is:inline src="/static/js/aos.js"></script>
+    <script is:inline src="/static/js/main.js"></script>
   </head>
   <body>
-    <Header />
-    <div class="container-fluid">
+    <main class="main-homepage">
+      <Header />
       <slot />
-    </div>
-    <Footer />
+    </main>
+
     <script is:inline>
-    setTimeout(() => {
-      $(function () {
-        $('[data-toggle="tooltip"]').tooltip();
-      });
-    }, 2000);
+      setTimeout(() => {
+        $(function () {
+          $('[data-toggle="tooltip"]').tooltip();
+        });
+      }, 2000);
     </script>
 
-<script is:inline>
-  function openLink(url) {
-      window.open(url, '_blank');
-  }
+    <script is:inline>
+      function openLink(url) {
+        window.open(url, "_blank");
+      }
 
-  const dataOnclick = document.querySelectorAll('[data-onclick]');
+      const dataOnclick = document.querySelectorAll("[data-onclick]");
 
-  for (let i = 0; i < dataOnclick.length; i++) {
-      dataOnclick[i].addEventListener('click', (e) => {
+      for (let i = 0; i < dataOnclick.length; i++) {
+        dataOnclick[i].addEventListener("click", (e) => {
           e.preventDefault();
-          openLink(dataOnclick[i].getAttribute('data-onclick'));
-      })
-  }
-</script>
+          openLink(dataOnclick[i].getAttribute("data-onclick"));
+        });
+      }
+    </script>
 
     <noscript>
       <div class="nojs">
@@ -169,5 +122,12 @@ const { title, description, img } = Astro.props;
         </p>
       </div>
     </noscript>
+    <script is:inline>
+      document.addEventListener("contextmenu", function (e) {
+        e.preventDefault();
+        alert("Right-click is disabled");
+      });
+    </script>
+    <Footer />
   </body>
 </html>

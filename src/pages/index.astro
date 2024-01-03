@@ -1,112 +1,265 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Socials from "../components/Socials.astro";
-import Projects from "../components/Sections/Projects.astro";
-import Testimonials from "../components/Sections/Testimonials.astro";
-import Skills from "../components/Sections/Skills.astro";
+import { getCollection } from "astro:content";
+import { createIndexHtml } from "../utils/Socials";
+
 ---
 
 <Layout
   title="withervt • Home"
   description="Hello, I’m Stella, a developer specializing in creating Discord bots and open-source solutions at Hyperstar. Additionally, I identify as a TransFemale, using She/Her pronouns."
 >
-  <div id="snackbar" class="snackbar d-none"></div>
-  <div class="container-fluid">
-    <div class="top-bar text-center position-relative">
-      <div class="top-bar-inner">
-        <a
-          class="menu-toggler"
-          data-bs-toggle="offcanvas"
-          href="#offcanvasNavbar"
-          role="button"
-          aria-controls="offcanvasNavbar"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="30"
-            height="30"
-            fill="currentColor"
-            class="bi bi-list"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
-            ></path>
-          </svg>
-        </a>
-
-        <div class="mode-toggle text-center">
-          <input class="toggle" id="darkmode" type="checkbox" />
-          <label class="toggle-btn mx-auto mb-0" for="darkmode">
-            <span class="day-icon toggle-icon">
-              <i class="bi bi-sun-fill"></i></span
-            >
-            <span class="night-icon toggle-icon"
-              ><i class="bi bi-moon-fill"></i></span
-            >
-          </label>
+  <section class="about-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6" data-aos="zoom-in">
+          <div class="about-me-box shadow-box">
+            <a class="overlay-link" href="/credentials"></a>
+            <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+            <div class="img-box">
+              <img
+                src="https://avatars.githubusercontent.com/u/93791569"
+                alt="About Me"
+              />
+            </div>
+            <div class="infos">
+              <h4>VTUBER // PROGRAMMER</h4>
+              <h1>Stella.</h1>
+              <p>I am a Vtuber and Software Developer</p>
+              <a href="/credentials" class="about-btn">
+                <img src="/static/images/button.svg" alt="Button" />
+              </a>
+            </div>
+          </div>
         </div>
 
-        <a class="btn btn-primary top-bar-cta" href="mailto:dev@hylia.dev"
-          >Hire Me</a
-        >
+        <div class="col-md-6">
+          <div class="about-credentials-wrap">
+            <div data-aos="zoom-in">
+              <div class="banner shadow-box">
+                <div class="marquee">
+                  <div>
+                    <span
+                      >LATEST WORK AND <b>FEATURED</b>
+                      <img src="/static/images/star.svg" alt="Star" /> LATEST WORK
+                      AND <b>FEATURED</b>
+                      <img src="/static/images/star.svg" alt="Star" /> LATEST WORK
+                      AND <b>FEATURED</b>
+                      <img src="/static/images/star.svg" alt="Star" /> LATEST WORK
+                      AND <b>FEATURED</b> LATEST WORK AND <img
+                        src="/static/images/star.svg"
+                        alt="Star"
+                      /> LATEST WORK AND <b>FEATURED</b> LATEST WORK AND <img
+                        src="/static/images/star.svg"
+                        alt="Star"
+                      /></span
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <ul class="social-list list-inline mx-auto d-none d-lg-block">
-          <Socials
-            classes="list-inline-item me-0 me-md-1 me-lg-2"
-            allowColors={true}
-          />
-        </ul>
+            <div class="gx-row d-flex gap-24" id="projects"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-24">
+        <div class="col-md-12">
+          <div class="blog-service-profile-wrap d-flex gap-24">
+            <div data-aos="zoom-in">
+              <div class="about-blog-box info-box shadow-box h-full">
+                <a href="/blog" class="overlay-link"></a>
+                <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+                <img src="/static/images/gfonts.png" alt="GFonts" />
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="infos">
+                    <h4>Blog</h4>
+                    <h1>GFonts</h1>
+                  </div>
+
+                  <a href="/blog" class="about-btn">
+                    <img src="/static/images/button.svg" alt="Button" />
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div data-aos="zoom-in" class="flex-1">
+              <div class="about-services-box info-box shadow-box h-full">
+                <a href="/service" class="overlay-link"></a>
+                <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+                <div class="icon-boxes">
+                  <i class="bi bi-code"></i>
+                  <i class="bi bi-webcam"></i>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="infos">
+                    <h4>specialization</h4>
+                    <h1>Services Offering</h1>
+                  </div>
+
+                  <!-- <a href="/service" class="about-btn">
+                    <img src="/static/images/button.svg" alt="Button" />
+                  </a> -->
+                </div>
+              </div>
+            </div>
+
+            <div data-aos="zoom-in">
+              <div class="about-profile-box info-box shadow-box h-full">
+                <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+                <div class="inner-profile-icons shadow-box" set:html={createIndexHtml({ random: { enabled: true, amount: 3 } })}>
+                </div>
+                <div class="d-flex align-items-center justify-content-between">
+                  <div class="infos">
+                    <h4>Stay with me</h4>
+                    <h1>Profiles</h1>
+                  </div>
+
+                  <a href="mailto:withervt@gmail.com" class="about-btn">
+                    <img src="/static/images/button.svg" alt="Button" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-24">
+        <div class="col-md-6" data-aos="zoom-in">
+          <div class="about-client-box info-box shadow-box">
+            <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+            <div
+              class="clients d-flex align-items-start gap-24 justify-content-center"
+            >
+              <div class="client-item">
+                <h1 id="date-started">[null]</h1>
+                <p>Years <br />Experience</p>
+              </div>
+
+              <div class="client-item">
+                <h1>+125</h1>
+                <p>CLIENTS <br />WORLDWIDE</p>
+              </div>
+
+              <div class="client-item" data-onclick="https://github.com/withervt?tab=repositories">
+                <h1 id="total-projects">[null]</h1>
+                <p>Total <br />Projects</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6" data-aos="zoom-in">
+          <div class="about-contact-box info-box shadow-box">
+            <a class="overlay-link" href="mailto:withervt@gmail.com"></a>
+            <img src="/static/images/bg.png" alt="BG" class="bg-img" />
+            <img src="/static/images/icon2.png" alt="Icon" class="star-icon" />
+            <h1>Let's <br />work <span>together.</span></h1>
+            <a href="#" class="about-btn">
+              <img src="/static/images/button.svg" alt="Button" />
+            </a>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
+  <script is:inline>
+    const ProjectUrl = "https://storage.hylia.dev/json/projects";
+    const dateStart = new Date("2021-01-01T18:33:38Z");
 
-    <section class="page-intro-section section has-profile-image mx-auto">
-      <div class="profile-holder text-center">
-        <img
-          class="profile-pic rounded-circle"
-          src="https://storage.hylia.dev/images/.old/47033415ef4841d627d49d05058324e8.jpg"
-          alt="image"
-          loading="lazy"
-        />
-      </div>
-      <div class="intro-holder">
-        <h2 class="intro-name text-center mb-3">Stella • WitherVt</h2>
-        <div class="profile-intro text-md-center limit-max-width mx-auto">
-          <p>
-            I'm a passionate developer and a dedicated VTuber hailing from the
-            United States. My journey in the world of software development
-            commenced at the tender age of 12, and I've been crafting innovative
-            solutions ever since.
-          </p>
-        </div>
-      </div>
-  
-      <div class="section-cta text-center mt-4">
-        <a class="btn btn-secondary theme-btn-cta" href="/resume"
-          >View Resume<svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="24"
-            height="24"
-            fill="currentColor"
-            class="bi bi-arrow-right-short"
-            viewBox="0 0 16 16"
-          >
-            <path
-              fill-rule="evenodd"
-              d="M4 8a.5.5 0 0 1 .5-.5h5.793L8.146 5.354a.5.5 0 1 1 .708-.708l3 3a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708-.708L10.293 8.5H4.5A.5.5 0 0 1 4 8z"
-            ></path>
-          </svg></a
-        >
-      </div>
-    </section>
-  
-    <Projects />
-    <Testimonials />
-    <Skills />
-  </div>
-</div>
-</div>
-</div>
-</div>
+    (async () => {
+      const projects = await fetch(ProjectUrl).then((res) => res.json());
+      document.getElementById("total-projects").innerHTML = (await fetch("https://api.github.com/users/withervt").then((res) => res.json())).public_repos;
+
+
+      function truncateString(str, length) {
+        if (str.length <= length) {
+          return str;
+        }
+        return str.slice(0, length) + "...";
+      }
+
+
+      projects.forEach((project, index) => {
+        if (index === 3) return;
+
+        document.getElementById(
+          "projects"
+        ).innerHTML += `<div data-aos="zoom-in">
+                          <div class="about-crenditials-box info-box shadow-box h-full">
+                              <a class="overlay-link" href="${project.url}"></a>
+                              <img src="/static/images/bg.png" alt="BG" class="bg-img">
+                              <img src="${project.image}" alt="${project.name}">
+                              <div class="d-flex align-items-center justify-content-between">
+                                  <div class="infos">
+                                      <h1>${project.name}</h1>
+                                  </div>
+
+                                  <a href="${project.url}" class="about-btn">
+                                      <img src="/static/images/button.svg" alt="Button">
+                                  </a>
+
+                              </div>
+                          </div>
+                      </div>`;
+      });
+    })();
+
+    function getTimeRemaining(endtime) {
+      const total = Date.parse(endtime) - Date.parse(new Date());
+      const seconds = Math.floor((total / 1000) % 60);
+      const minutes = Math.floor((total / 1000 / 60) % 60);
+      const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
+      const days = Math.floor(total / (1000 * 60 * 60 * 24));
+
+      return {
+        total,
+        days,
+        hours,
+        minutes,
+        seconds,
+      };
+    }
+
+    function initializeClock(id, endtime) {
+      const clock = document.getElementById(id);
+      const daysSpan = clock.querySelector(".days");
+      const hoursSpan = clock.querySelector(".hours");
+      const minutesSpan = clock.querySelector(".minutes");
+      const secondsSpan = clock.querySelector(".seconds");
+
+      function updateClock() {
+        const t = getTimeRemaining(endtime);
+
+        daysSpan.innerHTML = t.days;
+        hoursSpan.innerHTML = ("0" + t.hours).slice(-2);
+        minutesSpan.innerHTML = ("0" + t.minutes).slice(-2);
+        secondsSpan.innerHTML = ("0" + t.seconds).slice(-2);
+
+        if (t.total <= 0) {
+          clearInterval(timeinterval);
+        }
+      }
+
+      updateClock();
+      const timeinterval = setInterval(updateClock, 1000);
+    }
+
+    function setDate(date, id) {
+      const dateDiv = document.getElementById(id);
+
+      // Get the years since the date
+      const years = Math.floor(
+        (new Date() - new Date(date).getTime()) / 3.15576e10
+      );
+
+      // Set the date
+      dateDiv.innerHTML = `${years}`;
+    }
+
+    setDate(dateStart, "date-started");
+
+  </script>
 </Layout>

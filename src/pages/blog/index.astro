@@ -1,87 +1,72 @@
 ---
-import BlogLayout from "../../layouts/BlogLayout.astro";
-import Sidebar from "../../components/Blog/Sidebar.astro";
+import Layout from "../../layouts/Layout.astro";
 import { fDate } from "developer-toolkit-utils";
+import { getCollection } from "astro:content";
 import createExcerpt from "../../utils/createExcerpt";
+import RecentPosts from "../../components/Blog/recentPosts.astro";
 
 import CreateShareLinks from "../../utils/CreateShareLinks";
 
-const posts = (await Astro.glob("./posts/*.{md,mdx}")).sort(
-  (a, b) =>
-    new Date(b.frontmatter.pubDate).valueOf() -
-    new Date(a.frontmatter.pubDate).valueOf()
-);
+const $posts = await getCollection("blog");
+
+const posts = $posts.sort((a, b) => {
+  return (
+    new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime()
+  );
+});
+
+function fTime(date: Date) {
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const ampm = hours >= 12 ? "pm" : "am";
+  const fHours = hours % 12;
+  const fMinutes = minutes < 10 ? `0${minutes}` : minutes;
+  return `${fHours}:${fMinutes} ${ampm}`;
+}
+
 ---
 
-<BlogLayout title="withervt • Blog" description="Read withervt's blog posts!">
-  <div id="snackbar" class="snackbar d-none"></div>
-
-  <section class="main-content mt-5">
-    <div class="container-xl">
-      <div class="row gy-4">
-        <div class="col-lg-8">
-          <div class="row gy-4">
+<Layout title="withervt • Blog" description="Read withervt's blog posts!">
+  <section class="blog-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="blog-items">
             {
               posts.map((post) => (
-                <div class="col-sm-6">
-                  <div class="post post-grid rounded bordered">
-                    <div class="thumb top-rounded">
-                      <a href={`https://storage.hylia.dev/${post.frontmatter.image}`}>
-                        <div class="inner">
-                          <img
-                            src={`https://storage.hylia.dev/${post.frontmatter.image}`}
-                            alt={post.frontmatter.title}
-                            title={post.frontmatter.title}
-                            loading="lazy"
-                          />
-                        </div>
+                <div class="blog-item" data-aos="zoom-in">
+                  <div class="img-box">
+                    <img src={`https://storage.hylia.dev/${post.data.image}`} alt={post.data.title} title={post.data.title} loading="lazy" style="border-radius: 10px;" />
+                  </div>
+                  <div class="content">
+                    <span class="meta">
+                      {fDate(new Date(post.data.pubDate))} at {fTime(new Date(post.data.pubDate))}
+                    </span>
+                    <h1>
+                      <a href={`/blog/${post.slug}`}>
+                        {post.data.title}
                       </a>
-                    </div>
-                    <div class="details">
-                      <ul class="meta list-inline mb-0">
-                        <li class="list-inline-item">
-                          <i class="bi bi-calendar" style="padding-right: 5px;"></i> {fDate(new Date(post.frontmatter.pubDate))}
-                        </li>
-                      </ul>
-                      <h5 class="post-title mb-3 mt-3">
-                        <a href={`/blog/post/${post.frontmatter.slug}`} style="color: #fff;">
-                          {post.frontmatter.title.slice(0, 20) + (post.frontmatter.title.length > 20 ? "..." : "")}
-                        </a>
-                      </h5>
-                      <p class="excerpt mb-0">
-                        {createExcerpt(post.frontmatter.excerpt)}
-                      </p>
-                    </div>
-                    <div class="post-bottom clearfix d-flex align-items-center">
-                      <div class="social-share me-auto">
-                        <button class="toggle-button bi bi-share-fill" />
-                        <ul
-                          class="icons list-unstyled list-inline mb-0"
-                          set:html={CreateShareLinks(
-                            post.frontmatter.title,
-                            `https://hylia.dev/blog/post/${post.frontmatter.slug}`
-                          )}
-                        ></ul>
-                      </div>
-                      <div class="more-button float-end">
-                        <a href={`/blog/post/${post.frontmatter.slug}`}>
-                          <span class="bi bi-three-dots" />
-                        </a>
-                      </div>
-                    </div>
+                    </h1>
+                    <p>
+                      {createExcerpt(post.data.excerpt)}
+                    </p>
+                    <a href={`/blog/${post.slug}`} class="theme-btn">
+                      Read More
+                    </a>
                   </div>
                 </div>
-              ))
+                ))
             }
           </div>
         </div>
-
-        <div class="col-lg-4">
-          <Sidebar />
+        <div class="col-md-4">
+          <div class="blog-sidebar">
+            <div class="blog-sidebar-inner">
+              <RecentPosts />
+            </div>
+          </div>
         </div>
-
-        
       </div>
     </div>
   </section>
-</BlogLayout>
+</Layout>

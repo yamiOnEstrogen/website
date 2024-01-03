@@ -2,68 +2,51 @@
 import HeaderLinks from "./HeaderLinks.astro";
 ---
 
-<div class="side-panel position-relative">
-  <nav class="navbar">
-    <div
-      aria-labelledby="offcanvasNavbarLabel"
-      class="offcanvas offcanvas-start show d-flex"
-      id="offcanvasNavbar"
-      data-bs-scroll="true"
-      data-bs-backdrop="false"
-      tabindex="-1"
-    >
-      <div class="offcanvas-body d-flex align-items-center">
-        <ul class="main-nav navbar-nav text-center">
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column" href="/"
-              ><span class="icon-holder"
-                ><i class="bi bi-person-circle"></i></span
-              ><span class="nav-text">About</span></a
-            >
-          </li>
+<header class="header-area">
+  <div class="container">
+      <div class="gx-row d-flex align-items-center justify-content-between">
+          <a href="/" class="logo">
+              <img src="https://avatars.githubusercontent.com/u/93791569" alt="Logo" width="55px" height="55px" style="border-radius: 50%;">
+          </a>
 
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column" href="/projects"
-              ><span class="icon-holder"
-                ><i class="bi bi-braces-asterisk"></i></span
-              ><span class="nav-text">Projects</span></a
-            >
-          </li>
+          <nav class="navbar">
+              <ul class="menu">
+                <HeaderLinks
+                liClass="nav-link"
+                links={[
+                  { text: "Home", href: "/" },
+                  { text: "Blog", href: "/blog" },
+                  { text: "Contact", href: "mailto:withervt@gmail.com" },
+                  { text: "Discord", href: "/discord" },
+                ]}
+              />
+              </ul>
+              <a href="mailto:withervt@gmail.com" class="theme-btn">Let's talk</a>
+          </nav>
 
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column" href="/resume"
-              ><span class="icon-holder"
-                ><i class="bi bi-file-earmark"></i></span
-              ><span class="nav-text">Resume</span></a
-            >
-          </li>
+          <a href="mailto:withervt@gmail.com" class="theme-btn">Let's talk</a>
 
-          <li class="nav-item">
-            <a class="nav-link d-flex flex-column" href="/blog"
-              ><span class="icon-holder"><i class="bi bi-pen-fill"></i></span
-              ><span class="nav-text">Blog</span></a
-            >
-          </li>
-          <li class="nav-item nav-item-close">
-            <button aria-label="Close" class="btn-close" data-bs-dismiss="offcanvas" type="button"><i class="bi bi-x"></i></button>
-        </li>
-        </ul>
+          <div class="show-menu">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
       </div>
-    </div>
-  </nav>
-</div>
+  </div>
+</header>
 
-<script is:inline>
-const navLinks = document.querySelectorAll(".nav-link");
+<script is:inline defer>
+const navLinks = document.querySelectorAll(".nav-link a"); // Select the anchor tags within the .nav-link elements
 
 function ReplaceTrailingSlash(str) {
   return str.replace(/\/$/, "");
 }
 
 for (let i = 0; i < navLinks.length; i++) {
-  // Check if the href is the same as the current url (Remove the trailing slash)
+  // Check if the href of the anchor tag is the same as the current url (Remove the trailing slash)
   if (ReplaceTrailingSlash(navLinks[i].href) === ReplaceTrailingSlash(window.location.href)) {
-    navLinks[i].classList.add("active");
-    }
+    navLinks[i].parentNode.classList.add("active"); // Add class to the parent li element
   }
+}
+
 </script>

@@ -1,0 +1,31 @@
+---
+import HeaderLinks from "./HeaderLinks.astro";
+---
+
+<footer class="footer-area">
+    <div class="container">
+        <div class="footer-content text-center">
+            <a href="/" class="logo">
+                <img src="https://avatars.githubusercontent.com/u/93791569" alt="Logo" width="55px" height="55px" style="border-radius: 50%;">
+            </a>
+            <ul class="footer-menu">
+                <HeaderLinks
+                links={[
+                    { text: "Home", href: "/" },
+                    { text: "Blog", href: "/blog" },
+                    { text: "Contact", href: "mailto:withervt@gmail.com" },
+                    { text: "Discord", href: "/discord" },
+                  ]}
+              />
+            </ul>
+            <p class="copyright">
+            </p>
+        </div>
+    </div>
+</footer>
+
+<script is:inline>
+    const cp = document.querySelector(".copyright");
+
+    cp.textContent = `© ${new Date().getFullYear()} hylia.dev. All Rights Reserved.`;
+</script>
