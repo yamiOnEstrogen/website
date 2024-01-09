@@ -1,10 +1,13 @@
 ---
 title: "JavaScript Design Patterns: A Guide to Writing Maintainable Code"
 excerpt: "JavaScript design patterns play a crucial role in shaping the structure and organization of your code, contributing to its maintainability and scalability. In this post, we'll delve into some common design patterns and explore how they can enhance the quality of your JavaScript projects."
-image: blog/images/post/javascript-design-patterns-a-guide-to-writing-maintainable-code.jpg
+image: blog/images/post/v0e7ebslr9av7tc6fedu.jpg
 pubDate: 2024-01-09 12:00
 categories:
-  - NodeJS
+  - Programming
+  - NodeJs
+  - JavaScript
+  - TypeScript
 ---
 
 ## What are Design Patterns?
