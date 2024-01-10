@@ -14,7 +14,7 @@ categories:
 
 Design patterns are reusable solutions to common problems that arise during software development. They provide a template for solving issues in a way that is both proven and effective. In JavaScript, leveraging design patterns helps create more organized, readable, and maintainable code.
 
-## The Singleton Pattern
+### The Singleton Pattern
 
 The Singleton pattern ensures that a class has only one instance and provides a global point of access to it. This is useful when exactly one object is needed to coordinate actions across the system.
 
@@ -35,7 +35,7 @@ const instance2 = new Singleton();
 console.log(instance1 === instance2); // true
 ```
 
-## The Observer Pattern
+### The Observer Pattern
 
 The Observer pattern defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
 
@@ -71,7 +71,7 @@ subject.addObserver(observer2);
 subject.notifyObservers();
 ```
 
-## The Module Pattern
+### The Module Pattern
 
 The Module pattern allows you to create private and public encapsulation, reducing global scope pollution. It's a powerful way to organize your code and promote reusability.
 
