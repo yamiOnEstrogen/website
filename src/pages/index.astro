@@ -171,7 +171,7 @@ import { createIndexHtml } from "../utils/Socials";
 
     (async () => {
       const projects = await fetch(ProjectUrl).then((res) => res.json());
-      document.getElementById("total-projects").innerHTML = (await fetch("https://api.github.com/users/withervt").then((res) => res.json())).public_repos;
+      document.getElementById("total-projects").innerHTML = (await fetch("https://api.github.com/users/0xyami").then((res) => res.json())).public_repos;
 
 
       function truncateString(str, length) {
