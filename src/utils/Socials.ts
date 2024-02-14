@@ -10,13 +10,13 @@ interface Social {
 const socials: Social[] = [
     {
         title: "Twitter",
-        href: "https://x.com/withervt/",
+        href: "https://x.com/yamimdeveloper/",
         icon: "bi bi-twitter",
         color: "#1da1f2",
     },
     {
         title: "Github",
-        href: "https://github.com/withervt",
+        href: "https://github.com/0xYami",
         icon: "bi bi-github",
         color: "#181717"
     },
