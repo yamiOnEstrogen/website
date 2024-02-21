@@ -10,7 +10,7 @@ interface Social {
 const socials: Social[] = [
     {
         title: "Twitter",
-        href: "https://x.com/yamimdeveloper/",
+        href: "https://x.com/yamideveloper/",
         icon: "bi bi-twitter",
         color: "#1da1f2",
     },
