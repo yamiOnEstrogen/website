@@ -8,12 +8,12 @@ interface Social {
 
 
 const socials: Social[] = [
-    {
-        title: "Twitter",
-        href: "https://x.com/yamideveloper/",
-        icon: "bi bi-twitter",
-        color: "#1da1f2",
-    },
+    // {
+    //     title: "Twitter",
+    //     href: "https://x.com/yamideveloper/",
+    //     icon: "bi bi-twitter",
+    //     color: "#1da1f2",
+    // },
     {
         title: "Github",
         href: "https://github.com/0xYami",
